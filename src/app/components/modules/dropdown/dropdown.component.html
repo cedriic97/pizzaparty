@@ -1,0 +1,36 @@
+<div class="title">{{ field.title }}</div>
+<form class="em">
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-icon matSuffix>{{ field.icon }}</mat-icon>
+    <mat-label>{{ field.title }}</mat-label>
+    <input
+      type="text" placeholder=""  matInput [formControl]="myControl"
+      [matAutocomplete]="auto" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+  </mat-form-field>
+  <mat-autocomplete #auto="matAutocomplete">
+  <mat-option *ngFor="let option of filteredOptions | async" [value]="option[0]">
+    <span [ngSwitch]="field.connection">
+      <p *ngSwitchCase="'departments'">
+        <b>{{ option[0] }}</b>
+      </p>
+      <p *ngSwitchCase="'users'">
+        <b>{{ option[1] }} {{ option[2] }}</b>
+        <small> | {{ option[0] }}</small>
+      </p>
+      <p *ngSwitchDefault>
+        ERROR
+      </p>
+    </span>
+  </mat-option>
+</mat-autocomplete>
+  <mat-chip-list #chipList>
+    <mat-chip *ngFor="let chip of chips" color="primary" [removable]="removable" selected (removed)="remove(chip)">
+      {{ chip }}
+      <mat-icon *ngIf="removable" matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+</form>
+
+
+
+

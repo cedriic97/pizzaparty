@@ -1,0 +1,19 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2000,
+    "files.exclude": {
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/*.spec.ts": false,
+      "**/*.spec.json": true,
+      "**/*.app.json": false,
+      "**/polyfills.ts": true,
+      "**/main.ts": true,
+      "**/*.conf.js": true,
+      "**/browserlist": true,
+      "**/test.ts": true,
+    },
+    "files.hotExit": "onExit",
+    "files.defaultLanguage": "typescript",
+    "files.trimTrailingWhitespace": true,
+}

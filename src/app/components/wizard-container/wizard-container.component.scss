@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 16px auto;
+
+}
+
+.mat-card {
+  border-radius: 8px;
+}
+
+.button {
+  margin-left: 8px;
+}

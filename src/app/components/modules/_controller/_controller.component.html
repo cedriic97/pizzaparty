@@ -1,0 +1,18 @@
+<div *ngFor="let item of fields">
+  <div *ngIf="item.componentAvailable; else elseTemplate">
+    <span [ngSwitch]="fieldType(item)">
+      <p *ngSwitchCase="'user'">
+        <app-dropdown [field]="item"></app-dropdown>
+      </p>
+      <p *ngSwitchCase="'text'">
+        <app-number [field]="item"></app-number>
+      </p>
+      <p *ngSwitchDefault>
+        {{item.title}}
+      </p>
+    </span>
+  </div>
+  <ng-template #elseTemplate>
+    <p>COMPONENT FOR {{ item.title | uppercase}} NOT AVAILABLE</p>
+  </ng-template>
+</div>

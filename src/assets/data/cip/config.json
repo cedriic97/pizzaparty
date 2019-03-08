@@ -1,0 +1,26 @@
+{
+  "initiative": "Die Echte Initiative",
+  "title": "Torstens Echte",
+  "type": "KVP",
+  "process": {
+    "section1":
+      [
+        "title",
+        "author",
+        "department",
+        "champion"
+      ],
+    "section2":
+      [
+        "department",
+        "champion"
+      ],
+    "section3":
+      [
+        "title",
+        "author"
+      ]
+  }
+}
+
+

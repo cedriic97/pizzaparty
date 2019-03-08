@@ -1,0 +1,23 @@
+
+
+<mat-card class="mat-elevation-z4">
+    <mat-horizontal-stepper >
+        <mat-step label="Ideeneingabe">
+            <app-controller [field]="field.process.section1"></app-controller>
+            <div align="right">
+            <button mat-flat-button color="primary" matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step label="Kostenberechnung">
+            <app-controller [field]="field.process.section2"></app-controller>
+            <div align="right">
+            <button mat-stroked-button matStepperPrevious>Back</button>
+            <button mat-flat-button color="primary" matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step label="Weiterleitung">
+            <app-controller [field]="field.process.section3"></app-controller>
+        </mat-step>
+    </mat-horizontal-stepper>
+</mat-card>
+

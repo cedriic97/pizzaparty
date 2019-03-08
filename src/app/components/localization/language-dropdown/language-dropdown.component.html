@@ -1,0 +1,11 @@
+<!--suppress HtmlUnknownTarget -->
+<div class="trigger" [matMenuTriggerFor]="menu" *ngIf="activeLanguage$ | async as activeLang">
+  <img [src]="activeLang.iconPath" alt="">
+</div>
+
+<mat-menu #menu="matMenu" overlapTrigger>
+  <button mat-menu-item *ngFor="let lang of selectableLanguages$ | async" (click)="select(lang)">
+    <img [src]="lang.iconPath" alt="">
+    <span>{{lang.name}}</span>
+  </button>
+</mat-menu>

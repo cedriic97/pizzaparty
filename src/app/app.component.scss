@@ -1,0 +1,30 @@
+:host {
+    display: block;
+}
+
+.title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+}
+.mat-grid-tile {
+    max-width: 600px;
+}
+.content {
+    height: calc(100vh-64px);
+    overflow: auto;
+}
+
+mat-toolbar {
+    position: relative;
+    z-index: 2;
+    background: #fafafa !important;
+    border-bottom: #dadce0 1px solid;
+  }
+
+.mat-toolbar:hover {
+    align-self: stretch;
+}

@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './rochedesign.scss';
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url("src/assets/img/background.svg");
+  background-size: 100% 100vh;
+  overflow: hidden;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.result-trigger-circle {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
