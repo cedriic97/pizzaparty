@@ -1,12 +1,12 @@
 {
-  "initiative": "Die Echte Initiative",
+  "initiative": "FIT IST LIT",
   "title": "Torstens Echte",
-  "type": "KVP",
+  "type": "CIP",
   "process": {
     "section1":
       [
-        "author",
-        "author",
+        "department",
+        "department",
         "department",
         "champion",
         "author"

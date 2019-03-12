@@ -6,15 +6,13 @@
     "section1":
       [
         "author",
-        "author",
-        "department",
-        "champion",
         "author"
+        
       ],
     "section2":
       [
-        "department",
-        "champion"
+        "department"
+       
       ],
     "section3":
       [

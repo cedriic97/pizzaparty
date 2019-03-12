@@ -9,7 +9,8 @@ import {
   MatAutocompleteModule,
   MatCardModule,
   MatChipsModule,
-  MatGridListModule
+  MatGridListModule,
+  MatButtonToggleModule
 } from '@angular/material';
 import 'hammerjs';
 
@@ -30,5 +31,6 @@ export const MATERIAL_MODULES = [
   MatAutocompleteModule,
   MatCardModule,
   MatChipsModule,
-  MatGridListModule
+  MatGridListModule,
+  MatButtonToggleModule
 ];

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IField, EFieldType, getFieldType, getConfigFor } from 'src/app/models/process-config';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-controller',
@@ -8,9 +9,12 @@ import { IField, EFieldType, getFieldType, getConfigFor } from 'src/app/models/p
 })
 export class ControllerComponent implements OnInit {
   @Input() public field: string[];
+  @Input() public forminputs: FormGroup;
   fields: IField[];
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+
+  }
 
   ngOnInit() {
     this.getFields(this.field)

@@ -1,18 +1,24 @@
-<div *ngFor="let item of fields">
+<div class="border-color" *ngFor="let item of fields">
   <div *ngIf="item.componentAvailable; else elseTemplate">
-    <span [ngSwitch]="fieldType(item)">
-      <p *ngSwitchCase="'user'">
-        <app-dropdown [field]="item"></app-dropdown>
-      </p>
-      <p *ngSwitchCase="'text'">
-        <app-number [field]="item"></app-number>
-      </p>
-      <p *ngSwitchDefault>
-        {{item.title}}
-      </p>
-    </span>
+    <mat-card class="mat-elevation-z2">
+      <span [ngSwitch]="fieldType(item)">
+        <p *ngSwitchCase="'user'">
+          <app-dropdown [field]="item" [forminputs]="forminputs"></app-dropdown>
+        </p>
+        <p *ngSwitchCase="'text'">
+          <app-freetext [field]="item" [forminputs]="forminputs"></app-freetext>
+        </p>
+        <p *ngSwitchCase="'date'">
+          <app-date [field]="item" [forminputs]="forminputs"></app-date>
+        </p>
+        <p *ngSwitchDefault>
+          {{item.title}}
+        </p>
+      </span>
+    </mat-card>
   </div>
   <ng-template #elseTemplate>
-    <p>COMPONENT FOR {{ item.title | uppercase}} NOT AVAILABLE</p>
+    <app-component-not-found></app-component-not-found>
   </ng-template>
+
 </div>

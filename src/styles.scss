@@ -10,18 +10,43 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: url("src/assets/img/background.svg");
-  background-size: 100% 100vh;
-  overflow: hidden;
+  background-position: fixed;
+  background: linear-gradient(
+      12deg,
+      #fff 0%,
+      #fff 50%,
+      rgba($roche-blue, 0.2) 50%,
+      rgba($roche-blue, 0.2) 100%
+
+  );
+
+}
+
+.layout-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.layout-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.result-trigger-circle {
-  position: absolute;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+mat-list-item:hover {
+  background: #eee;
+}
+
+.my-panel .mat-dialog-container {
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 20px;
+  width: 600px;
 }

@@ -1,0 +1,17 @@
+.size {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.size>* {
+  width: 100%;
+
+}
+
+
+.title {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+

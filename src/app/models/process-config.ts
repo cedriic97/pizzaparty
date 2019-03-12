@@ -1,26 +1,31 @@
+import { FormControl } from '@angular/forms';
 
 export enum EFieldOptions {
-    AUTHOR,
-    COMMENT,
-    COMPLETION_DATE,
-    START_DATE,
-    DEPARTMENT,
-    PROBLEM_DESCRIPTION,
-    SOLUTION,
-    TAGS,
-    TITLE,
-    CHAMPION,
-    CONSEQUENCES,
-    EXPECTED_RESULT,
-    INNOVATIONPOINTS,
-    METHODS_USED,
-    TYPES_OF_WASTE
+    AUTHOR = 'author',
+    COMMENT = 'comment',
+    COMPLETION_DATE = 'completion_date',
+    START_DATE = 'start_date',
+    DEPARTMENT = 'department',
+    PROBLEM_DESCRIPTION = 'problem_description',
+    SOLUTION = 'solution',
+    TAGS = 'tags',
+    TITLE = 'title',
+    CHAMPION = 'champion',
+    CONSEQUENCES = 'consequences',
+    EXPECTED_RESULT = 'expected_result',
+    INNOVATIONPOINTS = 'innovationpoints',
+    METHODS_USED = 'methods_used',
+    TYPES_OF_WASTE = 'types_of_waste'
 }
+
+
 
 export enum EQueryable {
     DEPARTMENTS = 'departments',
     USERS = 'users',
-    NOQUERY = 'noquery'
+    METHODS_USED = 'methods_used',
+    TAGS = 'tags',
+
 }
 
 export enum ECurrency {
@@ -33,7 +38,7 @@ export enum EMaterialIcons {
     PERSON = 'person',
     CANCEL = 'cancel',
     SETTINGS = 'settings',
-    ACCESSIBILITY = 'accessibiliy',
+    ACCESSIBILITY = 'accessibility',
 }
 
 export enum EInitiative {
@@ -77,7 +82,7 @@ const fieldTypeLookup = {
     [EFieldOptions.COMPLETION_DATE]: EFieldType.DATE,
     [EFieldOptions.START_DATE]: EFieldType.DATE,
     [EFieldOptions.DEPARTMENT]: EFieldType.DROPDOWN,
-    [EFieldOptions.PROBLEM_DESCRIPTION]: EFieldType.DROPDOWN,
+    [EFieldOptions.PROBLEM_DESCRIPTION]: EFieldType.FREETEXT,
     [EFieldOptions.SOLUTION]: EFieldType.FREETEXT,
     [EFieldOptions.TAGS]: EFieldType.DROPDOWN,
     [EFieldOptions.TITLE]: EFieldType.FREETEXT,
@@ -101,7 +106,7 @@ export const config = {
         title: 'Autor der Idee',
         connection: EQueryable.USERS,
         icon: EMaterialIcons.PERSON,
-        componentAvailable: false,
+        componentAvailable: true,
     },
     champion: {
         type: EFieldOptions.CHAMPION,
@@ -117,70 +122,72 @@ export const config = {
         componentAvailable: true,
     },
     comment: {
-        type: EFieldOptions.TITLE,
+        type: EFieldOptions.COMMENT,
         title: 'Titel der Idee',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
     },
     completion_date: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
+        type: EFieldOptions.COMPLETION_DATE,
+        title: 'Enddatum',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
     },
     start_date: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
+        type: EFieldOptions.START_DATE,
+        title: 'Startdatum',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
     },
     problem_description: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
+        type: EFieldOptions.PROBLEM_DESCRIPTION,
+        title: 'Problembeschreibung',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
     },
     solution: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
+        type: EFieldOptions.SOLUTION,
+        title: 'Lösung',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
     },
     tags: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
-        icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        type: EFieldOptions.TAGS,
+        title: 'Stichwörter',
+        icon: EMaterialIcons.ACCESSIBILITY,
+        componentAvailable: true,
+        connection: EQueryable.TAGS,
     },
     consequences: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
+        type: EFieldOptions.CONSEQUENCES,
+        title: 'Konsequenzen',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
     },
     expected_result: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
+        type: EFieldOptions.EXPECTED_RESULT,
+        title: 'Erwartetes Ergebnis',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
     },
     innovationpoints: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
+        type: EFieldOptions.INNOVATIONPOINTS,
+        title: 'Innovationspunkte',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
     },
     methods_used: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
+        type: EFieldOptions.METHODS_USED,
+        title: 'Genutzte Methoden',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
+        connection: EQueryable.METHODS_USED,
     },
     types_of_waste: {
-        type: EFieldOptions.TITLE,
-        title: 'Titel der Idee',
+        type: EFieldOptions.TYPES_OF_WASTE,
+        title: 'Verschwendungsarten',
         icon: EMaterialIcons.CANCEL,
-        componentAvailable: false,
+        componentAvailable: true,
     }
 }
 

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IField } from 'src/app/models/process-config';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-date',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./date.component.scss']
 })
 export class DateComponent implements OnInit {
+  @Input() public field: IField;
+  @Input() public forminputs: FormGroup;
 
   constructor() { }
 

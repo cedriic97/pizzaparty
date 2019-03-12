@@ -21,6 +21,9 @@ import { WizardContainerComponent } from './components/wizard-container/wizard-c
 import { ControllerComponent } from './components/modules/_controller/_controller.component';
 import { NumberComponent } from './components/modules/number/number.component';
 import { ChipComponent } from './components/modules/chip/chip.component';
+import { PageNotFoundComponent } from './components/general/page-not-found/page-not-found.component';
+import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
+import { ComponentNotFoundComponent } from './components/general/component-not-found/component-not-found.component';
 
 
 
@@ -34,7 +37,11 @@ import { ChipComponent } from './components/modules/chip/chip.component';
     FreetextComponent,
     DateComponent,
     NumberComponent,
-    ChipComponent
+    ChipComponent,
+    PageNotFoundComponent,
+    SuccessAlertComponent,
+    ComponentNotFoundComponent
+
   ],
   imports: [
     BrowserModule,
@@ -45,6 +52,7 @@ import { ChipComponent } from './components/modules/chip/chip.component';
     FormsModule,
     NgSelectModule,
     ReactiveFormsModule,
+
     ...MATERIAL_MODULES,
     ...MDC_MODULES
   ],

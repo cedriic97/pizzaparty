@@ -1,1 +1,11 @@
-<input [value]="field.title">
+
+<div class="title">{{ field.title }}</div>
+<mat-form-field class="size" appearance="outline">
+
+  <div [formGroup]="forminputs">
+      <textarea matInput cdkTextareaAutosize
+placeholder="Leave a comment" [formControlName]="field.type"></textarea>
+  </div>
+
+  <!--<mat-hint>Hint</mat-hint>-->
+</mat-form-field>

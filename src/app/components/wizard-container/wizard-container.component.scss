@@ -3,13 +3,61 @@
   flex-direction: column;
   max-width: 800px;
   margin: 16px auto;
-
+  margin-top: 0px;
 }
 
-.mat-card {
+
+.fixed-header {
+  background: transparent !important;
+}
+
+mat-card {
   border-radius: 8px;
+  z-index: 1;
+  background: #fff !important;
+  border-top: #06c 5px solid;
 }
 
-.button {
-  margin-left: 8px;
+button {
+  margin: 16px;
+}
+
+.buttonback {
+
+  margin-right: 0px !important;
+}
+#label {
+  position: fixed !important;
+}
+
+mat-horizontal-stepper {
+  background: #fff;
+
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+/deep/ .mat-horizontal-stepper-header-container {
+  z-index: 5;
+  width: 800px !important;
+  position: fixed !important;
+
+
+}
+
+/deep/ .mat-horizontal-content-container {
+  z-index: 1;
+  padding-top: 96px !important;
+}
+
+.formdisplay {
+  margin-bottom: 16px;
 }

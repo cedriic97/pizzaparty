@@ -21,10 +21,15 @@ export class HypeService {
 
   public queryDepartments(query: string): Observable<HypeTable> {
     query = query.replace(' ', '* ') + '*';
-
+    console.log(query);
     const promise = sendMessage(new Message('DEPARTMENT_QUERY', {query}), window.opener)
       .then(({payload}) => payload);
 
     return from(promise);
   }
+
+  
+
+
+
 }

@@ -1,0 +1,15 @@
+mat-card {
+    border-radius: 8px;
+    z-index: 2;
+    background: #fafafa !important;
+    border: #dadce0 1px solid;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 16px auto;
+
+}
+
