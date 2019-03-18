@@ -2,15 +2,19 @@
 
 @import './rochedesign.scss';
 
+::-webkit-scrollbar {
+  display: none;
+}
 
 html, body {
   height: 100%;
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-position: fixed;
+
   background: linear-gradient(
       12deg,
       #fff 0%,
@@ -19,6 +23,9 @@ body {
       rgba($roche-blue, 0.2) 100%
 
   );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 
 }
 

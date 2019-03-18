@@ -1,0 +1,15 @@
+{
+ "methods": [
+   {"name": "5S", "description": "METHOD.5S.DESCRIPTION"},
+   {"name": "4S", "description": "METHOD.4S.DESCRIPTION"},
+   {"name": "3S", "description": "METHOD.3S.DESCRIPTION"},
+   {"name": "2S", "description": "METHOD.2S.DESCRIPTION"},
+   {"name": "1S", "description": "METHOD.1S.DESCRIPTION"}
+ ],
+ "typesOfWaste": [
+  {"name": "Faulheit", "description": "TYPESOFWASTE.FAULHEIT.DESCRIPTION"},
+  {"name": "Kollegen", "description": "TYPESOFWASTE.KOLLEGEN.DESCRIPTION"},
+  {"name": "Fehlende Kompetenz", "description": "TYPESOFWASTE.KOMPETENZ.DESCRIPTION"},
+  {"name": "Erst um 12 essen gehen", "description": "TYPESOFWASTE.ESSEN.DESCRIPTION"}
+ ]
+}

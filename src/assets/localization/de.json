@@ -1,0 +1,81 @@
+{
+  "APP_NAME": "HYPE Benefit Rechner",
+  "BUTTON_CLOSE": "schliessen",
+  "BUTTON_BACK": "zurück",
+  "BUTTON_NEXT": "weiter",
+  "BUTTON_FINALIZE": "abschliessen",
+  "RESULT.TITLE": "Ergebnis",
+  "RESULT.DESCRIPTION": "Hier siehst du das Ergebnis deiner Benefit Berechnung.",
+  "RESULT.SAVING.TITLE": "Summe der Einsparung",
+  "RESULT.SCORE.TITLE": "Summe der Punkte",
+  "RESULT.DETAILS.TITLE": "Details",
+  "RESULT.BUTTON.TRANSFER": "In HYPE speichern",
+
+  "AUTHOR.TITLE": "Autor/en",
+  "AUTHOR.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "COMMENT.TITLE": "Kommentar",
+  "COMMENT.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "COMPLETION_DATE.TITLE": "Abschlussdatum",
+  "COMPLETION_DATE.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "START_DATE.TITLE": "Startdatum",
+  "START_DATE.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "DEPARTMENT.TITLE": "Kommentar",
+  "DEPARTMENT.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "PROBLEM_DESCRIPTION.TITLE": "Problembeschreibung",
+  "PROBLEM_DESCRIPTION.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "SOLUTION.TITLE": "Lösung",
+  "SOLUTION.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "TAGS.TITLE": "Stichwörter",
+  "TAGS.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "TITLE.TITLE": "Titel",
+  "TITLE.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "CHAMPION.TITLE": "Multiplikator/en",
+  "CHAMPION.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "CONSEQUENCES.TITLE": "Konsequenzen",
+  "CONSEQUENCES.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "EXPECTED_RESULT.TITLE": "Erwartetes Ergebnis",
+  "EXPECTED_RESULT.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "INNOVATIONPOINTS.TITLE": "Innovationspunkte",
+  "INNOVATIONPOINTS.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "METHODS_USED.TITLE": "Verwendete Methoden",
+  "METHODS_USED.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "TYPES_OF_WASTE.TITLE": "Verschwendungsarten",
+  "TYPES_OF_WASTE.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "CHAPTER.DESCRIPTION.HEADER": "Um mehr über die Inhalte dieses Abschnittes zu erfahren, klicke hier",
+  "DEFAULT.LOGO.PATH":"/assets/img/roche-logo.png",
+  "DEFAULT.CHAPTER.NAME.IDEENDATEN": "Ideendaten",
+  "DEFAULT.CHAPTER.DESCRIPTION.IDEENDATEN": "In diesem Abschnitt soll deine Idee festgehalten werden. Es dreht sich alles um deren reinen Inhalt.",
+  "DEFAULT.CHAPTER.NAME.WERTBESTIMMUNG": "Wertbestimmung",
+  "DEFAULT.CHAPTER.DESCRIPTION.WERTBESTIMMUNG": "Die meisten Ideen generieren messbare Einsparungen und/oder Kosten in der Umsetzung. Um den Benefit deiner Idee optimal berechnen zu können nutze unseren Benefit Calculator, oder trage den Wert einfach hier ein",
+  "DEFAULT.CHAPTER.NAME.KLASSIFIZIERUNG": "Klassifizierung",
+  "DEFAULT.CHAPTER.DESCRIPTION.KLASSIFIZIERUNG": "Als solche ist deine Idee bereits umsetzungsbereit. Indem du die Angaben in diesem Abschnitt vervollständigst ermöglichst du, dass deine Idee schneller in deinem Bereich umgesetzt wird und leichter in anderen Bereichen umgesetzt werden kann. Mache deine Idee zu etwas großem!",
+  "DEFAULT.DESCRIPTION.BODY": "Hallo. Ich bin ein kleiner Blindtext. Und zwar schon so lange ich denken kann. Es war nicht leicht zu verstehen, was es bedeutet, ein blinder Text zu sein: Man macht keinen Sinn. Wirklich keinen Sinn. Man wird zusammenhangslos eingeschoben und rumgedreht – und oftmals gar nicht erst gelesen. Aber bin ich allein deshalb ein schlechterer Text als andere? Na gut, ich werde nie in den Bestsellerlisten stehen. Aber andere Texte schaffen das auch nicht. Und darum stört es mich nicht besonders blind zu sein. Und sollten Sie diese Zeilen noch immer lesen, so habe ich als kleiner Blindtext etwas geschafft, wovon all die richtigen und wichtigen Texte meist nur träumen.",
+
+  "CIP.LOGO.PATH": "/assets/img/cip/icon-cip-de.png",
+  "CIP.CHAPTER.NAME.1": "Bild",
+  "CIP.CHAPTER.DESCRIPTION.1": "Das ist die Beschreibung des Kapitels 1 vom KVP",
+  "CIP.CHAPTER.NAME.2": "Ideendaten",
+  "CIP.CHAPTER.DESCRIPTION.2": "Das ist die Beschreibung des Kapitels 2 vom KVP",
+  "CIP.CHAPTER.NAME.3": "Ideenbewertung",
+  "CIP.CHAPTER.DESCRIPTION.3": "Das ist die Beschreibung des Kapitels 3 vom KVP",
+  "CIP.CHAPTER.NAME.4": "Ideenklassifizierung",
+  "CIP.CHAPTER.DESCRIPTION.4": "Hier wird ihre Idee klassifiziert"
+
+
+
+}

@@ -8,7 +8,7 @@ import {APP_NAME} from '../config';
 const DEFAULT_LANG = 'de';
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/localization/', '.json_');
+  return new TranslateHttpLoader(http, './assets/localization/', '.json');
 }
 
 @NgModule({

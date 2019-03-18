@@ -1,27 +1,33 @@
-{
-  "initiative": "FIT IST LIT",
-  "title": "Torstens Echte",
-  "type": "CIP",
-  "process": {
-    "section1":
-      [
-        "department",
-        "department",
-        "department",
-        "champion",
-        "author"
-      ],
-    "section2":
-      [
-        "department",
-        "champion"
-      ],
-    "section3":
-      [
-        "title",
-        "author"
-      ]
+[
+  {
+    "name": "Kapitel 1",
+    "description": "Hier wird deine eigentliche Idee festgehalten. Achte darauf das die textlichen Beschreibungen präzise sind. Dies ermöglicht eine schnellere und effizientere Bearbeitung deiner Idee",
+    "fields": [
+      "title",
+      "problem_description",
+      "solution",
+      "author",
+      "start_date"
+    ]
+  },
+  {
+    "name": "Kapitel 2",
+    "description": "Wer etwas zu sagen hat, und gehört werden will, der sucht sich ein Podium",
+    "fields": [
+      "title",
+      "problem_description",
+      "solution",
+      "author"
+    ]
+  },
+  {
+    "name": "Kapitel 3",
+    "description": "Wer etwas zu sagen hat, und gehört werden will, der sucht sich ein Podium",
+    "fields": [
+      "title",
+      "problem_description",
+      "solution",
+      "author"
+    ]
   }
-}
-
-
+]

@@ -3,11 +3,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatChipInputEvent } from '@angular/material';
 import { Observable } from 'rxjs';
-import { filter, map, switchMap, startWith } from 'rxjs/operators';
-import { IField, EQueryable } from '../../../models/process-config';
-import { HypeService } from '../../../services/hype.service';
-import { tags } from 'src/assets/data/tags';
+import { filter, map, startWith, switchMap } from 'rxjs/operators';
 import { FilterService } from 'src/app/services/filter.service';
+
+import { EQueryable, IField } from '../../../models/wizard';
+import { HypeService } from '../../../services/hype.service';
+import { IProcess } from 'src/app/models/wizard';
 
 
 @Component({
@@ -31,6 +32,7 @@ export class DropdownComponent implements OnInit {
   isSelected = false;
 
 
+  @Input() public fieldConfig: IField;
   @Input() public field: IField;
   @Input() public forminputs: FormGroup;
   @Output() public optionSelected: EventEmitter<MatAutocompleteSelectedEvent>
@@ -56,15 +58,13 @@ export class DropdownComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this.field);
-    console.log(this.forminputs.value);
-    if (this.field.connection == EQueryable.USERS || this.field.connection == EQueryable.DEPARTMENTS) {
+    if (this.field.connection === EQueryable.USERS || this.field.connection === EQueryable.DEPARTMENTS) {
       this.filteredOptions = this.forminputs.controls[this.field.type].valueChanges
         .pipe(
           filter(value => window.opener && !this.isSelected),
           switchMap(value => this._filter(value)),
         );
-    } else if (this.field.connection == EQueryable.TAGS || this.field.connection == EQueryable.METHODS_USED) {
+    } else if (this.field.connection === EQueryable.TAGS || this.field.connection === EQueryable.METHODS_USED) {
       this.filteredOptionsStatic = this.forminputs.controls[this.field.type].valueChanges
         .pipe(
           startWith(''),

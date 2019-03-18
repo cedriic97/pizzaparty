@@ -1,48 +1,9 @@
 <form [formGroup]="formGroup">
-  <!--
-    <mat-card class="formdisplay mat-elevation-z2">
-        Form Values: {{formGroup.value | json}}
-    </mat-card>
-    -->
-
   <mat-horizontal-stepper class="fixed-header" labelPosition="bottom" #stepper>
-    <mat-step label="Ideedetails">
-
-      <app-controller [field]="field.process.section1" [forminputs]="formGroup"></app-controller>
-      <div align="right">
-        <button mat-flat-button color="primary" matStepperNext>Weiter</button>
-      </div>
-
-    </mat-step>
-    <mat-step label="Zuordnung">
-      <app-controller [field]="field.process.section2" [forminputs]="formGroup"></app-controller>
-      <div align="right">
-        <button mat-stroked-button matStepperPrevious class="buttonback">Zurück</button>
-        <button mat-flat-button color="primary" matStepperNext>Weiter</button>
-      </div>
-    </mat-step>
-    <mat-step label="Klassifizierung">
-      <app-controller [field]="field.process.section3" [forminputs]="formGroup"></app-controller>
-      <div align="right">
-        <button mat-stroked-button matStepperPrevious class="buttonback">Zurück</button>
-        <button mat-flat-button color="primary" matStepperNext>Weiter</button>
-      </div>
-    </mat-step>
-    <mat-step label="Idee abgeben">
-      <mat-card class="formdisplay mat-elevation-z2">
-        Form Values: {{ formGroup.value | json}}
-      </mat-card>
-      <button mat-flat-button color="primary" (click)="fireSuccess()">Idee abschicken</button>
+    <mat-step *ngFor="let step of config.config">
+      <ng-template matStepLabel>{{step.name | translate}}</ng-template>
+      <app-controller [imgpath]=config.imgpath [chapter]="step" [forminputs]="formGroup"></app-controller>
     </mat-step>
   </mat-horizontal-stepper>
-
-  <mat-toolbar class="footer">
-    <button mat-stroked-button color="primary" (click)="goBack(stepper)" class="button-global-1">Back</button>
-
-    <button mat-flat-button color="primary" (click)="goForward(stepper)" class="button-global-2">Next</button>
-  </mat-toolbar>
-
-
-
-
+  <app-footer [stepper]=stepper (success)="fireSuccess()"></app-footer>
 </form>

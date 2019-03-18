@@ -26,6 +26,7 @@ button {
 
   margin-right: 0px !important;
 }
+
 #label {
   position: fixed !important;
 }
@@ -35,15 +36,7 @@ mat-horizontal-stepper {
 
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center
-}
+
 
 /deep/ .mat-horizontal-stepper-header-container {
   z-index: 5;
@@ -55,9 +48,37 @@ mat-horizontal-stepper {
 
 /deep/ .mat-horizontal-content-container {
   z-index: 1;
-  padding-top: 96px !important;
+  padding-top: 108px !important;
+  padding-bottom: 200px !important;
 }
 
 .formdisplay {
   margin-bottom: 16px;
+}
+
+.mat-icon-fab {
+  margin-left: -2px;
+  margin-right: 5px;
+}
+mat-toolbar {
+  background-color: rgba(0, 0, 0, 0.20)
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center
+
+}
+
+.fab {
+  height: 50px;
+  bottom: 32px;
+  border-radius: 100vh;
+  border: 5px solid #fff
+
 }

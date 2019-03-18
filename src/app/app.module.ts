@@ -24,7 +24,13 @@ import { ChipComponent } from './components/modules/chip/chip.component';
 import { PageNotFoundComponent } from './components/general/page-not-found/page-not-found.component';
 import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
 import { ComponentNotFoundComponent } from './components/general/component-not-found/component-not-found.component';
-
+import { FooterComponent } from './components/footer/footer.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import {WizardEffects} from './store/wizard.effects';
+import {reducers} from './store';
+import { HelpPanelComponent } from './components/modules/help-panel/help-panel.component';
+import { MatNativeDateModule } from '@angular/material';
 
 
 @NgModule({
@@ -40,7 +46,9 @@ import { ComponentNotFoundComponent } from './components/general/component-not-f
     ChipComponent,
     PageNotFoundComponent,
     SuccessAlertComponent,
-    ComponentNotFoundComponent
+    ComponentNotFoundComponent,
+    FooterComponent,
+    HelpPanelComponent
 
   ],
   imports: [
@@ -48,11 +56,13 @@ import { ComponentNotFoundComponent } from './components/general/component-not-f
     AppRoutingModule,
     BrowserAnimationsModule,
     LocalizationModule,
+    MatNativeDateModule,
     HttpClientModule,
     FormsModule,
     NgSelectModule,
     ReactiveFormsModule,
-
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([ WizardEffects]),
     ...MATERIAL_MODULES,
     ...MDC_MODULES
   ],

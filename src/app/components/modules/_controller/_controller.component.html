@@ -1,5 +1,9 @@
+
+<app-help-panel [description]="chapter.description" [imgpath]="imgpath"></app-help-panel>
 <div class="border-color" *ngFor="let item of fields">
-  <div *ngIf="item.componentAvailable; else elseTemplate">
+
+  <div *ngIf="item; else elseTemplate">
+
     <mat-card class="mat-elevation-z2">
       <span [ngSwitch]="fieldType(item)">
         <p *ngSwitchCase="'user'">
@@ -12,7 +16,7 @@
           <app-date [field]="item" [forminputs]="forminputs"></app-date>
         </p>
         <p *ngSwitchDefault>
-          {{item.title}}
+          <app-component-not-found></app-component-not-found>
         </p>
       </span>
     </mat-card>

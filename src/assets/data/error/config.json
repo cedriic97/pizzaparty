@@ -1,0 +1,37 @@
+{
+  "imgpath": "DEFAULT.LOGO.PATH",
+  "config": [{
+      "name": "DEFAULT.CHAPTER.NAME.IDEENDATEN",
+      "description": "DEFAULT.CHAPTER.DESCRIPTION.IDEENDATEN",
+      "fields": [
+        "start_date",
+        "title",
+        "problem_description",
+        "solution",
+        "author",
+        "start_date",
+        "essen"
+      ]
+    },
+    {
+      "name": "DEFAULT.CHAPTER.NAME.WERTBESTIMMUNG",
+      "description": "DEFAULT.CHAPTER.DESCRIPTION.WERTBESTIMMUNG",
+      "fields": [
+        "title",
+        "problem_description",
+        "solution",
+        "author"
+      ]
+    },
+    {
+      "name": "DEFAULT.CHAPTER.NAME.KLASSIFIZIERUNG",
+      "description": "DEFAULT.CHAPTER.DESCRIPTION.KLASSIFIZIERUNG",
+      "fields": [
+        "title",
+        "problem_description",
+        "solution",
+        "author"
+      ]
+    }
+  ]
+}

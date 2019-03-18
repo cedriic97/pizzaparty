@@ -1,7 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
-import { IField } from './models/process-config';
-import { MatStepper, MatHorizontalStepper, MatStepperNext } from '@angular/material';
-import { WizardContainerComponent } from './components/wizard-container/wizard-container.component';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
+
+import { ICurrentUser } from './models/current-user';
+import { HypeService } from './services/hype.service';
+import { AppState } from './store';
+import { FetchWizardDataAction } from './store/wizard.actions';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +15,22 @@ import { WizardContainerComponent } from './components/wizard-container/wizard-c
 })
 export class AppComponent {
   title = 'hype-idea-form';
-  @ViewChild(WizardContainerComponent) private child: WizardContainerComponent;
-  @ViewChild(MatStepper) private next: MatStepper;
+  currentUser: ICurrentUser;
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+
+  constructor(store: Store<AppState>, translate: TranslateService, private http: HttpClient, private hype: HypeService) {
+    translate.setDefaultLang('de');
+    translate.use('en');
+
+    // store.dispatch(new FetchWizardDataAction());
+    // console.log(store.dispatch(new FetchWizardDataAction()));
 
   }
 
+
+  ngOnInit(): void {
+
+
+  }
 
 }

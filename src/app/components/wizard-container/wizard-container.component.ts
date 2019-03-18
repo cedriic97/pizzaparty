@@ -1,11 +1,18 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatStepper } from '@angular/material';
-import { IConfig, EFieldOptions } from 'src/app/models/process-config';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { StepUnion, EFieldOptions, IConfig, getWizardPath, EInitiative } from 'src/app/models/wizard';
 import { HypeService } from 'src/app/services/hype.service';
+import { selectActiveWizard } from 'src/app/store/wizard.selectors';
 
+import { AppState } from '../../store';
 import { SuccessAlertComponent } from '../success-alert/success-alert.component';
-
+import { HttpClient } from '@angular/common/http';
+import { Initiative } from 'src/app/models/hype-interface';
+import { load } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-wizard-container',
@@ -15,52 +22,18 @@ import { SuccessAlertComponent } from '../success-alert/success-alert.component'
 
 export class WizardContainerComponent implements OnInit {
   response: any;
-  @ViewChild('stepper') private next: MatStepper;
-  field: IConfig = JSON.parse(
-    `{
-    "initiative": "FIT",
-    "title": "Torstens Echte",
-    "type": "CIP",
-    "process": {
-      "section1":
-        [
-          "title",
-          "problem_description",
-          "solution",
-          "author"
-        ],
-      "section2":
-        [
-          "author",
-          "champion",
-          "department",
-          "start_date",
-          "completion_date"
-
-
-        ],
-      "section3":
-        [
-          "tags",
-          "types_of_waste",
-          "methods_used",
-          "comment"
-
-        ]
-    }
-  }`
-
-  )
-
-
+  staticData: any;
+  config: IConfig = null;
   formGroup: FormGroup;
-  post: any;
-  des: string = '';
-  name: string = '';
 
+  constructor(private fb: FormBuilder, public hype: HypeService, public dialog: MatDialog, private store: Store<AppState>, private http: HttpClient) {
+    // this.store.pipe(select(selectActiveWizard)).subscribe(res => {
+    //   this.config = res;
+    // });
 
-  constructor(private fb: FormBuilder, public hype: HypeService, public dialog: MatDialog) {
-    this.formGroup = fb.group({
+    //this.stepCount$ = this.steps$.pipe(map(config => config.length));
+
+    this.formGroup = this.fb.group({
       [EFieldOptions.AUTHOR]: new FormControl(),
       [EFieldOptions.CHAMPION]: new FormControl(),
       [EFieldOptions.COMMENT]: new FormControl(),
@@ -78,9 +51,43 @@ export class WizardContainerComponent implements OnInit {
       [EFieldOptions.TITLE]: new FormControl()
     });
   }
-  ngOnInit() {
 
+  ngOnInit() {
+    this.loadConfig();
+    this.loadStaticData();
   }
+
+  loadStaticData() {
+    this.http.get('/assets/data/data.json')
+      .subscribe(v => console.log(v))
+    console.log(this.staticData);
+  }
+
+  loadConfig() {
+
+    this.hype.userData$.subscribe(
+      userData => {
+        this.http.get(getWizardPath(userData.initiative))
+          .subscribe(
+
+            (v: IConfig) => { this.config = v; }
+
+          );
+      },
+      err => this.loadDefaultConfig()
+    );
+  }
+
+  loadDefaultConfig() {
+    this.http.get(getWizardPath(Initiative.ERROR)).subscribe((v: IConfig) => {
+      console.log(v),
+        this.config = v;
+    });
+  }
+
+
+
+
   goBack(stepper: MatStepper) {
     stepper.previous();
   }
@@ -88,6 +95,7 @@ export class WizardContainerComponent implements OnInit {
   goForward(stepper: MatStepper) {
     stepper.next();
   }
+
   fireSuccess() {
     const dialogRef = this.dialog.open(SuccessAlertComponent, { disableClose: true, panelClass: 'my-panel' });
   }

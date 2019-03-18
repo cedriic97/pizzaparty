@@ -1,0 +1,14 @@
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="mat-elevation-z2">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <img [src]="imgpath | translate">
+
+    </mat-panel-title>
+    <mat-panel-title>
+      {{ 'CHAPTER.DESCRIPTION.HEADER' | translate }}
+
+    </mat-panel-title>
+
+  </mat-expansion-panel-header>
+  {{ description | translate }}
+</mat-expansion-panel>

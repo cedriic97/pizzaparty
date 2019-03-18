@@ -1,0 +1,78 @@
+{
+  "APP_NAME": "HYPE One Idea Form",
+  "BUTTON_CLOSE": "close",
+  "BUTTON_BACK": "back",
+  "BUTTON_NEXT": "next",
+  "BUTTON_FINALIZE": "finalize",
+  "RESULT.TITLE": "result",
+  "RESULT.DESCRIPTION": "your result",
+  "RESULT.SAVING.TITLE": "sum of savings",
+  "RESULT.SCORE.TITLE": "score",
+  "RESULT.DETAILS.TITLE": "details",
+  "RESULT.BUTTON.TRANSFER": "Save in HYPE",
+
+  "AUTHOR.TITLE": "Author/s",
+  "AUTHOR.DESCRIPTION": "This could be your description",
+
+  "COMMENT.TITLE": "Comment",
+  "COMMENT.DESCRIPTION": "This could be your description",
+
+  "COMPLETION_DATE.TITLE": "Completion Date",
+  "COMPLETION_DATE.DESCRIPTION": "This could be your description",
+
+  "START_DATE.TITLE": "Start Date",
+  "START_DATE.DESCRIPTION": "This could be your description",
+
+  "DEPARTMENT.TITLE": "Kommentar",
+  "DEPARTMENT.DESCRIPTION": "This could be your description",
+
+  "PROBLEM_DESCRIPTION.TITLE": "Problemdescription",
+  "PROBLEM_DESCRIPTION.DESCRIPTION": "This could be your description",
+
+  "SOLUTION.TITLE": "Solution",
+  "SOLUTION.DESCRIPTION":"This could be your description",
+
+  "TAGS.TITLE": "Tags",
+  "TAGS.DESCRIPTION": "This could be your description",
+
+  "TITLE.TITLE": "Title",
+  "TITLE.DESCRIPTION": "This could be your description",
+
+  "CHAMPION.TITLE": "Champion/s",
+  "CHAMPION.DESCRIPTION": "This could be your description",
+
+  "CONSEQUENCES.TITLE": "Consequences",
+  "CONSEQUENCES.DESCRIPTION": "This could be your description",
+
+  "EXPECTED_RESULT.TITLE": "Expected result",
+  "EXPECTED_RESULT.DESCRIPTION": "This could be your description",
+
+  "INNOVATIONPOINTS.TITLE": "Innovationpoints",
+  "INNOVATIONPOINTS.DESCRIPTION": "This could be your description",
+
+  "METHODS_USED.TITLE": "Methods used",
+  "METHODS_USED.DESCRIPTION": "This could be your description",
+
+  "TYPES_OF_WASTE.TITLE": "Types of waste",
+  "TYPES_OF_WASTE.DESCRIPTION": "This could be your description",
+
+  "CHAPTER.DESCRIPTION.HEADER": "Click, to get more information about this chapter",
+
+  "DEFAULT.CHAPTER.NAME.IDEENDATEN": "Idea data",
+  "DEFAULT.CHAPTER.DESCRIPTION.IDEENDATEN": "In this section your idea will be recorded. It is all about its pure content.",
+  "DEFAULT.CHAPTER.NAME.WERTBESTIMMUNG": "Value determination",
+  "DEFAULT.CHAPTER.DESCRIPTION.WERTBESTIMMUNG": "Most ideas generate measurable savings and/or costs in implementation. To calculate the benefit of your idea optimally, use our Benefit Calculator, or simply enter the value here",
+  "DEFAULT.CHAPTER.NAME.KLASSIFIZIERUNG": "Classification",
+  "DEFAULT.CHAPTER.DESCRIPTION.KLASSIFIZIERUNG": "As such, your idea is already ready to be implemented. By completing the information in this section, you make it possible for your idea to be implemented more quickly in your area and more easily in other areas. Turn your idea into something big!",
+  "DEFAULT.DESCRIPTION.BODY": "Hello. I'm a little dummy text. And that for as long as I can remember. It was not easy to understand what it means to be a blind text: You don't make sense. Really no sense. You are pushed in and turned around incoherently - and often not even read. But is this the only reason why I am a worse text than others? All right, I'll never be on the bestseller lists. But other texts don't make it either. And that's why it doesn't bother me to be particularly blind. And if you're still reading these lines, I've done something as a small dummy text that all the right and important texts usually only dream about.",
+
+  "CIP.LOGO.PATH": "/assets/img/cip/icon-cip-en.png",
+  "CIP.CHAPTER.NAME.1": "Picture",
+  "CIP.CHAPTER.DESCRIPTION.1": "This is the description of chapter 1",
+  "CIP.CHAPTER.NAME.2": "Idea data",
+  "CIP.CHAPTER.DESCRIPTION.2": "This is the description of chapter 2",
+  "CIP.CHAPTER.NAME.3": "Idea value",
+  "CIP.CHAPTER.DESCRIPTION.3": "This is the description of chapter 3",
+  "CIP.CHAPTER.NAME.4": "Idea Classification",
+  "CIP.CHAPTER.DESCRIPTION.4": "In this section, your idea will be classified"
+}

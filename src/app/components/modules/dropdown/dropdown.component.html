@@ -1,11 +1,12 @@
-<div class="title">{{ field.title }}</div>
+<div class="title">{{ field.title | translate }}</div>
+<p> {{ field.description | translate }}</p>
 <mat-form-field appearance="outline">
 
   <div [formGroup]="forminputs">
     <input class="full-width" type="text" placeholder="" matInput [formControlName]="field.type" [matAutocomplete]="auto"
       [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
   </div>
-  
+
   <!--<mat-hint>Hint</mat-hint>-->
 </mat-form-field>
 

@@ -1,5 +1,5 @@
 :host {
-    display: block;
+  display: block;
 
 }
 
@@ -10,27 +10,26 @@
 }
 
 .content {
-    z-index: 2;
+  z-index: 2;
 
-    overflow: auto;
+  overflow: auto;
   //  background: #dadce0;
 }
 
 mat-toolbar {
-    z-index: 2;
+  z-index: 2;
 
-    min-height: 96px;
-    border-bottom: #dadce0 1px solid;
-    position: fixed;
+  min-height: 108px;
+  border-bottom: #dadce0 1px solid;
+  position: fixed;
 
-    background: #fff !important;
+  background: #fff !important;
 
-    //border-bottom: #dadce0 1px solid;
-
-  }
+}
 
 .footer-toolbar {
   bottom: 0;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
 }
-
-

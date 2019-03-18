@@ -15,9 +15,7 @@ export class Message {
     public responseTo?: string) {
   }
 }
-export function getPlatformDetails() {
-  return sendMessage(new Message('GET_PLATFORM_DETAILS'), window.opener);
-}
+
 export function sendMessage(message, target, timeout = 5000) {
   return new Promise((resolve, reject) => {
     let isCancelled = false;

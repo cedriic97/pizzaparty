@@ -10,7 +10,8 @@ import {
   MatCardModule,
   MatChipsModule,
   MatGridListModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatDatepickerModule,
 } from '@angular/material';
 import 'hammerjs';
 
@@ -32,5 +33,6 @@ export const MATERIAL_MODULES = [
   MatCardModule,
   MatChipsModule,
   MatGridListModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatDatepickerModule
 ];
