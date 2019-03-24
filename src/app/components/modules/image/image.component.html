@@ -1,0 +1,30 @@
+<div class="test">
+
+  <span>
+    <div>
+      <div class="title"><b>{{ field.title | translate }}</b></div>
+      <p> {{ field.description | translate }}</p>
+
+      <input type="file" name="file" id="file" class="inputfile" (change)="fileChangeEvent($event)" />
+
+      <button mat-flat-button color="primary"><label for="file">{{'BUTTON_UPLOAD' | translate}}</label></button>
+      <div [hidden]="!hideImageSelector">
+        <button mat-flat-button color="primary" (click)="hide()">{{'BUTTON_SHOW' | translate}}</button>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div [hidden]="!hideImageSelector">
+      <img [src]="croppedImage" />
+
+    </div>
+  </span>
+
+</div>
+<div [hidden]="hideImageSelector || !imageExists">
+
+  <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="false" [resizeToWidth]="128" format="png"
+    (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"></image-cropper>
+  <button mat-flat-button color="primary" (click)="hide()">{{'BUTTON_CLOSE' | translate}}</button>
+</div>
+<br>

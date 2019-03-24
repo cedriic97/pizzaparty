@@ -4,6 +4,9 @@
       "name": "DEFAULT.CHAPTER.NAME.IDEENDATEN",
       "description": "DEFAULT.CHAPTER.DESCRIPTION.IDEENDATEN",
       "fields": [
+        "tags",
+        "picture_before",
+        "picture_after",
         "start_date",
         "title",
         "problem_description",
@@ -27,10 +30,10 @@
       "name": "DEFAULT.CHAPTER.NAME.KLASSIFIZIERUNG",
       "description": "DEFAULT.CHAPTER.DESCRIPTION.KLASSIFIZIERUNG",
       "fields": [
-        "title",
-        "problem_description",
-        "solution",
-        "author"
+        "tags",
+        "methods_used",
+        "types_of_waste",
+        "comment"
       ]
     }
   ]

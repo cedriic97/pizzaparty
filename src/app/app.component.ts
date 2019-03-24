@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ICurrentUser } from './models/current-user';
 import { HypeService } from './services/hype.service';
 import { AppState } from './store';
-import { FetchWizardDataAction } from './store/wizard.actions';
+import { FetchStepperDataAction } from './store/stepper.actions';
 
 @Component({
   selector: 'app-root',
@@ -17,20 +17,15 @@ export class AppComponent {
   title = 'hype-idea-form';
   currentUser: ICurrentUser;
 
-
   constructor(store: Store<AppState>, translate: TranslateService, private http: HttpClient, private hype: HypeService) {
     translate.setDefaultLang('de');
     translate.use('en');
 
-    // store.dispatch(new FetchWizardDataAction());
+    store.dispatch(new FetchStepperDataAction());
     // console.log(store.dispatch(new FetchWizardDataAction()));
 
   }
 
-
   ngOnInit(): void {
-
-
   }
-
 }

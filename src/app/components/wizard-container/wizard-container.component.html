@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup">
   <mat-horizontal-stepper class="fixed-header" labelPosition="bottom" #stepper>
-    <mat-step *ngFor="let step of config.config">
+    <mat-step *ngFor="let step of (config$ | async).config">
       <ng-template matStepLabel>{{step.name | translate}}</ng-template>
       <app-controller [imgpath]=config.imgpath [chapter]="step" [forminputs]="formGroup"></app-controller>
     </mat-step>

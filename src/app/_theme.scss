@@ -1,5 +1,8 @@
 @import '~@angular/material/theming';
+$mdc-theme-primary: #0066cc; // primary color
+$mdc-theme-secondary: #ed8b00; // secondary color
 
+@import "~@angular-mdc/theme/material";
 @include mat-core();
 
 $map-values: 50 100 200 300 400 500 600 700 800 900 A100 A200 A400 A700;
@@ -11,6 +14,7 @@ $roche-green: #00965e;
 $roche-yellow: #ffc72c;
 $roche-orange: #ed8b00;
 $roche-cyan: #00e5ef;
+$roche-blue-grey: #CCE0F4;
 
 @function buildPalette($color, $contrastColor) {
   $basic: ();

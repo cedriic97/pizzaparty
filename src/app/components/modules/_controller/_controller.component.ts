@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EFieldType, IField, IProcess } from 'src/app/models/wizard';
 import { getConfigFor, getFieldType } from 'src/app/models/process-config';
 
@@ -13,11 +13,7 @@ export class ControllerComponent implements OnInit {
   @Input() public imgpath: string;
   @Input() public forminputs: FormGroup;
   fields: IField[];
-
-
-  constructor(private fb: FormBuilder) {
-
-  }
+  myform: FormGroup = null;
 
   ngOnInit() {
     this.getFields(this.chapter.fields);

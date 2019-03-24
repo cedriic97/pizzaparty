@@ -1,0 +1,23 @@
+.noflex {
+  display: flex;
+  flex-direction: column;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+img {
+  max-height: 150px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+button {
+  margin-top:8px;
+}
+

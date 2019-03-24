@@ -40,9 +40,9 @@
 </mat-autocomplete>
 
 <mat-chip-list #chipList>
-  <mat-chip *ngFor="let chip of chips" color="primary" [removable]="removable" selected (removed)="remove(chip)">
-    {{ chip }}
-    <mat-icon *ngIf="removable" matChipRemove>cancel</mat-icon>
-  </mat-chip>
-</mat-chip-list>
+    <mat-chip *ngFor="let chip of chips" color="primary" [removable]="removable" selected (removed)="remove(chip)">
+      {{ chip }}
+      <mat-icon *ngIf="removable" matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
 

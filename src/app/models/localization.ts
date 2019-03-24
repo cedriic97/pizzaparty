@@ -11,7 +11,7 @@ export interface LanguageDetail {
 }
 
 export const AVAILABLE_LANGUAGES: LanguageDetail[] = [
-  {code: LanguageCodes.GERMAN, iconPath: 'assets/img/ger.png', name: 'Deutsch'},
-  {code: LanguageCodes.ENGLISH, iconPath: 'assets/img/uk.png', name: 'English'},
+  {code: LanguageCodes.GERMAN, iconPath: 'assets/img/localization/ger.png', name: 'Deutsch'},
+  {code: LanguageCodes.ENGLISH, iconPath: 'assets/img/localization/uk.png', name: 'English'},
   // {code: LanguageCodes.SPANISH, iconPath: 'assets/img/spain.png', name: 'Espanol'},
 ];

@@ -1,37 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { MATERIAL_MODULES } from './material';
-import { MDC_MODULES } from './mdc';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { APP_NAME } from './config';
-import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
+import { ComponentNotFoundComponent } from './components/general/component-not-found/component-not-found.component';
+import { PageNotFoundComponent } from './components/general/page-not-found/page-not-found.component';
 import { LanguageDropdownComponent } from './components/localization/language-dropdown/language-dropdown.component';
+import { ControllerComponent } from './components/modules/_controller/_controller.component';
+import { ChipComponent } from './components/modules/chip/chip.component';
+import { DateComponent } from './components/modules/date/date.component';
+import { DropdownComponent } from './components/modules/dropdown/dropdown.component';
+import { FreetextComponent } from './components/modules/freetext/freetext.component';
+import { HelpPanelComponent } from './components/modules/help-panel/help-panel.component';
+import { ImageComponent } from './components/modules/image/image.component';
+import { NumberComponent } from './components/modules/number/number.component';
+import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
+import { WizardContainerComponent } from './components/wizard-container/wizard-container.component';
+import { APP_NAME } from './config';
 import { LocalizationModule } from './modules/localization.module';
 import { HypeService } from './services/hype.service';
-import { DropdownComponent } from './components/modules/dropdown/dropdown.component';
-import { FormControl, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NgSelectModule, NgOption } from '@ng-select/ng-select';
-
-import { FreetextComponent } from './components/modules/freetext/freetext.component';
-import { DateComponent } from './components/modules/date/date.component';
-import { WizardContainerComponent } from './components/wizard-container/wizard-container.component';
-import { ControllerComponent } from './components/modules/_controller/_controller.component';
-import { NumberComponent } from './components/modules/number/number.component';
-import { ChipComponent } from './components/modules/chip/chip.component';
-import { PageNotFoundComponent } from './components/general/page-not-found/page-not-found.component';
-import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
-import { ComponentNotFoundComponent } from './components/general/component-not-found/component-not-found.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import {WizardEffects} from './store/wizard.effects';
-import {reducers} from './store';
-import { HelpPanelComponent } from './components/modules/help-panel/help-panel.component';
-import { MatNativeDateModule } from '@angular/material';
-
+import { reducers } from './store';
+import { WizardEffects } from './store/stepper.effects';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { SelectorComponent } from './components/modules/selector/selector.component';
+import { MaterialModule } from './modules/material.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { MatNativeDateModule } from '@angular/material';
     SuccessAlertComponent,
     ComponentNotFoundComponent,
     FooterComponent,
-    HelpPanelComponent
+    HelpPanelComponent,
+    ImageComponent,
+    SelectorComponent
 
   ],
   imports: [
@@ -58,13 +61,13 @@ import { MatNativeDateModule } from '@angular/material';
     LocalizationModule,
     MatNativeDateModule,
     HttpClientModule,
+    ImageCropperModule,
     FormsModule,
     NgSelectModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([ WizardEffects]),
-    ...MATERIAL_MODULES,
-    ...MDC_MODULES
+    EffectsModule.forRoot([WizardEffects]),
+    MaterialModule,
   ],
   providers: [
     { provide: APP_NAME, useValue: 'hype-idea-form' },

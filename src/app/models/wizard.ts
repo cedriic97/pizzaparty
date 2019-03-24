@@ -3,21 +3,23 @@ import { config } from './process-config';
 
 
 export enum EFieldOptions {
-  AUTHOR = 'author',
-  COMMENT = 'comment',
-  COMPLETION_DATE = 'completion_date',
-  START_DATE = 'start_date',
-  DEPARTMENT = 'department',
-  PROBLEM_DESCRIPTION = 'problem_description',
-  SOLUTION = 'solution',
-  TAGS = 'tags',
-  TITLE = 'title',
-  CHAMPION = 'champion',
-  CONSEQUENCES = 'consequences',
-  EXPECTED_RESULT = 'expected_result',
-  INNOVATIONPOINTS = 'innovationpoints',
-  METHODS_USED = 'methods_used',
-  TYPES_OF_WASTE = 'types_of_waste'
+    AUTHOR = 'author',
+    COMMENT = 'comment',
+    COMPLETION_DATE = 'completion_date',
+    START_DATE = 'start_date',
+    DEPARTMENT = 'department',
+    PROBLEM_DESCRIPTION = 'problem_description',
+    SOLUTION = 'solution',
+    TAGS = 'tags',
+    TITLE = 'title',
+    CHAMPION = 'champion',
+    CONSEQUENCES = 'consequences',
+    EXPECTED_RESULT = 'expected_result',
+    INNOVATIONPOINTS = 'innovationpoints',
+    METHODS_USED = 'methods_used',
+    TYPES_OF_WASTE = 'types_of_waste',
+    PICTURE_BEFORE = "PICTURE_BEFORE",
+    PICTURE_AFTER = "PICTURE_AFTER"
 }
 
 
@@ -26,6 +28,7 @@ export enum EQueryable {
   DEPARTMENTS = 'departments',
   USERS = 'users',
   METHODS_USED = 'methods_used',
+  TYPES_OF_WASTE = 'types_of_waste',
   TAGS = 'tags',
 
 }
@@ -73,7 +76,9 @@ export enum EFieldType {
   FREETEXT = 'text',
   DROPDOWN = 'user',
   DATE = 'date',
-  NUMBER = 'number'
+  NUMBER = 'number',
+  IMAGE = 'image',
+  SELECTOR = 'selector'
 }
 
 export const fieldTypeLookup = {
@@ -90,8 +95,10 @@ export const fieldTypeLookup = {
   [EFieldOptions.CONSEQUENCES]: EFieldType.DROPDOWN,
   [EFieldOptions.EXPECTED_RESULT]: EFieldType.DROPDOWN,
   [EFieldOptions.INNOVATIONPOINTS]: EFieldType.NUMBER,
-  [EFieldOptions.METHODS_USED]: EFieldType.DROPDOWN,
-  [EFieldOptions.TYPES_OF_WASTE]: EFieldType.DROPDOWN
+  [EFieldOptions.METHODS_USED]: EFieldType.SELECTOR,
+  [EFieldOptions.TYPES_OF_WASTE]: EFieldType.SELECTOR,
+  [EFieldOptions.PICTURE_BEFORE]: EFieldType.IMAGE,
+  [EFieldOptions.PICTURE_AFTER]: EFieldType.IMAGE
 };
 
 

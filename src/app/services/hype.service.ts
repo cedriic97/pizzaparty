@@ -13,6 +13,7 @@ import { Message, sendMessage } from '../models/messaging';
 export class HypeService {
 
   public readonly userData$: Observable<ICurrentUser>;
+  initiative$: any;
 
   constructor(private route: ActivatedRoute) {
     this.userData$ = this.getPlatformDetails();

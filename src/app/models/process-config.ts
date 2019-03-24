@@ -108,6 +108,21 @@ export const config = {
         title: 'TYPES_OF_WASTE.TITLE',
         description: 'TYPES_OF_WASTE.DESCRIPTION',
         icon: EMaterialIcons.CANCEL,
+        connection: EQueryable.TYPES_OF_WASTE,
+        componentAvailable: true,
+    },
+    picture_before: {
+        type: EFieldOptions.PICTURE_BEFORE,
+        title: 'PICTURE_BEFORE.TITLE',
+        description: 'PICTURE_BEFORE.DESCRIPTION',
+        icon: EMaterialIcons.CANCEL,
+        componentAvailable: true,
+    },
+    picture_after: {
+        type: EFieldOptions.PICTURE_AFTER,
+        title: 'PICTURE_AFTER.TITLE',
+        description: 'PICTURE_AFTER.DESCRIPTION',
+        icon: EMaterialIcons.CANCEL,
         componentAvailable: true,
     }
 }

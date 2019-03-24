@@ -1,29 +1,22 @@
 import { Wizard } from '../models/wizard';
-import { ActionsUnion, ActionTypes } from './wizard.actions';
+import { ActionsUnion, ActionTypes } from './stepper.actions';
 
 export interface WizardState {
-  activeWizard: Wizard;
+  activeStepper: Wizard;
 }
 
 const initialState: WizardState = {
-  activeWizard: null,
+  activeStepper: {} as Wizard,
 };
-
-
-function initWizard(wizard: Wizard): Wizard {
-  return wizard;
-}
 
 
 export function wizardReducer(state = initialState, action: ActionsUnion): WizardState {
   switch (action.type) {
 
-    case ActionTypes.SET_ACTIVE_WIZARD:
-      const newWizard = initWizard(action.wizard);
-
+    case ActionTypes.SET_ACTIVE_STEPPER:
       return {
         ...state,
-        activeWizard: newWizard,
+        activeStepper: action.stepper,
       };
 
     default:

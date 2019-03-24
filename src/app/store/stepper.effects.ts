@@ -8,7 +8,7 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { Initiative } from '../models/hype-interface';
 import { getWizardPath, Wizard } from '../models/wizard';
 import { HypeService } from '../services/hype.service';
-import { ActionTypes, FetchWizardDataAction, SetActiveWizardAction } from './wizard.actions';
+import { ActionTypes, FetchStepperDataAction, SetActiveStepperAction } from './stepper.actions';
 
 @Injectable()
 export class WizardEffects {
@@ -20,12 +20,11 @@ export class WizardEffects {
 
   @Effect()
   fetchWizardData$: Observable<Action> = this.actions$.pipe(
-    ofType<FetchWizardDataAction>(ActionTypes.FETCH_WIZARD_DATA),
-    switchMap(() => this.hype.initiative$),
-    switchMap(initiative => this.http.get(getWizardPath("cip"))),
-
+    ofType<FetchStepperDataAction>(ActionTypes.FETCH_STEPPER_DATA),
+    switchMap(() => this.hype.userData$),
+    switchMap(userData => this.http.get(getWizardPath(userData.initiative))),
     catchError(() => this.http.get(getWizardPath(Initiative.ERROR))),
-    map((data: Wizard) => new SetActiveWizardAction(data)),
+    map((data: Wizard) => new SetActiveStepperAction(data)),
   );
 
 }

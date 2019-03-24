@@ -1,33 +1,28 @@
-@import 'src/rochedesign.scss';
+@import "src/app/theme";
+
 .mat-icon-fab {
-    margin-left: -2px;
-    margin-right: 5px;
-  }
-  mat-toolbar {
+  margin-left: -2px;
+  margin-right: 5px;
+}
 
-  }
+.footer {
+  background-color: $roche-blue-grey;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
 
-  .footer {
-    background-color: rgba(#CCE0F4, 1); //Roche Grey
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center
+.fab {
+  height: 60px;
+  bottom: 32px;
+  border-radius: 100vh;
+  border: 5px solid #fff
+}
 
-  }
-
-  .fab {
-    height: 60px;
-    bottom: 32px;
-    border-radius: 100vh;
-    border: 5px solid #fff
-
-  }
-
-  button {
-    margin: 16px;
-  }
-
+button {
+  margin: 16px;
+}

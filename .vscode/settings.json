@@ -1,6 +1,6 @@
 {
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 2000,
+    "files.autoSaveDelay": 300000,
     "files.exclude": {
       "**/.git": true,
       "**/.DS_Store": true,

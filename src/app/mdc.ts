@@ -5,7 +5,8 @@ import {
     MdcTopAppBarModule,
     MdcButtonModule,
     MdcElevationModule,
-    MdcTextFieldModule
+    MdcTextFieldModule,
+    MdcChipsModule
   } from '@angular-mdc/web';
 
 
@@ -16,5 +17,6 @@ export const MDC_MODULES = [
     MdcTopAppBarModule,
     MdcButtonModule,
     MdcElevationModule,
-    MdcTextFieldModule
+    MdcTextFieldModule,
+    MdcChipsModule
   ];

@@ -1,5 +1,5 @@
 
-import { WizardState, wizardReducer } from './wizard.reducer';
+import { WizardState, wizardReducer } from './stepper.reducer';
 import { ActionReducerMap } from '@ngrx/store';
 
 

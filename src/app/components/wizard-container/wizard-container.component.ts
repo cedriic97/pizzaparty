@@ -1,18 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatStepper } from '@angular/material';
-import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
-import { StepUnion, EFieldOptions, IConfig, getWizardPath, EInitiative } from 'src/app/models/wizard';
+import { Store, select } from '@ngrx/store';
+import { Initiative } from 'src/app/models/hype-interface';
+import { EFieldOptions, getWizardPath, IConfig } from 'src/app/models/wizard';
 import { HypeService } from 'src/app/services/hype.service';
-import { selectActiveWizard } from 'src/app/store/wizard.selectors';
 
 import { AppState } from '../../store';
 import { SuccessAlertComponent } from '../success-alert/success-alert.component';
-import { HttpClient } from '@angular/common/http';
-import { Initiative } from 'src/app/models/hype-interface';
-import { load } from '@angular/core/src/render3';
+import { Observable } from 'rxjs';
+import { selectActiveStepper } from 'src/app/store/stepper.selectors';
 
 @Component({
   selector: 'app-wizard-container',
@@ -21,9 +19,9 @@ import { load } from '@angular/core/src/render3';
 })
 
 export class WizardContainerComponent implements OnInit {
+  config$: Observable<IConfig>;
   response: any;
   staticData: any;
-  config: IConfig = null;
   formGroup: FormGroup;
 
   constructor(private fb: FormBuilder, public hype: HypeService, public dialog: MatDialog, private store: Store<AppState>, private http: HttpClient) {
@@ -31,8 +29,11 @@ export class WizardContainerComponent implements OnInit {
     //   this.config = res;
     // });
 
+    this.config$ = store.pipe(select(selectActiveStepper));
+
     //this.stepCount$ = this.steps$.pipe(map(config => config.length));
 
+    // TODO: construct form from JSON process
     this.formGroup = this.fb.group({
       [EFieldOptions.AUTHOR]: new FormControl(),
       [EFieldOptions.CHAMPION]: new FormControl(),
@@ -53,37 +54,36 @@ export class WizardContainerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadConfig();
-    this.loadStaticData();
+    // this.loadConfig();
+    //this.loadStaticData();
   }
 
-  loadStaticData() {
-    this.http.get('/assets/data/data.json')
-      .subscribe(v => console.log(v))
-    console.log(this.staticData);
-  }
+  // loadStaticData() {
+  //   this.http.get('/assets/data/data.json')
+  //     .subscribe(v => console.log(v));
+  //   console.log(this.staticData);
+  // }
 
-  loadConfig() {
+  // loadConfig() {
+  //   this.hype.userData$.subscribe(
+  //     userData => {
+  //       this.http.get(getWizardPath(userData.initiative))
+  //         .subscribe(
 
-    this.hype.userData$.subscribe(
-      userData => {
-        this.http.get(getWizardPath(userData.initiative))
-          .subscribe(
+  //           (v: IConfig) => { this.config = v; }
 
-            (v: IConfig) => { this.config = v; }
+  //         );
+  //     },
+  //     err => this.loadDefaultConfig()
+  //   );
+  // }
 
-          );
-      },
-      err => this.loadDefaultConfig()
-    );
-  }
-
-  loadDefaultConfig() {
-    this.http.get(getWizardPath(Initiative.ERROR)).subscribe((v: IConfig) => {
-      console.log(v),
-        this.config = v;
-    });
-  }
+  // loadDefaultConfig() {
+  //   this.http.get(getWizardPath(Initiative.ERROR)).subscribe((v: IConfig) => {
+  //     console.log(v),
+  //       this.config = v;
+  //   });
+  // }
 
 
 
