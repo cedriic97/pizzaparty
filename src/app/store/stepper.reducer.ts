@@ -1,16 +1,19 @@
-import { Wizard } from '../models/wizard';
-import { ActionsUnion, ActionTypes } from './stepper.actions';
+import {Wizard} from '../models/wizard';
+import {ActionsUnion, ActionTypes} from './stepper.actions';
 
-export interface WizardState {
+export interface StepperState {
   activeStepper: Wizard;
 }
 
-const initialState: WizardState = {
-  activeStepper: {} as Wizard,
+const initialState: StepperState = {
+  activeStepper: {
+    imgpath: 'DEFAULT.LOGO.PATH',
+    config: []
+  },
 };
 
 
-export function wizardReducer(state = initialState, action: ActionsUnion): WizardState {
+export function stepperReducer(state = initialState, action: ActionsUnion): StepperState {
   switch (action.type) {
 
     case ActionTypes.SET_ACTIVE_STEPPER:

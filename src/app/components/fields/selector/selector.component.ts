@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import {Component, forwardRef, Input, OnInit} from '@angular/core';
+import {ControlValueAccessor, FormGroup, NG_VALUE_ACCESSOR} from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material';
 import { TranslateParser, TranslateService } from '@ngx-translate/core';
 import { EQueryable, IField } from 'src/app/models/wizard';
@@ -8,9 +8,16 @@ import { EQueryable, IField } from 'src/app/models/wizard';
 @Component({
   selector: 'app-selector',
   templateUrl: './selector.component.html',
-  styleUrls: ['./selector.component.scss']
+  styleUrls: ['./selector.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SelectorComponent),
+      multi: true
+    }
+  ]
 })
-export class SelectorComponent implements OnInit {
+export class SelectorComponent implements OnInit, ControlValueAccessor {
   @Input() public field: IField;
   @Input() public forminputs: FormGroup;
 
@@ -19,6 +26,7 @@ export class SelectorComponent implements OnInit {
   chips = [];
 
   selectedChips: any[] = [];
+  private onChange: any;
   constructor(private http: HttpClient, private translate: TranslateService, public translateParser: TranslateParser) { }
 
   ngOnInit(): void {
@@ -74,6 +82,20 @@ export class SelectorComponent implements OnInit {
 
 
 
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+  }
+
+  writeValue(obj: any): void {
+    console.log(obj);
   }
 }
 

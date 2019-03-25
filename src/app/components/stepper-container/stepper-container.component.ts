@@ -1,91 +1,56 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MatDialog, MatStepper } from '@angular/material';
-import { Store, select } from '@ngrx/store';
-import { Initiative } from 'src/app/models/hype-interface';
-import { EFieldOptions, getWizardPath, IConfig } from 'src/app/models/wizard';
-import { HypeService } from 'src/app/services/hype.service';
+import {HttpClient} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {MatDialog, MatStepper} from '@angular/material';
+import {Store, select} from '@ngrx/store';
+import {Observable} from 'rxjs';
 
-import { AppState } from '../../store';
-import { SuccessAlertComponent } from '../success-alert/success-alert.component';
-import { Observable } from 'rxjs';
-import { selectActiveStepper } from 'src/app/store/stepper.selectors';
+import {EFieldOptions, IConfig} from 'src/app/models/wizard';
+import {HypeService} from 'src/app/services/hype.service';
+import {AppState} from '../../store';
+import {SuccessAlertComponent} from '../success-alert/success-alert.component';
+import {selectActiveStepper} from 'src/app/store/stepper.selectors';
+import {SetFieldValueAction} from '../../store/idea-form.actions';
 
 @Component({
-  selector: 'app-wizard-container',
-  templateUrl: './wizard-container.component.html',
-  styleUrls: ['./wizard-container.component.scss'],
+  selector: 'app-stepper-container',
+  templateUrl: './stepper-container.component.html',
+  styleUrls: ['./stepper-container.component.scss'],
 })
 
-export class WizardContainerComponent implements OnInit {
+export class StepperContainerComponent implements OnInit {
   config$: Observable<IConfig>;
   response: any;
   staticData: any;
-  formGroup: FormGroup;
+  formGroup = new FormGroup({
+    [EFieldOptions.AUTHOR]: new FormControl(),
+    [EFieldOptions.CHAMPION]: new FormControl(),
+    [EFieldOptions.COMMENT]: new FormControl(),
+    [EFieldOptions.COMPLETION_DATE]: new FormControl(),
+    [EFieldOptions.CONSEQUENCES]: new FormControl(),
+    [EFieldOptions.DEPARTMENT]: new FormControl(),
+    [EFieldOptions.EXPECTED_RESULT]: new FormControl(),
+    [EFieldOptions.INNOVATIONPOINTS]: new FormControl(),
+    [EFieldOptions.METHODS_USED]: new FormControl(),
+    [EFieldOptions.PROBLEM_DESCRIPTION]: new FormControl(),
+    [EFieldOptions.TYPES_OF_WASTE]: new FormControl(),
+    [EFieldOptions.SOLUTION]: new FormControl(),
+    [EFieldOptions.TAGS]: new FormControl(),
+    [EFieldOptions.START_DATE]: new FormControl(),
+    [EFieldOptions.TITLE]: new FormControl()
+  });
 
   constructor(private fb: FormBuilder, public hype: HypeService, public dialog: MatDialog, private store: Store<AppState>, private http: HttpClient) {
-    // this.store.pipe(select(selectActiveWizard)).subscribe(res => {
-    //   this.config = res;
-    // });
-
     this.config$ = store.pipe(select(selectActiveStepper));
-
-    //this.stepCount$ = this.steps$.pipe(map(config => config.length));
-
-    // TODO: construct form from JSON process
-    this.formGroup = this.fb.group({
-      [EFieldOptions.AUTHOR]: new FormControl(),
-      [EFieldOptions.CHAMPION]: new FormControl(),
-      [EFieldOptions.COMMENT]: new FormControl(),
-      [EFieldOptions.COMPLETION_DATE]: new FormControl(),
-      [EFieldOptions.CONSEQUENCES]: new FormControl(),
-      [EFieldOptions.DEPARTMENT]: new FormControl(),
-      [EFieldOptions.EXPECTED_RESULT]: new FormControl(),
-      [EFieldOptions.INNOVATIONPOINTS]: new FormControl(),
-      [EFieldOptions.METHODS_USED]: new FormControl(),
-      [EFieldOptions.PROBLEM_DESCRIPTION]: new FormControl(),
-      [EFieldOptions.TYPES_OF_WASTE]: new FormControl(),
-      [EFieldOptions.SOLUTION]: new FormControl(),
-      [EFieldOptions.TAGS]: new FormControl(),
-      [EFieldOptions.START_DATE]: new FormControl(),
-      [EFieldOptions.TITLE]: new FormControl()
-    });
   }
 
   ngOnInit() {
-    // this.loadConfig();
-    //this.loadStaticData();
+    this.formGroup.valueChanges.subscribe(state => {
+      for (const key in state) {
+        this.store.dispatch(new SetFieldValueAction(key as EFieldOptions, state[key]));
+      }
+    });
   }
-
-  // loadStaticData() {
-  //   this.http.get('/assets/data/data.json')
-  //     .subscribe(v => console.log(v));
-  //   console.log(this.staticData);
-  // }
-
-  // loadConfig() {
-  //   this.hype.userData$.subscribe(
-  //     userData => {
-  //       this.http.get(getWizardPath(userData.initiative))
-  //         .subscribe(
-
-  //           (v: IConfig) => { this.config = v; }
-
-  //         );
-  //     },
-  //     err => this.loadDefaultConfig()
-  //   );
-  // }
-
-  // loadDefaultConfig() {
-  //   this.http.get(getWizardPath(Initiative.ERROR)).subscribe((v: IConfig) => {
-  //     console.log(v),
-  //       this.config = v;
-  //   });
-  // }
-
-
 
 
   goBack(stepper: MatStepper) {
@@ -97,7 +62,7 @@ export class WizardContainerComponent implements OnInit {
   }
 
   fireSuccess() {
-    const dialogRef = this.dialog.open(SuccessAlertComponent, { disableClose: true, panelClass: 'my-panel' });
+    const dialogRef = this.dialog.open(SuccessAlertComponent, {disableClose: true, panelClass: 'my-panel'});
   }
 
   request(searchval: string): void {

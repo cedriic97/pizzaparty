@@ -4,7 +4,7 @@
 
 
   <mat-chip *ngFor="let chip of chips" [selected]="isSelected(chip)" (focus)="selectChip(chip)"
-    color="primary" [matTooltip]="chip.description | translate">
+            color="primary" [matTooltip]="chip.description | translate">
     <mat-icon *ngIf="isSelected(chip)">check</mat-icon>
     <span>{{ chip.name | translate }}</span>
 

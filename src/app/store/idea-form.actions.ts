@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {EFieldOptions, EFieldType} from '../models/wizard';
+import {EFieldOptions} from '../models/wizard';
 
 export enum ActionTypes {
   SET_FIELD_VALUE = '[IDEA_FORM]SET_FIELD_VALUE',
@@ -12,5 +12,5 @@ export class SetFieldValueAction implements Action {
   }
 }
 
-export const ActionsUnion =
+export type ActionsUnion =
   SetFieldValueAction;

@@ -1,12 +1,12 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { TranslateService } from '@ngx-translate/core';
+import {HttpClient} from '@angular/common/http';
+import {Component} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {TranslateService} from '@ngx-translate/core';
 
-import { ICurrentUser } from './models/current-user';
-import { HypeService } from './services/hype.service';
-import { AppState } from './store';
-import { FetchStepperDataAction } from './store/stepper.actions';
+import {ICurrentUser} from './models/current-user';
+import {HypeService} from './services/hype.service';
+import {AppState} from './store';
+import {FetchStepperDataAction} from './store/stepper.actions';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +23,8 @@ export class AppComponent {
 
     store.dispatch(new FetchStepperDataAction());
     // console.log(store.dispatch(new FetchWizardDataAction()));
+
+    store.subscribe(console.log);
 
   }
 

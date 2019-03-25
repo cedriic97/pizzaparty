@@ -1,7 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
-import { IField } from 'src/app/models/wizard';
-import { FormControl, FormGroup } from '@angular/forms';
-import { CdkTextareaAutosize } from '@angular/cdk/text-field';
+import {Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
+import {IField} from 'src/app/models/wizard';
+import {FormControl, FormGroup} from '@angular/forms';
+import {CdkTextareaAutosize} from '@angular/cdk/text-field';
+import {select, Store} from '@ngrx/store';
+import {AppState} from '../../../store';
+import {Observable} from 'rxjs';
+import {selectFieldValue} from '../../../store/idea-form.selectors';
+import {SetFieldValueAction} from '../../../store/idea-form.actions';
 
 @Component({
   selector: 'app-freetext',
@@ -13,10 +18,13 @@ export class FreetextComponent implements OnInit {
   @Input() public forminputs: FormGroup;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
+  value$: Observable<string>;
 
-  constructor() { }
 
-  ngOnInit() {
+  constructor(public store: Store<AppState>) {
   }
 
+  ngOnInit() {
+
+  }
 }

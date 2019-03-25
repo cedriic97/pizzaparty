@@ -18,8 +18,8 @@ export enum EFieldOptions {
     INNOVATIONPOINTS = 'innovationpoints',
     METHODS_USED = 'methods_used',
     TYPES_OF_WASTE = 'types_of_waste',
-    PICTURE_BEFORE = "PICTURE_BEFORE",
-    PICTURE_AFTER = "PICTURE_AFTER"
+    PICTURE_BEFORE = 'PICTURE_BEFORE',
+    PICTURE_AFTER = 'PICTURE_AFTER'
 }
 
 

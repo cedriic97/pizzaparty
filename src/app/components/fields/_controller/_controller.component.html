@@ -1,5 +1,5 @@
 <app-help-panel [description]="chapter.description" [imgpath]="imgpath"></app-help-panel>
-<div class="border-color" *ngFor="let item of fields">
+<div class="border-color" *ngFor="let item of fields" [formGroup]="forminputs">
   <div *ngIf="item; else elseTemplate">
     <mat-card class="mat-elevation-z2">
       <span [ngSwitch]="fieldType(item)">
@@ -16,7 +16,7 @@
           <app-image [field]="item" [forminputs]="forminputs"></app-image>
         </p>
         <p *ngSwitchCase="'selector'">
-            <app-selector [field]="item" [forminputs]="forminputs"></app-selector>
+            <app-selector [field]="item" [formControlName]="item.type"></app-selector>
           </p>
         <p *ngSwitchDefault>
           <app-component-not-found></app-component-not-found>
