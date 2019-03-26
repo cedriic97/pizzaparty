@@ -4,7 +4,7 @@
     <mat-card class="mat-elevation-z2">
       <span [ngSwitch]="fieldType(item)">
         <p *ngSwitchCase="'user'">
-          <app-dropdown [field]="item" [forminputs]="forminputs"></app-dropdown>
+          <app-dropdown [field]="item" [forminputs]="forminputs" [formControlName]="item.type"></app-dropdown>
         </p>
         <p *ngSwitchCase="'text'">
           <app-freetext [field]="item" [forminputs]="forminputs"></app-freetext>
@@ -16,8 +16,8 @@
           <app-image [field]="item" [forminputs]="forminputs"></app-image>
         </p>
         <p *ngSwitchCase="'selector'">
-            <app-selector [field]="item" [formControlName]="item.type"></app-selector>
-          </p>
+          <app-selector [field]="item" [forminputs]="forminputs" [formControlName]="item.type"></app-selector>
+        </p>
         <p *ngSwitchDefault>
           <app-component-not-found></app-component-not-found>
         </p>

@@ -1,91 +1,115 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output, forwardRef } from '@angular/core';
+import { FormGroup, NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatChipInputEvent } from '@angular/material';
 import { Observable } from 'rxjs';
-import { filter, map, startWith, switchMap } from 'rxjs/operators';
+import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { FilterService } from 'src/app/services/filter.service';
 
-import { EQueryable, IField } from '../../../models/wizard';
+import { EQueryable, IField, IStaticDataObject } from '../../../models/wizard';
 import { HypeService } from '../../../services/hype.service';
 import { IProcess } from 'src/app/models/wizard';
+import { SelectorComponent } from '../selector/selector.component';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/store';
+import { selectMethods, selectTypesOfWaste, selectTags } from 'src/app/store/stepper.selectors';
 
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss']
+  styleUrls: ['./dropdown.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => DropdownComponent),
+      multi: true
+    }
+  ]
 })
 
-export class DropdownComponent implements OnInit {
-  constructor(public hype: HypeService, public filter: FilterService) { }
-  visible = true;
-  selectable = true;
+export class DropdownComponent implements OnInit, ControlValueAccessor {
+  private _selectedChips: string[] = [];
+  onChange;
+  myControl = new FormControl;
+
   removable = true;
-  addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  chips: string[] = []
+
 
   response: string[][];
-  filteredOptions: Observable<string[][]>;
-  filteredOptionsStatic: Observable<string[]>;
-  isSelected = false;
+  filteredOptions$: Observable<any>;
+  staticData$: Observable<IStaticDataObject[]>;
 
 
-  @Input() public fieldConfig: IField;
   @Input() public field: IField;
   @Input() public forminputs: FormGroup;
   @Output() public optionSelected: EventEmitter<MatAutocompleteSelectedEvent>
 
+  @Input()
+  get selectedChips(): string[] {
+    return this._selectedChips;
+  }
+
+  set selectedChips(v: string[]) {
+    console.log("sdsd")
+    this._selectedChips = v;
+    this.onChange(v);
+    this.selectedChipsChange.emit(v);
+  }
+
+  @Output() public selectedChipsChange = new EventEmitter<string[]>();
+
+  writeValue(obj: any): void {
+
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+  }
+
+  constructor(public hype: HypeService, public filter: FilterService, public store: Store<AppState>) { }
+
   // fired when chip should be created
   add(event: MatChipInputEvent): void {
-    console.log(this.forminputs.value);
+    console.log(this.selectedChips)
     if (event.value.length > 3) {
-      if ((event.value || '').trim()) {
-        this.chips.push(event.value.trim());
-        event.input.value = '';
-      }
+      this.selectedChips = [...this.selectedChips, event.value.trim()];
+      event.input.value = '';
     }
   }
   // fired when a chip should be removed
   remove(chip: string): void {
-    const index = this.chips.indexOf(chip);
-
-    if (index >= 0) {
-      this.chips.splice(index, 1);
-    }
+    this.selectedChips = this.selectedChips.filter(v => v !== chip);
   }
-
-
-  ngOnInit() {
-    if (this.field.connection === EQueryable.USERS || this.field.connection === EQueryable.DEPARTMENTS) {
-      this.filteredOptions = this.forminputs.controls[this.field.type].valueChanges
-        .pipe(
-          filter(value => window.opener && !this.isSelected),
-          switchMap(value => this._filter(value)),
-        );
-    } else if (this.field.connection === EQueryable.TAGS || this.field.connection === EQueryable.METHODS_USED) {
-      this.filteredOptionsStatic = this.forminputs.controls[this.field.type].valueChanges
-        .pipe(
-          startWith(''),
-          map(value => this._filterStatic(value))
-        );
-    }
-
-  }
-  private _filterStatic(val: string): string[] {
+  loadStaticData() {
     switch (this.field.connection) {
-      case 'tags':
-        return this.filter.queryTags(val).slice(0, 5)
-
-      case 'methods_used':
-        return this.filter.queryMethodsUsed(val).slice(0, 5)
+      case EQueryable.TAGS:
+        this.staticData$ = this.store.pipe(select(selectTags));
+        break;
 
       default:
         break;
     }
   }
-  private _filter(val: string): Observable<string[][]> {
+  // TODO: On Value Changes war auf alte Form registriert und muss wieder laufen
+  ngOnInit() {
+    this.loadStaticData()
+
+    this.filteredOptions$ = this.myControl.valueChanges
+      .pipe(
+        //filter(value => window.opener),
+        switchMap(value => this._filter(value)),
+      );
+  }
+
+  private _filter(val: string): Observable<any> {
     console.log(val);
     switch (this.field.connection) {
       case 'departments':
@@ -98,9 +122,19 @@ export class DropdownComponent implements OnInit {
           map(value => value.rows.splice(0, 5)),
         );
 
+      case 'tags':
+        return this.staticData$.pipe(
+          map(value => value.filter(x => x.name.includes(val)))
+        );
       default:
         break;
     }
   }
+
+
+
+
+
+
 }
 

@@ -11,9 +11,10 @@
   </svg>
   <br>
   <br>
-  <button id="button1" mat-flat-button color="primary">{{ 'RESULT.SUCCESS.BUTTON.LEFT' | translate}}</button>
-  <button id="button2" mat-flat-button color="primary">{{ 'RESULT.SUCCESS.BUTTON.CENTER' | translate}}</button>
+  <button (click)="reload()" mat-flat-button color="primary">{{ 'RESULT.SUCCESS.BUTTON.LEFT' | translate}}</button>
+  <button mat-flat-button color="primary">{{ 'RESULT.SUCCESS.BUTTON.CENTER' | translate}}</button>
 
-  <button id="button3" mat-stroked-button color="primary">{{ 'RESULT.SUCCESS.BUTTON.RIGHT' | translate}}</button>
+  <button mat-stroked-button color="primary">{{ 'RESULT.SUCCESS.BUTTON.RIGHT' | translate}}</button>
 </div>
+{{ (result$ | async) | json}}
 

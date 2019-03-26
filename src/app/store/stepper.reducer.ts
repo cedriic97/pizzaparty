@@ -1,8 +1,9 @@
-import {Wizard} from '../models/wizard';
-import {ActionsUnion, ActionTypes} from './stepper.actions';
+import { Wizard, IStaticData } from '../models/wizard';
+import { ActionsUnion, ActionTypes } from './stepper.actions';
 
 export interface StepperState {
   activeStepper: Wizard;
+  staticData: IStaticData;
 }
 
 const initialState: StepperState = {
@@ -10,7 +11,14 @@ const initialState: StepperState = {
     imgpath: 'DEFAULT.LOGO.PATH',
     config: []
   },
+  staticData: {
+    methods: [],
+    typesOfWaste: [],
+    tags: []
+  }
 };
+
+
 
 
 export function stepperReducer(state = initialState, action: ActionsUnion): StepperState {
@@ -20,6 +28,12 @@ export function stepperReducer(state = initialState, action: ActionsUnion): Step
       return {
         ...state,
         activeStepper: action.stepper,
+      };
+
+    case ActionTypes.SET_STATIC_DATA:
+      return {
+        ...state,
+        staticData: action.staticData,
       };
 
     default:

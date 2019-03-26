@@ -1,16 +1,16 @@
-import {HttpClient} from '@angular/common/http';
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {MatDialog, MatStepper} from '@angular/material';
-import {Store, select} from '@ngrx/store';
-import {Observable} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatDialog, MatStepper } from '@angular/material';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
-import {EFieldOptions, IConfig} from 'src/app/models/wizard';
-import {HypeService} from 'src/app/services/hype.service';
-import {AppState} from '../../store';
-import {SuccessAlertComponent} from '../success-alert/success-alert.component';
-import {selectActiveStepper} from 'src/app/store/stepper.selectors';
-import {SetFieldValueAction} from '../../store/idea-form.actions';
+import { EFieldOptions, IConfig, IStaticData } from 'src/app/models/wizard';
+import { HypeService } from 'src/app/services/hype.service';
+import { AppState } from '../../store';
+import { SuccessAlertComponent } from '../success-alert/success-alert.component';
+import { selectActiveStepper, selectStaticData } from 'src/app/store/stepper.selectors';
+import { SetFieldValueAction } from '../../store/idea-form.actions';
 
 @Component({
   selector: 'app-stepper-container',
@@ -21,7 +21,7 @@ import {SetFieldValueAction} from '../../store/idea-form.actions';
 export class StepperContainerComponent implements OnInit {
   config$: Observable<IConfig>;
   response: any;
-  staticData: any;
+  staticData$: Observable<IStaticData>;
   formGroup = new FormGroup({
     [EFieldOptions.AUTHOR]: new FormControl(),
     [EFieldOptions.CHAMPION]: new FormControl(),
@@ -40,12 +40,16 @@ export class StepperContainerComponent implements OnInit {
     [EFieldOptions.TITLE]: new FormControl()
   });
 
-  constructor(private fb: FormBuilder, public hype: HypeService, public dialog: MatDialog, private store: Store<AppState>, private http: HttpClient) {
+  constructor(public hype: HypeService, public dialog: MatDialog, private store: Store<AppState>, private http: HttpClient) {
     this.config$ = store.pipe(select(selectActiveStepper));
+    this.staticData$ = store.pipe(select(selectStaticData));
+
+
   }
 
   ngOnInit() {
     this.formGroup.valueChanges.subscribe(state => {
+      // tslint:disable-next-line: forin
       for (const key in state) {
         this.store.dispatch(new SetFieldValueAction(key as EFieldOptions, state[key]));
       }
@@ -62,7 +66,8 @@ export class StepperContainerComponent implements OnInit {
   }
 
   fireSuccess() {
-    const dialogRef = this.dialog.open(SuccessAlertComponent, {disableClose: true, panelClass: 'my-panel'});
+    const dialogRef = this.dialog.open(SuccessAlertComponent, { disableClose: true, panelClass: 'my-panel' });
+
   }
 
   request(searchval: string): void {

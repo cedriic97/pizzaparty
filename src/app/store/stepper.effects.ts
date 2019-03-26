@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
 import { Initiative } from '../models/hype-interface';
-import { getWizardPath, Wizard } from '../models/wizard';
+import { getWizardPath, Wizard, IStaticDataObject, IStaticData, getStaticDataPath } from '../models/wizard';
 import { HypeService } from '../services/hype.service';
-import { ActionTypes, FetchStepperDataAction, SetActiveStepperAction } from './stepper.actions';
+import { ActionTypes, FetchStepperDataAction, SetActiveStepperAction, FetchStaticDataAction, SetStaticDataAction } from './stepper.actions';
 
 @Injectable()
 export class WizardEffects {
@@ -27,4 +27,11 @@ export class WizardEffects {
     map((data: Wizard) => new SetActiveStepperAction(data)),
   );
 
+  @Effect()
+  fetchStaticData$: Observable<Action> = this.actions$.pipe(
+    ofType<FetchStaticDataAction>(ActionTypes.FETCH_STATIC_DATA),
+    switchMap(() => this.http.get(getStaticDataPath('static'))),
+    catchError(() => null),
+    map((data: IStaticData) => new SetStaticDataAction(data)),
+  );
 }

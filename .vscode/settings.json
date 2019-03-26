@@ -16,4 +16,9 @@
     "files.hotExit": "onExit",
     "files.defaultLanguage": "typescript",
     "files.trimTrailingWhitespace": true,
+    "cSpell.words": [
+      "DROPDOWN",
+      "Queryable",
+      "imgpath"
+    ],
 }

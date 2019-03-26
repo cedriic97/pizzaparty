@@ -1,17 +1,13 @@
 <div class="title">{{ field.title | translate }}</div>
 <p> {{ field.description | translate }}</p>
 <mat-form-field appearance="outline">
-
-  <div [formGroup]="forminputs">
-    <input class="full-width" type="text" placeholder="" matInput [formControlName]="field.type" [matAutocomplete]="auto"
-      [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
-  </div>
-
-  <!--<mat-hint>Hint</mat-hint>-->
+  <input class="full-width" type="text" placeholder="" matInput [matAutocomplete]="auto" [matChipInputFor]="chipList"
+    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)" [formControl]="myControl">
 </mat-form-field>
 
 <mat-autocomplete #auto="matAutocomplete">
-  <mat-option *ngFor="let option of filteredOptions | async" [value]="option[0]">
+<div *ngIf="(filteredOptions$.length | async) == 0">
+  <mat-option *ngFor="let option of (filteredOptions$ | async)" [value]="options[0]">
     <span [ngSwitch]="field.connection">
       <p *ngSwitchCase="'departments'">
         <b>{{ option[0] }}</b>
@@ -20,29 +16,27 @@
         <b>{{ option[1] }} {{ option[2] }}</b>
         <small> | {{ option[0] }}</small>
       </p>
-
       <p *ngSwitchDefault>
         ERROR
       </p>
     </span>
   </mat-option>
-  <mat-option *ngFor="let option of filteredOptionsStatic | async" [value]="option">
-      <span [ngSwitch]="field.connection">
-        <p *ngSwitchCase="'tags'">
-          {{ option }}
-        <p *ngSwitchCase="'methods_used'">
-          {{ option }}
+</div>
+  <mat-option *ngFor="let option of (filteredOptions$ | async)" [value]="option.name">
+    <span [ngSwitch]="field.connection">
+      <p *ngSwitchCase="'tags'">
+        {{ option.name }}
         <p *ngSwitchDefault>
           ERROR
         </p>
-      </span>
-    </mat-option>
+    </span>
+  </mat-option>
 </mat-autocomplete>
 
-<mat-chip-list #chipList>
-    <mat-chip *ngFor="let chip of chips" color="primary" [removable]="removable" selected (removed)="remove(chip)">
-      {{ chip }}
-      <mat-icon *ngIf="removable" matChipRemove>cancel</mat-icon>
-    </mat-chip>
-  </mat-chip-list>
-
+<mat-chip-list #chipList [(ngModel)]="selectedChips">
+  <mat-chip *ngFor="let chip of selectedChips" color="primary" [removable]="removable" selected
+    (removed)="remove(chip)">
+    {{ chip }}
+    <mat-icon *ngIf="removable" matChipRemove>cancel</mat-icon>
+  </mat-chip>
+</mat-chip-list>

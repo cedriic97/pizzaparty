@@ -1,11 +1,13 @@
 import { Action } from '@ngrx/store';
 
-import { Wizard } from '../models/wizard';
+import { Wizard, IStaticData } from '../models/wizard';
 
 
 export enum ActionTypes {
   FETCH_STEPPER_DATA = '[STEPPER]FETCH_STEPPER_DATA',
+  FETCH_STATIC_DATA = '[STEPPER]FETCH_STATIC_DATA',
   SET_ACTIVE_STEPPER = '[STEPPER]SET_ACTIVE_STEPPER',
+  SET_STATIC_DATA = '[STEPPER]SET_STATIC_DATA'
 }
 
 
@@ -20,7 +22,23 @@ export class SetActiveStepperAction implements Action {
   }
 }
 
+export class FetchStaticDataAction implements Action {
+  readonly type = ActionTypes.FETCH_STATIC_DATA;
+}
+
+export class SetStaticDataAction implements Action {
+  readonly type = ActionTypes.SET_STATIC_DATA;
+
+  constructor(public staticData: IStaticData) {
+  }
+}
+
+
+
 
 export type ActionsUnion =
-  FetchStepperDataAction | SetActiveStepperAction;
+  FetchStepperDataAction
+  | FetchStaticDataAction
+  | SetActiveStepperAction
+  | SetStaticDataAction;
 

@@ -1,9 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {ControlValueAccessor, FormGroup, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, forwardRef, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { ControlValueAccessor, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material';
 import { TranslateParser, TranslateService } from '@ngx-translate/core';
-import { EQueryable, IField } from 'src/app/models/wizard';
+import { EQueryable, IField, IStaticData, IStaticDataObject } from 'src/app/models/wizard';
+import { select, Store } from '@ngrx/store';
+import { AppState } from 'src/app/store';
+import { Observable } from 'rxjs';
+import { selectStaticData, selectMethods, selectTypesOfWaste } from 'src/app/store/stepper.selectors';
 
 @Component({
   selector: 'app-selector',
@@ -18,70 +22,28 @@ import { EQueryable, IField } from 'src/app/models/wizard';
   ]
 })
 export class SelectorComponent implements OnInit, ControlValueAccessor {
+  private _selectedChips: string[] = [];
+  onChange;
+  selected = true;
+  chips$: Observable<IStaticDataObject[]>;
+
   @Input() public field: IField;
   @Input() public forminputs: FormGroup;
-
-  englishLanguage;
-
-  chips = [];
-
-  selectedChips: any[] = [];
-  private onChange: any;
-  constructor(private http: HttpClient, private translate: TranslateService, public translateParser: TranslateParser) { }
-
-  ngOnInit(): void {
-    this.loadStaticData();
-    this.getTranslationInTargetLanguage('en').subscribe(v => this.englishLanguage = v)
+  @Input()
+  get selectedChips(): string[] {
+    return this._selectedChips;
   }
 
-  loadStaticData() {
-
-    switch (this.field.connection) {
-      // TODO: fix errors
-      // case EQueryable.METHODS_USED:
-      //   this.http.get('/assets/data/data.json')
-      //     .subscribe(v => this.chips = v.methods)
-      //   break;
-      // case EQueryable.TYPES_OF_WASTE:
-      //   this.http.get('/assets/data/data.json')
-      //     .subscribe(v => this.chips = v.typesOfWaste);
-      //   break;
-
-      default:
-        break;
-    }
-
-
-  }
-  add(event: MatChipInputEvent): void {
-
+  set selectedChips(v: string[]) {
+    this._selectedChips = v;
+    this.onChange(v);
+    this.selectedChipsChange.emit(v);
   }
 
-  remove(chip: any): void {
+  @Output() public selectedChipsChange = new EventEmitter<string[]>();
 
-  }
-
-  isSelected(chip: any): boolean {
-    const index = this.selectedChips.indexOf(this.englishLanguage[chip.name]);
-    return index >= 0;
-  }
-
-
-  selectChip(chip: any): void {
-    const index = this.selectedChips.indexOf(this.englishLanguage[chip.name]);
-
-    if (index >= 0) {
-      this.selectedChips.splice(index, 1);
-    } else {
-      this.selectedChips.push(this.englishLanguage[chip.name]);
-
-    }
-  }
-  getTranslationInTargetLanguage(language: string) {
-    return this.translate.getTranslation(language);
-
-
-
+  writeValue(obj: any): void {
+    console.log(obj);
   }
 
   registerOnChange(fn: any): void {
@@ -91,11 +53,45 @@ export class SelectorComponent implements OnInit, ControlValueAccessor {
   registerOnTouched(fn: any): void {
   }
 
-  setDisabledState(isDisabled: boolean): void {
+  setDisabledState?(isDisabled: boolean): void {
   }
 
-  writeValue(obj: any): void {
-    console.log(obj);
+  constructor(public store: Store<AppState>, public translateParser: TranslateParser) {
   }
+
+  ngOnInit(): void {
+    this.loadStaticData();
+  }
+
+  loadStaticData() {
+    switch (this.field.connection) {
+      case EQueryable.METHODS_USED:
+        this.chips$ = this.store.pipe(select(selectMethods));
+        break;
+      case EQueryable.TYPES_OF_WASTE:
+        this.chips$ = this.store.pipe(select(selectTypesOfWaste))
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  isSelected(chip: any): boolean {
+    const index = this.selectedChips.indexOf(chip.name);
+    return index >= 0;
+  }
+
+
+  selectChip(chip: any): void {
+    const index = this.selectedChips.indexOf(chip.name);
+
+    if (index >= 0) {
+      this.selectedChips = this.selectedChips.filter(v => v !== chip.name);
+    } else {
+      this.selectedChips = [...this.selectedChips, chip.name];
+    }
+  }
+
 }
 

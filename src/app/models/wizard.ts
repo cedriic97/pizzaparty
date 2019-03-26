@@ -80,6 +80,15 @@ export enum EFieldType {
   IMAGE = 'image',
   SELECTOR = 'selector'
 }
+export interface IStaticDataObject {
+  name: string;
+  description?: string;
+}
+export interface IStaticData {
+  methods: IStaticDataObject[];
+  typesOfWaste: IStaticDataObject[];
+  tags: IStaticDataObject[];
+}
 
 export const fieldTypeLookup = {
   [EFieldOptions.AUTHOR]: EFieldType.DROPDOWN,
@@ -102,13 +111,17 @@ export const fieldTypeLookup = {
 };
 
 
-export type StepUnion = IConfig;
 
-export type Wizard = StepUnion;
+
+export type Wizard = IConfig;
 
 
 export function getWizardPath(initiative: string): string {
   return `assets/data/${initiative.toLowerCase()}/config.json`;
+}
+
+export function getStaticDataPath(filename: string): string {
+  return `assets/data/${filename.toLowerCase()}.json`;
 }
 
 

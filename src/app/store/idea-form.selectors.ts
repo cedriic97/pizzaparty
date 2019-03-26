@@ -8,3 +8,8 @@ export const selectFieldValue = (field: EFieldOptions) => createSelector(
   selectIdeaForm,
   s => s.values[field],
 );
+
+export const selectFormValues = createSelector(
+  selectIdeaForm,
+  s => s.values,
+);

@@ -6,7 +6,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {ICurrentUser} from './models/current-user';
 import {HypeService} from './services/hype.service';
 import {AppState} from './store';
-import {FetchStepperDataAction} from './store/stepper.actions';
+import {FetchStepperDataAction, FetchStaticDataAction} from './store/stepper.actions';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +22,7 @@ export class AppComponent {
     translate.use('en');
 
     store.dispatch(new FetchStepperDataAction());
+    store.dispatch(new FetchStaticDataAction())
     // console.log(store.dispatch(new FetchWizardDataAction()));
 
     store.subscribe(console.log);
