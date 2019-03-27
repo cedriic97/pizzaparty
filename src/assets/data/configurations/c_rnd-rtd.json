@@ -1,0 +1,9 @@
+{
+    "imgpath": "BIOBASEL.LOGO.PATH",
+    "config": [{
+        "name": "BIOBASEL.CHAPTER.NAME.1",
+        "description": "BIOBASEL.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

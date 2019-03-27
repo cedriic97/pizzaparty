@@ -1,6 +1,6 @@
 import {AppState} from './index';
 import {createSelector} from '@ngrx/store';
-import {EFieldOptions} from '../models/wizard';
+import {EFieldOptions} from '../models/stepper';
 
 export const selectIdeaForm = (state: AppState) => state.ideaForm;
 

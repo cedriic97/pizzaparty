@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 import { AppState } from 'src/app/store';
-import { Store, select } from '@ngrx/store';
-import { pipe } from 'rxjs';
-import { selectIdeaForm, selectFormValues } from 'src/app/store/idea-form.selectors';
+import { selectFormValues } from 'src/app/store/idea-form.selectors';
 
 
 @Component({

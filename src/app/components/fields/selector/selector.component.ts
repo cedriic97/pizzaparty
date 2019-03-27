@@ -1,13 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, forwardRef, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { MatChipInputEvent } from '@angular/material';
-import { TranslateParser, TranslateService } from '@ngx-translate/core';
-import { EQueryable, IField, IStaticData, IStaticDataObject } from 'src/app/models/wizard';
 import { select, Store } from '@ngrx/store';
-import { AppState } from 'src/app/store';
+import { TranslateParser } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
-import { selectStaticData, selectMethods, selectTypesOfWaste } from 'src/app/store/stepper.selectors';
+import { EQueryable, IField, IStaticDataObject } from 'src/app/models/stepper';
+import { AppState } from 'src/app/store';
+import { selectMethods, selectTypesOfWaste } from 'src/app/store/stepper.selectors';
 
 @Component({
   selector: 'app-selector',
@@ -64,7 +62,7 @@ export class SelectorComponent implements OnInit, ControlValueAccessor {
   }
 
   loadStaticData() {
-    switch (this.field.connection) {
+    switch (this.field.connection.source) {
       case EQueryable.METHODS_USED:
         this.chips$ = this.store.pipe(select(selectMethods));
         break;
@@ -81,7 +79,6 @@ export class SelectorComponent implements OnInit, ControlValueAccessor {
     const index = this.selectedChips.indexOf(chip.name);
     return index >= 0;
   }
-
 
   selectChip(chip: any): void {
     const index = this.selectedChips.indexOf(chip.name);

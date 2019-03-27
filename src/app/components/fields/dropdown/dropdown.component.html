@@ -6,15 +6,15 @@
 </mat-form-field>
 
 <mat-autocomplete #auto="matAutocomplete">
-<div *ngIf="(filteredOptions$.length | async) == 0">
-  <mat-option *ngFor="let option of (filteredOptions$ | async)" [value]="options[0]">
-    <span [ngSwitch]="field.connection">
+<div >
+  <mat-option *ngFor="let option of (filteredOptions$ | async)" [value]="option.username">
+    <span [ngSwitch]="field.connection.source">
       <p *ngSwitchCase="'departments'">
-        <b>{{ option[0] }}</b>
+        <b>{{ option.username }}</b>
       </p>
       <p *ngSwitchCase="'users'">
-        <b>{{ option[1] }} {{ option[2] }}</b>
-        <small> | {{ option[0] }}</small>
+        <b>{{ option.forename }} {{ option.surname }}</b>
+        <small> | {{ option.username }}</small>
       </p>
       <p *ngSwitchDefault>
         ERROR
@@ -23,7 +23,7 @@
   </mat-option>
 </div>
   <mat-option *ngFor="let option of (filteredOptions$ | async)" [value]="option.name">
-    <span [ngSwitch]="field.connection">
+    <span [ngSwitch]="field.connection.source">
       <p *ngSwitchCase="'tags'">
         {{ option.name }}
         <p *ngSwitchDefault>

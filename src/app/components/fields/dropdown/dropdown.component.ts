@@ -1,18 +1,15 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Component, EventEmitter, Input, OnInit, Output, forwardRef } from '@angular/core';
-import { FormGroup, NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
+import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatChipInputEvent } from '@angular/material';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
-import { FilterService } from 'src/app/services/filter.service';
-
-import { EQueryable, IField, IStaticDataObject } from '../../../models/wizard';
-import { HypeService } from '../../../services/hype.service';
-import { IProcess } from 'src/app/models/wizard';
-import { SelectorComponent } from '../selector/selector.component';
-import { Store, select } from '@ngrx/store';
+import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { AppState } from 'src/app/store';
-import { selectMethods, selectTypesOfWaste, selectTags } from 'src/app/store/stepper.selectors';
+import { selectTags } from 'src/app/store/stepper.selectors';
+
+import { EQueryable, IField, IStaticDataObject } from '../../../models/stepper';
+import { HypeService } from '../../../services/hype.service';
 
 
 @Component({
@@ -31,37 +28,33 @@ import { selectMethods, selectTypesOfWaste, selectTags } from 'src/app/store/ste
 export class DropdownComponent implements OnInit, ControlValueAccessor {
   private _selectedChips: string[] = [];
   onChange;
-  myControl = new FormControl;
-
   removable = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-
-
   response: string[][];
   filteredOptions$: Observable<any>;
   staticData$: Observable<IStaticDataObject[]>;
+  myControl = new FormControl;
 
 
+  @Output() public optionSelected: EventEmitter<MatAutocompleteSelectedEvent>;
+  @Output() public selectedChipsChange = new EventEmitter<string[]>();
   @Input() public field: IField;
   @Input() public forminputs: FormGroup;
-  @Output() public optionSelected: EventEmitter<MatAutocompleteSelectedEvent>
-
   @Input()
   get selectedChips(): string[] {
     return this._selectedChips;
   }
 
   set selectedChips(v: string[]) {
-    console.log("sdsd")
+    console.log('sdsd');
     this._selectedChips = v;
     this.onChange(v);
     this.selectedChipsChange.emit(v);
   }
 
-  @Output() public selectedChipsChange = new EventEmitter<string[]>();
+
 
   writeValue(obj: any): void {
-
   }
 
   registerOnChange(fn: any): void {
@@ -74,11 +67,11 @@ export class DropdownComponent implements OnInit, ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
   }
 
-  constructor(public hype: HypeService, public filter: FilterService, public store: Store<AppState>) { }
+  constructor(public hype: HypeService, public store: Store<AppState>) { }
 
   // fired when chip should be created
   add(event: MatChipInputEvent): void {
-    console.log(this.selectedChips)
+    console.log(this.selectedChips);
     if (event.value.length > 3) {
       this.selectedChips = [...this.selectedChips, event.value.trim()];
       event.input.value = '';
@@ -86,10 +79,11 @@ export class DropdownComponent implements OnInit, ControlValueAccessor {
   }
   // fired when a chip should be removed
   remove(chip: string): void {
+
     this.selectedChips = this.selectedChips.filter(v => v !== chip);
   }
   loadStaticData() {
-    switch (this.field.connection) {
+    switch (this.field.connection.source) {
       case EQueryable.TAGS:
         this.staticData$ = this.store.pipe(select(selectTags));
         break;
@@ -98,20 +92,19 @@ export class DropdownComponent implements OnInit, ControlValueAccessor {
         break;
     }
   }
-  // TODO: On Value Changes war auf alte Form registriert und muss wieder laufen
-  ngOnInit() {
-    this.loadStaticData()
 
+  ngOnInit() {
+    this.loadStaticData();
     this.filteredOptions$ = this.myControl.valueChanges
       .pipe(
-        //filter(value => window.opener),
+        filter(value => window.opener || true),
         switchMap(value => this._filter(value)),
       );
   }
 
   private _filter(val: string): Observable<any> {
-    console.log(val);
-    switch (this.field.connection) {
+    console.log(this.field.connection.source);
+    switch (this.field.connection.source) {
       case 'departments':
         return this.hype.queryDepartments(val).pipe(
           map(value => value.rows.splice(0, 5)),
@@ -119,22 +112,19 @@ export class DropdownComponent implements OnInit, ControlValueAccessor {
 
       case 'users':
         return this.hype.queryUser(val).pipe(
-          map(value => value.rows.splice(0, 5)),
+          tap(console.log),
+          map(value => value.splice(0, 5)),
+
         );
 
       case 'tags':
         return this.staticData$.pipe(
           map(value => value.filter(x => x.name.includes(val)))
         );
+
       default:
         break;
     }
   }
-
-
-
-
-
-
 }
 

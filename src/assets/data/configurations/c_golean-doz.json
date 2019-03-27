@@ -1,0 +1,9 @@
+{
+    "imgpath": "GOLEAN_DOZ.LOGO.PATH",
+    "config": [{
+        "name": "GOLEAN_DOZ.CHAPTER.NAME.1",
+        "description": "GOLEAN_DOZ.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

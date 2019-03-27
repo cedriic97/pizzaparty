@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ImageCroppedEvent } from 'ngx-image-cropper';
-import { IField } from 'src/app/models/wizard';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
+import { IField } from 'src/app/models/stepper';
 
 
 @Component({

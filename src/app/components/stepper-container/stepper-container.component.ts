@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatStepper } from '@angular/material';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-
-import { EFieldOptions, IConfig, IStaticData } from 'src/app/models/wizard';
+import { EFieldOptions, IConfig, IStaticData } from 'src/app/models/stepper';
 import { HypeService } from 'src/app/services/hype.service';
-import { AppState } from '../../store';
-import { SuccessAlertComponent } from '../success-alert/success-alert.component';
 import { selectActiveStepper, selectStaticData } from 'src/app/store/stepper.selectors';
+
+import { AppState } from '../../store';
 import { SetFieldValueAction } from '../../store/idea-form.actions';
+import { SuccessAlertComponent } from '../success-alert/success-alert.component';
+import { WelcomeAlertComponent } from '../welcome-alert/welcome-alert.component';
 
 @Component({
   selector: 'app-stepper-container',
@@ -21,6 +22,7 @@ import { SetFieldValueAction } from '../../store/idea-form.actions';
 export class StepperContainerComponent implements OnInit {
   config$: Observable<IConfig>;
   response: any;
+  dialogRef;
   staticData$: Observable<IStaticData>;
   formGroup = new FormGroup({
     [EFieldOptions.AUTHOR]: new FormControl(),
@@ -48,6 +50,7 @@ export class StepperContainerComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.showWelcomeDialog();
     this.formGroup.valueChanges.subscribe(state => {
       // tslint:disable-next-line: forin
       for (const key in state) {
@@ -55,6 +58,10 @@ export class StepperContainerComponent implements OnInit {
       }
     });
   }
+  showWelcomeDialog() {
+    const dialogRef = this.dialog.open(WelcomeAlertComponent, { disableClose: false, panelClass: 'panel-welcome' })
+  }
+
 
 
   goBack(stepper: MatStepper) {
@@ -64,6 +71,7 @@ export class StepperContainerComponent implements OnInit {
   goForward(stepper: MatStepper) {
     stepper.next();
   }
+
 
   fireSuccess() {
     const dialogRef = this.dialog.open(SuccessAlertComponent, { disableClose: true, panelClass: 'my-panel' });

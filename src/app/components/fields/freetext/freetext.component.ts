@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
-import {IField} from 'src/app/models/wizard';
+import {IField} from 'src/app/models/stepper';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {select, Store} from '@ngrx/store';

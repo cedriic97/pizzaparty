@@ -1,0 +1,9 @@
+{
+    "imgpath": "GOLEAN_FIT.LOGO.PATH",
+    "config": [{
+        "name": "GOLEAN_FIT.CHAPTER.NAME.1",
+        "description": "GOLEAN_FIT.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

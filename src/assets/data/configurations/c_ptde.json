@@ -1,0 +1,9 @@
+{
+    "imgpath": "PTDE.LOGO.PATH",
+    "config": [{
+        "name": "PTDE.CHAPTER.NAME.1",
+        "description": "PTDE.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

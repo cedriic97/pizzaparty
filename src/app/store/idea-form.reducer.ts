@@ -1,5 +1,5 @@
 import {ActionsUnion, ActionTypes} from './idea-form.actions';
-import {EFieldOptions} from '../models/wizard';
+import {EFieldOptions} from '../models/stepper';
 
 export interface IdeaFormState {
   values: { [key: string]: any };

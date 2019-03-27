@@ -29,10 +29,12 @@ import { APP_NAME } from './config';
 import { LocalizationModule } from './modules/localization.module';
 import { HypeService } from './services/hype.service';
 import { reducers } from './store';
-import { WizardEffects } from './store/stepper.effects';
+import { StepperEffects } from './store/stepper.effects';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { SelectorComponent } from './components/fields/selector/selector.component';
 import { MaterialModule } from './modules/material.module';
+import { WelcomeAlertComponent } from './components/welcome-alert/welcome-alert.component';
+import { FeedbackFormularComponent } from './components/feedback-formular/feedback-formular.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { MaterialModule } from './modules/material.module';
     FooterComponent,
     HelpPanelComponent,
     ImageComponent,
-    SelectorComponent
+    SelectorComponent,
+    WelcomeAlertComponent,
+    FeedbackFormularComponent
 
   ],
   imports: [
@@ -66,8 +70,11 @@ import { MaterialModule } from './modules/material.module';
     NgSelectModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([WizardEffects]),
+    EffectsModule.forRoot([StepperEffects]),
     MaterialModule,
+  ],
+  entryComponents: [
+    WelcomeAlertComponent
   ],
   providers: [
     { provide: APP_NAME, useValue: 'hype-idea-form' },

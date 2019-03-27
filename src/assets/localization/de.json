@@ -113,7 +113,7 @@
 
 
   "CHAPTER.DESCRIPTION.HEADER": "Um mehr über die Inhalte dieses Abschnittes zu erfahren, klicke hier",
-  "DEFAULT.LOGO.PATH": "/assets/img/roche-logo.png",
+  "DEFAULT.LOGO.PATH": "/assets/img/logos/i_default.png",
   "DEFAULT.CHAPTER.NAME.IDEENDATEN": "Ideendaten",
   "DEFAULT.CHAPTER.DESCRIPTION.IDEENDATEN": "In diesem Abschnitt soll deine Idee festgehalten werden. Es dreht sich alles um deren reinen Inhalt.",
   "DEFAULT.CHAPTER.NAME.WERTBESTIMMUNG": "Wertbestimmung",
@@ -122,7 +122,7 @@
   "DEFAULT.CHAPTER.DESCRIPTION.KLASSIFIZIERUNG": "Als solche ist deine Idee bereits umsetzungsbereit. Indem du die Angaben in diesem Abschnitt vervollständigst ermöglichst du, dass deine Idee schneller in deinem Bereich umgesetzt wird und leichter in anderen Bereichen umgesetzt werden kann. Mache deine Idee zu etwas großem!",
   "DEFAULT.DESCRIPTION.BODY": "Hallo. Ich bin ein kleiner Blindtext. Und zwar schon so lange ich denken kann. Es war nicht leicht zu verstehen, was es bedeutet, ein blinder Text zu sein: Man macht keinen Sinn. Wirklich keinen Sinn. Man wird zusammenhangslos eingeschoben und rumgedreht – und oftmals gar nicht erst gelesen. Aber bin ich allein deshalb ein schlechterer Text als andere? Na gut, ich werde nie in den Bestsellerlisten stehen. Aber andere Texte schaffen das auch nicht. Und darum stört es mich nicht besonders blind zu sein. Und sollten Sie diese Zeilen noch immer lesen, so habe ich als kleiner Blindtext etwas geschafft, wovon all die richtigen und wichtigen Texte meist nur träumen.",
 
-  "CIP.LOGO.PATH": "/assets/img/cip/icon-cip-de.png",
+  "CIP.LOGO.PATH": "/assets/img/logos/i_cip_de.png",
   "CIP.CHAPTER.NAME.1": "Bild",
   "CIP.CHAPTER.DESCRIPTION.1": "Das ist die Beschreibung des Kapitels 1 vom KVP",
   "CIP.CHAPTER.NAME.2": "Ideendaten",
@@ -132,7 +132,7 @@
   "CIP.CHAPTER.NAME.4": "Ideenklassifizierung",
   "CIP.CHAPTER.DESCRIPTION.4": "Hier wird ihre Idee klassifiziert",
 
-  "FIT4CIP.LOGO.PATH": "/assets/img/fit4cip/icon-fit4cip.png",
+  "FIT4CIP.LOGO.PATH": "/assets/img/logos/i_fit4cip.png",
   "FIT4CIP.CHAPTER.NAME.1": "FIT EINS",
   "FIT4CIP.CHAPTER.DESCRIPTION.1": "Willkommen bei FIT4CIP die Erste",
   "FIT4CIP.CHAPTER.NAME.2": "FIT ZWEI",
@@ -140,7 +140,66 @@
   "FIT4CIP.CHAPTER.NAME.3": "FIT DREI",
   "FIT4CIP.CHAPTER.DESCRIPTION.3": "Willkommen bei FIT4CIP die Dritte",
   "FIT4CIP.CHAPTER.NAME.4": "FIT VIER",
-  "FIT4CIP.CHAPTER.DESCRIPTION.4": "Willkommen bei FIT4CIP die Vierte"
+  "FIT4CIP.CHAPTER.DESCRIPTION.4": "Willkommen bei FIT4CIP die Vierte",
 
+  "BIOBASEL.LOGO.PATH": "/assets/img/logos/i_biobasel.png",
+  "BIOBASEL.CHAPTER.NAME.1": "BIOBASEL EINS",
+  "BIOBASEL.CHAPTER.DESCRIPTION.1": "Willkommen bei BioBasel, die Erste",
+
+  "CIP_HR.LOGO.PATH": "/assets/img/logos/i_cip-hr.png",
+  "CIP_HR.CHAPTER.NAME.1": "CIP_HR EINS",
+  "CIP_HR.CHAPTER.DESCRIPTION.1": "Willkommen bei cip-hr, die Erste",
+
+  "FIVE.LOGO.PATH": "/assets/img/logos/i_five.png",
+  "FIVE.CHAPTER.NAME.1": "FIVE EINS",
+  "FIVE.CHAPTER.DESCRIPTION.1": "Willkommen bei five, die Erste",
+
+  "LPSPZ.LOGO.PATH": "/assets/img/logos/i_lpspz.png",
+  "LPSPZ.CHAPTER.NAME.1": "LPSPZ EINS",
+  "LPSPZ.CHAPTER.DESCRIPTION.1": "Willkommen bei lpspz, die Erste",
+
+  "GOLEAN_BRANCHBURG.LOGO.PATH": "/assets/img/logos/i_golean-branchburg.png",
+  "GOLEAN_BRANCHBURG.CHAPTER.NAME.1": "GOLEAN_BRANCHBURG EINS",
+  "GOLEAN_BRANCHBURG.CHAPTER.DESCRIPTION.1": "Willkommen bei golean-branchburg, die Erste",
+
+  "GOLEAN_DOZ.LOGO.PATH": "/assets/img/logos/i_golean-doz.png",
+  "GOLEAN_DOZ.CHAPTER.NAME.1": "GOLEAN_DOZ EINS",
+  "GOLEAN_DOZ.CHAPTER.DESCRIPTION.1": "Willkommen bei golean-doz, die Erste",
+
+  "GOLEAN_FIT.LOGO.PATH": "/assets/img/logos/i_golean-fit.png",
+  "GOLEAN_FIT.CHAPTER.NAME.1": "GOLEAN_FIT EINS",
+  "GOLEAN_FIT.CHAPTER.DESCRIPTION.1": "Willkommen bei golean-fit, die Erste",
+
+  "GOLEAN_MOVE.LOGO.PATH": "/assets/img/logos/i_golean-move.png",
+  "GOLEAN_MOVE.CHAPTER.NAME.1": "GOLEAN_MOVE EINS",
+  "GOLEAN_MOVE.CHAPTER.DESCRIPTION.1": "Willkommen bei golean-move, die Erste",
+
+  "GOLEAN_RDSZ.LOGO.PATH": "/assets/img/logos/i_golean-rdsz.png",
+  "GOLEAN_RDSZ.CHAPTER.NAME.1": "GOLEAN_RDSZ EINS",
+  "GOLEAN_RDSZ.CHAPTER.DESCRIPTION.1": "Willkommen bei golean-rdsz, die Erste",
+
+  "GOLEAN_RTD.LOGO.PATH": "/assets/img/logos/i_golean-rtd.png",
+  "GOLEAN_RTD.CHAPTER.NAME.1": "GOLEAN_RTD EINS",
+  "GOLEAN_RTD.CHAPTER.DESCRIPTION.1": "Willkommen bei golean-rtd, die Erste",
+
+  "GOLEAN_TOPINOPS.LOGO.PATH": "/assets/img/logos/i_golean-topinops.png",
+  "GOLEAN_TOPINOPS.CHAPTER.NAME.1": "GOLEAN_TOPINOPS EINS",
+  "GOLEAN_TOPINOPS.CHAPTER.DESCRIPTION.1": "Willkommen bei golean-topinops, die Erste",
+
+  "IMPROVE.LOGO.PATH": "/assets/img/logos/i_improve.png",
+  "IMPROVE.CHAPTER.NAME.1": "IMPROVE EINS",
+  "IMPROVE.CHAPTER.DESCRIPTION.1": "Willkommen bei improve, die Erste",
+
+  "KVPHARMA.LOGO.PATH": "/assets/img/logos/i_kvpharma.png",
+  "KVPHARMA.CHAPTER.NAME.1": "KVPHARMA EINS",
+  "KVPHARMA.CHAPTER.DESCRIPTION.1": "Willkommen bei kvpharma, die Erste",
+
+  "PTDE.LOGO.PATH": "/assets/img/logos/i_ptde.png",
+  "PTDE.CHAPTER.NAME.1": "PTDE EINS",
+  "PTDE.CHAPTER.DESCRIPTION.1": "Willkommen bei ptde, die Erste",
+
+  "RND_RTD.LOGO.PATH": "/assets/img/logos/i_rnd-rtd.png",
+  "RND_RTD.CHAPTER.NAME.1": "LPSPZ EINS",
+  "RND_RTD.CHAPTER.DESCRIPTION.1": "Willkommen bei rnd-rtd, die Erste"
 
 }

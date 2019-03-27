@@ -1,8 +1,8 @@
-import { Wizard, IStaticData } from '../models/wizard';
+import { Stepper, IStaticData } from '../models/stepper';
 import { ActionsUnion, ActionTypes } from './stepper.actions';
 
 export interface StepperState {
-  activeStepper: Wizard;
+  activeStepper: Stepper;
   staticData: IStaticData;
 }
 

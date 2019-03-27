@@ -106,7 +106,6 @@
   "PICTURE_BEFORE.TITLE": "Picture before",
   "PICTURE_BEFORE.DESCRIPTION": "This could be your description",
 
-
   "PICTURE_AFTER.TITLE": "Picture after",
   "PICTURE_AFTER.DESCRIPTION": "This could be your description",
 
@@ -121,7 +120,7 @@
   "DEFAULT.CHAPTER.DESCRIPTION.KLASSIFIZIERUNG": "As such, your idea is already ready to be implemented. By completing the information in this section, you make it possible for your idea to be implemented more quickly in your area and more easily in other areas. Turn your idea into something big!",
   "DEFAULT.DESCRIPTION.BODY": "Hello. I'm a little dummy text. And that for as long as I can remember. It was not easy to understand what it means to be a blind text: You don't make sense. Really no sense. You are pushed in and turned around incoherently - and often not even read. But is this the only reason why I am a worse text than others? All right, I'll never be on the bestseller lists. But other texts don't make it either. And that's why it doesn't bother me to be particularly blind. And if you're still reading these lines, I've done something as a small dummy text that all the right and important texts usually only dream about.",
 
-  "CIP.LOGO.PATH": "/assets/img/cip/icon-cip-en.png",
+  "CIP.LOGO.PATH": "/assets/img/logos/i_cip_en.png",
   "CIP.CHAPTER.NAME.1": "Picture",
   "CIP.CHAPTER.DESCRIPTION.1": "This is the description of chapter 1",
   "CIP.CHAPTER.NAME.2": "Idea data",
@@ -129,5 +128,75 @@
   "CIP.CHAPTER.NAME.3": "Idea value",
   "CIP.CHAPTER.DESCRIPTION.3": "This is the description of chapter 3",
   "CIP.CHAPTER.NAME.4": "Idea Classification",
-  "CIP.CHAPTER.DESCRIPTION.4": "In this section, your idea will be classified"
+  "CIP.CHAPTER.DESCRIPTION.4": "In this section, your idea will be classified",
+
+  "FIT4CIP.LOGO.PATH": "/assets/img/logos/i_fit4cip.png",
+  "FIT4CIP.CHAPTER.NAME.1": "FIT ONE",
+  "FIT4CIP.CHAPTER.DESCRIPTION.1": "Welcome to FIT4CIP the first chapter!",
+  "FIT4CIP.CHAPTER.NAME.2": "FIT TWO",
+  "FIT4CIP.CHAPTER.DESCRIPTION.2": "Welcome to FIT4CIP the second chapter!",
+  "FIT4CIP.CHAPTER.NAME.3": "FIT THREE",
+  "FIT4CIP.CHAPTER.DESCRIPTION.3": "Welcome to FIT4CIP the third chapter!",
+  "FIT4CIP.CHAPTER.NAME.4": "FIT FOUR",
+  "FIT4CIP.CHAPTER.DESCRIPTION.4": "Welcome to FIT4CIP the fourth chapter!",
+
+  "BIOBASEL.LOGO.PATH": "/assets/img/logos/i_biobasel.png",
+  "BIOBASEL.CHAPTER.NAME.1": "BIOBASEL ONE",
+  "BIOBASEL.CHAPTER.DESCRIPTION.1": "Welcome to BioBasel, the first chapter!",
+
+  "CIP_HR.LOGO.PATH": "/assets/img/logos/i_cip-hr.png",
+  "CIP_HR.CHAPTER.NAME.1": "CIP_HR ONE",
+  "CIP_HR.CHAPTER.DESCRIPTION.1": "Welcome to cip-hr, the first chapter!",
+
+  "FIVE.LOGO.PATH": "/assets/img/logos/i_five.png",
+  "FIVE.CHAPTER.NAME.1": "FIVE ONE",
+  "FIVE.CHAPTER.DESCRIPTION.1": "Welcome to five, the first chapter!",
+
+  "LPSPZ.LOGO.PATH": "/assets/img/logos/i_lpspz.png",
+  "LPSPZ.CHAPTER.NAME.1": "LPSPZ ONE",
+  "LPSPZ.CHAPTER.DESCRIPTION.1": "Welcome to lpspz, the first chapter!",
+
+  "GOLEAN_BRANCHBURG.LOGO.PATH": "/assets/img/logos/i_golean-branchburg.png",
+  "GOLEAN_BRANCHBURG.CHAPTER.NAME.1": "GOLEAN_BRANCHBURG ONE",
+  "GOLEAN_BRANCHBURG.CHAPTER.DESCRIPTION.1": "Welcome to golean-branchburg, the first chapter!",
+
+  "GOLEAN_DOZ.LOGO.PATH": "/assets/img/logos/i_golean-doz.png",
+  "GOLEAN_DOZ.CHAPTER.NAME.1": "GOLEAN_DOZ ONE",
+  "GOLEAN_DOZ.CHAPTER.DESCRIPTION.1": "Welcome to golean-doz, the first chapter!",
+
+  "GOLEAN_FIT.LOGO.PATH": "/assets/img/logos/i_golean-fit.png",
+  "GOLEAN_FIT.CHAPTER.NAME.1": "GOLEAN_FIT ONE",
+  "GOLEAN_FIT.CHAPTER.DESCRIPTION.1": "Welcome to golean-fit, the first chapter!",
+
+  "GOLEAN_MOVE.LOGO.PATH": "/assets/img/logos/i_golean-move.png",
+  "GOLEAN_MOVE.CHAPTER.NAME.1": "GOLEAN_MOVE ONE",
+  "GOLEAN_MOVE.CHAPTER.DESCRIPTION.1": "Welcome to golean-move, the first chapter!",
+
+  "GOLEAN_RDSZ.LOGO.PATH": "/assets/img/logos/i_golean-rdsz.png",
+  "GOLEAN_RDSZ.CHAPTER.NAME.1": "GOLEAN_RDSZ ONE",
+  "GOLEAN_RDSZ.CHAPTER.DESCRIPTION.1": "Welcome to golean-rdsz, the first chapter!",
+
+  "GOLEAN_RTD.LOGO.PATH": "/assets/img/logos/i_golean-rtd.png",
+  "GOLEAN_RTD.CHAPTER.NAME.1": "GOLEAN_RTD ONE",
+  "GOLEAN_RTD.CHAPTER.DESCRIPTION.1": "Welcome to golean-rtd, the first chapter!",
+
+  "GOLEAN_TOPINOPS.LOGO.PATH": "/assets/img/logos/i_golean-topinops.png",
+  "GOLEAN_TOPINOPS.CHAPTER.NAME.1": "GOLEAN_TOPINOPS ONE",
+  "GOLEAN_TOPINOPS.CHAPTER.DESCRIPTION.1": "Welcome to golean-topinops, the first chapter!",
+
+  "IMPROVE.LOGO.PATH": "/assets/img/logos/i_improve.png",
+  "IMPROVE.CHAPTER.NAME.1": "IMPROVE ONE",
+  "IMPROVE.CHAPTER.DESCRIPTION.1": "Welcome to improve, the first chapter!",
+
+  "KVPHARMA.LOGO.PATH": "/assets/img/logos/i_kvpharma.png",
+  "KVPHARMA.CHAPTER.NAME.1": "KVPHARMA ONE",
+  "KVPHARMA.CHAPTER.DESCRIPTION.1": "Welcome to kvpharma, the first chapter!",
+
+  "PTDE.LOGO.PATH": "/assets/img/logos/i_ptde.png",
+  "PTDE.CHAPTER.NAME.1": "PTDE ONE",
+  "PTDE.CHAPTER.DESCRIPTION.1": "Welcome to ptde, the first chapter!",
+
+  "RND_RTD.LOGO.PATH": "/assets/img/logos/i_rnd-rtd.png",
+  "RND_RTD.CHAPTER.NAME.1": "LPSPZ ONE",
+  "RND_RTD.CHAPTER.DESCRIPTION.1": "Welcome to rnd-rtd, the first chapter!"
 }

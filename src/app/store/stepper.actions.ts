@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { Wizard, IStaticData } from '../models/wizard';
+import { Stepper, IStaticData } from '../models/stepper';
 
 
 export enum ActionTypes {
@@ -18,7 +18,7 @@ export class FetchStepperDataAction implements Action {
 export class SetActiveStepperAction implements Action {
   readonly type = ActionTypes.SET_ACTIVE_STEPPER;
 
-  constructor(public stepper: Wizard) {
+  constructor(public stepper: Stepper) {
   }
 }
 

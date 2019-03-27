@@ -23,7 +23,7 @@ export class AppComponent {
 
     store.dispatch(new FetchStepperDataAction());
     store.dispatch(new FetchStaticDataAction())
-    // console.log(store.dispatch(new FetchWizardDataAction()));
+    // console.log(store.dispatch(new FetchStepperDataAction()));
 
     store.subscribe(console.log);
 

@@ -1,0 +1,9 @@
+{
+    "imgpath": "LPSPZ.LOGO.PATH",
+    "config": [{
+        "name": "LPSPZ.CHAPTER.NAME.1",
+        "description": "LPSPZ.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

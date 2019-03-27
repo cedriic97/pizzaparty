@@ -1,0 +1,9 @@
+{
+    "imgpath": "KVPHARMA.LOGO.PATH",
+    "config": [{
+        "name": "KVPHARMA.CHAPTER.NAME.1",
+        "description": "KVPHARMA.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

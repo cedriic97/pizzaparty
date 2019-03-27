@@ -1,17 +1,17 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {StepperContainerComponent} from '../components/stepper-container/stepper-container.component';
-import {PageNotFoundComponent} from '../components/general/page-not-found/page-not-found.component';
-import {SuccessAlertComponent} from '../components/success-alert/success-alert.component';
+import { FeedbackFormularComponent } from '../components/feedback-formular/feedback-formular.component';
+import { PageNotFoundComponent } from '../components/general/page-not-found/page-not-found.component';
+import { StepperContainerComponent } from '../components/stepper-container/stepper-container.component';
 
 export const ROUTE_PATH_UNIFIEDIDEAFORM = 'idea-one';
-export const ROUTE_PATH_SUCCESS = 'success';
+export const ROUTE_PATH_FEEDBACK = 'feedback';
 
 const routes: Routes = [
   {path: '', redirectTo: ROUTE_PATH_UNIFIEDIDEAFORM, pathMatch: 'full'},
   {path: ROUTE_PATH_UNIFIEDIDEAFORM, component: StepperContainerComponent},
-  {path: ROUTE_PATH_SUCCESS, component: SuccessAlertComponent, pathMatch: 'full'},
+  {path: ROUTE_PATH_FEEDBACK, component: FeedbackFormularComponent, pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent},
 ];
 

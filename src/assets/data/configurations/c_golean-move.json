@@ -1,0 +1,9 @@
+{
+    "imgpath": "GOLEAN_MOVE.LOGO.PATH",
+    "config": [{
+        "name": "GOLEAN_MOVE.CHAPTER.NAME.1",
+        "description": "GOLEAN_MOVE.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

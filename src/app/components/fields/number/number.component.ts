@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IField } from 'src/app/models/wizard';
+import { IField } from 'src/app/models/stepper';
 import { FormGroup } from '@angular/forms';
 
 @Component({

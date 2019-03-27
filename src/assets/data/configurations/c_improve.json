@@ -1,0 +1,9 @@
+{
+    "imgpath": "IMPROVE.LOGO.PATH",
+    "config": [{
+        "name": "IMPROVE.CHAPTER.NAME.1",
+        "description": "IMPROVE.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

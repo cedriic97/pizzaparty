@@ -1,5 +1,5 @@
-import {Initiative} from './hype-interface';
 import { config } from './process-config';
+import { EInitiative } from './current-user';
 
 
 export enum EFieldOptions {
@@ -18,8 +18,8 @@ export enum EFieldOptions {
     INNOVATIONPOINTS = 'innovationpoints',
     METHODS_USED = 'methods_used',
     TYPES_OF_WASTE = 'types_of_waste',
-    PICTURE_BEFORE = 'PICTURE_BEFORE',
-    PICTURE_AFTER = 'PICTURE_AFTER'
+    PICTURE_BEFORE = 'picture_before',
+    PICTURE_AFTER = 'picture_before'
 }
 
 
@@ -30,7 +30,6 @@ export enum EQueryable {
   METHODS_USED = 'methods_used',
   TYPES_OF_WASTE = 'types_of_waste',
   TAGS = 'tags',
-
 }
 
 export enum ECurrency {
@@ -39,39 +38,33 @@ export enum ECurrency {
   CHF = 'CHF'
 }
 
-export enum EMaterialIcons {
-  PERSON = 'person',
-  CANCEL = 'cancel',
-  SETTINGS = 'settings',
-  ACCESSIBILITY = 'accessibility',
+// Data Source Connection interface
+export interface IConnection {
+  source: EQueryable;
+  isLocal: boolean;
 }
 
-export enum EInitiative {
-  CIP = 'CIP',
-  KVPHARMA = 'KVPharma',
-  MOVE = 'move'
-}
-
-export interface IField {
-  type: EFieldOptions;
-  title: string;
-  connection?: EQueryable;
-  währung?: ECurrency;
-  icon?: EMaterialIcons;
-  componentAvailable: boolean;
-}
-
+// IConfig --> ISection --> IField
+// Initiative Configuration Interface
 export interface IConfig {
   imgpath: string;
-  config: IProcess[];
+  config: ISection[];
 }
-
-export interface IProcess {
+// A Section of a certain configuration
+export interface ISection {
   name: string;
   description: string;
   fields: string[];
 }
+// Configuration of a field in a section
+export interface IField {
+  type: EFieldOptions;
+  title: string;
+  connection?: IConnection;
+  währung?: ECurrency;
+}
 
+// ControllerComponent control
 export enum EFieldType {
   FREETEXT = 'text',
   DROPDOWN = 'user',
@@ -80,16 +73,22 @@ export enum EFieldType {
   IMAGE = 'image',
   SELECTOR = 'selector'
 }
+
+
+
+// Data that is static and not dynamically provided
 export interface IStaticDataObject {
   name: string;
   description?: string;
 }
+// Available static Groups: Methods, Types of Waste, Tags
 export interface IStaticData {
   methods: IStaticDataObject[];
   typesOfWaste: IStaticDataObject[];
   tags: IStaticDataObject[];
 }
 
+// TODO: Was bringt das eigentlich
 export const fieldTypeLookup = {
   [EFieldOptions.AUTHOR]: EFieldType.DROPDOWN,
   [EFieldOptions.COMMENT]: EFieldType.FREETEXT,
@@ -113,11 +112,11 @@ export const fieldTypeLookup = {
 
 
 
-export type Wizard = IConfig;
+export type Stepper = IConfig;
 
 
-export function getWizardPath(initiative: string): string {
-  return `assets/data/${initiative.toLowerCase()}/config.json`;
+export function getStepperPath(initiative: EInitiative): string {
+  return `assets/data/configurations/c_${initiative.toLowerCase()}.json`;
 }
 
 export function getStaticDataPath(filename: string): string {

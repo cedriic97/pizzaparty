@@ -1,0 +1,9 @@
+{
+    "imgpath": "GOLEAN_TOPINOPS.LOGO.PATH",
+    "config": [{
+        "name": "GOLEAN_TOPINOPS.CHAPTER.NAME.1",
+        "description": "GOLEAN_TOPINOPS.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

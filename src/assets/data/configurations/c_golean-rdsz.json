@@ -1,0 +1,9 @@
+{
+    "imgpath": "GOLEAN_RDSZ.LOGO.PATH",
+    "config": [{
+        "name": "GOLEAN_RDSZ.CHAPTER.NAME.1",
+        "description": "GOLEAN_RDSZ.CHAPTER.DESCRIPTION.1",
+        "fields": []
+      }
+    ]
+  }

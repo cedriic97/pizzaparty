@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {EFieldOptions} from '../models/wizard';
+import {EFieldOptions} from '../models/stepper';
 
 export enum ActionTypes {
   SET_FIELD_VALUE = '[IDEA_FORM]SET_FIELD_VALUE',
