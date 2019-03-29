@@ -11,6 +11,9 @@
   "RESULT.SUCCESS.BUTTON.CENTER": "HYPE Startseite",
   "RESULT.SUCCESS.BUTTON.RIGHT": "Idee in HYPE ansehen",
   "RESULT.BUTTON.TRANSFER": "In HYPE speichern",
+  "HEADER.MENU_ITEM.PATCHNOTES": "v0.1 Informationen",
+  "HEADER.MENU_ITEM.HOME": "Startseite",
+  "HEADER.MENU_ITEM.FEEDBACK": "Feedback Formular",
 
   "METHOD.NAME.A3":"A3",
   "METHOD.NAME.MAKIGAMI":"Makigami",

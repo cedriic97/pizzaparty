@@ -50,7 +50,7 @@ export class StepperContainerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showWelcomeDialog();
+
     this.formGroup.valueChanges.subscribe(state => {
       // tslint:disable-next-line: forin
       for (const key in state) {

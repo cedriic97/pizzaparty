@@ -120,7 +120,7 @@ export function getStepperPath(initiative: EInitiative): string {
 }
 
 export function getStaticDataPath(filename: string): string {
-  return `assets/data/${filename.toLowerCase()}.json`;
+  return `assets/data/_${filename.toLowerCase()}.json`;
 }
 
 

@@ -1,12 +1,15 @@
-import {HttpClient} from '@angular/common/http';
-import {Component} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {TranslateService} from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { TranslateService } from '@ngx-translate/core';
 
-import {ICurrentUser} from './models/current-user';
-import {HypeService} from './services/hype.service';
-import {AppState} from './store';
-import {FetchStepperDataAction, FetchStaticDataAction} from './store/stepper.actions';
+import { ICurrentUser } from './models/current-user';
+import { HypeService } from './services/hype.service';
+import { AppState } from './store';
+import { FetchStepperDataAction, FetchStaticDataAction } from './store/stepper.actions';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { WelcomeAlertComponent } from './components/welcome-alert/welcome-alert.component';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +17,11 @@ import {FetchStepperDataAction, FetchStaticDataAction} from './store/stepper.act
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'hype-idea-form';
   currentUser: ICurrentUser;
 
-  constructor(store: Store<AppState>, translate: TranslateService, private http: HttpClient, private hype: HypeService) {
+  constructor(private router: Router, store: Store<AppState>, translate: TranslateService, public dialog: MatDialog) {
     translate.setDefaultLang('de');
     translate.use('en');
 
@@ -29,6 +33,12 @@ export class AppComponent {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.showWelcomeDialog();
+
+  }
+  showWelcomeDialog() {
+    const dialogRef = this.dialog.open(WelcomeAlertComponent, { disableClose: false, panelClass: 'panel-welcome' })
   }
 }
+

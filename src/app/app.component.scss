@@ -13,16 +13,7 @@
   //  background: #dadce0;
 }
 
-mat-toolbar {
-  z-index: 2;
 
-  min-height: 108px;
-  border-bottom: #dadce0 1px solid;
-  position: fixed;
-
-  background: #fff !important;
-
-}
 
 .footer-toolbar {
   bottom: 0;
@@ -36,4 +27,3 @@ app-language-dropdown {
   right: 32px;
   bottom: 32px;
 }
-

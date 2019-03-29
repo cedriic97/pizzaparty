@@ -35,6 +35,10 @@ import { SelectorComponent } from './components/fields/selector/selector.compone
 import { MaterialModule } from './modules/material.module';
 import { WelcomeAlertComponent } from './components/welcome-alert/welcome-alert.component';
 import { FeedbackFormularComponent } from './components/feedback-formular/feedback-formular.component';
+import { UsersComponent } from './components/fields/dropdown/users/users.component';
+import { DepartmentsComponent } from './components/fields/dropdown/departments/departments.component';
+import { TagsComponent } from './components/fields/dropdown/tags/tags.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,11 @@ import { FeedbackFormularComponent } from './components/feedback-formular/feedba
     ImageComponent,
     SelectorComponent,
     WelcomeAlertComponent,
-    FeedbackFormularComponent
+    FeedbackFormularComponent,
+    UsersComponent,
+    DepartmentsComponent,
+    TagsComponent,
+    HeaderComponent
 
   ],
   imports: [

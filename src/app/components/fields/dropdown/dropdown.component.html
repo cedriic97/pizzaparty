@@ -6,7 +6,19 @@
 </mat-form-field>
 
 <mat-autocomplete #auto="matAutocomplete">
-<div >
+<!--   <div [ngSwitch]="field.connection.source">
+    <div *ngSwitchCase="'departments'">
+      <app-departments [options]="(filteredOptions$ | async)"></app-departments>
+    </div>
+    <div *ngSwitchCase="'users'">
+      <app-users [options]="(filteredOptions$ | async)"></app-users>
+    </div>
+    <div *ngSwitchCase="'tags'">
+      <app-tags [options]="(filteredOptions$ | async)"></app-tags>
+    </div>
+    <div *ngSwitchDefault>output2</div>
+  </div> -->
+  <div>
   <mat-option *ngFor="let option of (filteredOptions$ | async)" [value]="option.username">
     <span [ngSwitch]="field.connection.source">
       <p *ngSwitchCase="'departments'">
