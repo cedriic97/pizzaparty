@@ -9,7 +9,7 @@
 
       <button mat-flat-button color="primary"><label for="file">{{'BUTTON_UPLOAD' | translate}}</label></button>
       <div [hidden]="!hideImageSelector">
-        <button mat-flat-button color="primary" (click)="hide()">{{'BUTTON_SHOW' | translate}}</button>
+        <button mat-flat-button color="primary" (click)="openCropper()">{{'BUTTON_SHOW' | translate}}</button>
       </div>
     </div>
     <div class="spacer"></div>
@@ -22,8 +22,8 @@
 </div>
 <div [hidden]="hideImageSelector || !imageExists">
 
-  <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="false" [resizeToWidth]="128" format="png"
-    (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()"
+  <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="false" [resizeToWidth]="128"
+    format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady()"
     (loadImageFailed)="loadImageFailed()"></image-cropper>
   <button mat-flat-button color="primary" (click)="hide()">{{'BUTTON_CLOSE' | translate}}</button>
 </div>

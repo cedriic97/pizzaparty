@@ -62,6 +62,7 @@ export interface IField {
   title: string;
   connection?: IConnection;
   währung?: ECurrency;
+  description?: string;
 }
 
 // ControllerComponent control
@@ -116,11 +117,11 @@ export type Stepper = IConfig;
 
 
 export function getStepperPath(initiative: EInitiative): string {
-  return `assets/data/configurations/c_${initiative.toLowerCase()}.json`;
+  return `assets/data/configurations/c_${initiative.toLowerCase()}.json_`;
 }
 
 export function getStaticDataPath(filename: string): string {
-  return `assets/data/_${filename.toLowerCase()}.json`;
+  return `assets/data/_${filename.toLowerCase()}.json_`;
 }
 
 

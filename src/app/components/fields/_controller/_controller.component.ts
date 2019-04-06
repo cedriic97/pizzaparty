@@ -22,6 +22,7 @@ export class ControllerComponent implements OnInit {
 
   getFields(array: string[]) {
     this.fields = array.map(getConfigFor);
+    console.log(this.fields)
   }
 
   fieldType(item: any): EFieldType {

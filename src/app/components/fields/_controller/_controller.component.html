@@ -1,6 +1,6 @@
 <app-help-panel [description]="chapter.description" [imgpath]="imgpath"></app-help-panel>
 <div class="border-color" *ngFor="let item of fields" [formGroup]="forminputs">
-  <div *ngIf="item; else elseTemplate">
+  <div *ngIf="item.type; else elseTemplate">
     <mat-card class="mat-elevation-z2">
       <span [ngSwitch]="fieldType(item)">
         <p *ngSwitchCase="'user'">
@@ -25,6 +25,6 @@
     </mat-card>
   </div>
   <ng-template #elseTemplate>
-    <app-component-not-found></app-component-not-found>
+    <app-component-not-found [componentName]="item"></app-component-not-found>
   </ng-template>
 </div>

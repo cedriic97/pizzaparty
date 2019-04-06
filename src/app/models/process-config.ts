@@ -118,6 +118,10 @@ export function getFieldType(field: IField): EFieldType {
     return fieldTypeLookup[field.type];
 }
 
-export function getConfigFor(field: string): IField {
-    return config[field];
+export function getConfigFor(field: string) {
+    if (config[field]) {
+       return config[field];
+    }
+    return field;
+
 }

@@ -1,9 +1,0 @@
-{
-    "imgpath": "GOLEAN_RTD.LOGO.PATH",
-    "config": [{
-        "name": "GOLEAN_RTD.CHAPTER.NAME.1",
-        "description": "GOLEAN_RTD.CHAPTER.DESCRIPTION.1",
-        "fields": []
-      }
-    ]
-  }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-component-not-found',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component-not-found.component.scss']
 })
 export class ComponentNotFoundComponent implements OnInit {
-
+  @Input() public componentName: string;
   constructor() { }
 
   ngOnInit() {

@@ -50,14 +50,28 @@ mat-list-item:hover {
   background: #eee;
 }
 
-.my-panel .mat-dialog-container {
+.my-panel .mat-dialog-container{
   overflow: hidden;
   border-radius: 16px;
   padding: 20px;
   width: 600px;
 }
 
-.panel-welcome .mat-dialog-container{
+.mat-dialog-container {
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 20px;
+  width: 600px;
+}
+
+.panel-welcome .mat-dialog-container {
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 20px;
+  width: 1000px
+}
+
+.panel-imagecropper .mat-dialog-container {
   overflow: hidden;
   border-radius: 16px;
   padding: 20px;

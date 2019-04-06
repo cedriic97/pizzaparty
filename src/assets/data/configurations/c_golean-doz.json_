@@ -1,0 +1,36 @@
+{
+    "imgpath": "GOLEAN_DOZ.LOGO.PATH",
+    "config": [{
+      "name": "DEFAULT.CHAPTER.NAME.1",
+      "description": "DEFAULT.CHAPTER.DESCRIPTION.1",
+      "fields": [
+        "title",
+        "problem_description",
+        "solution",
+        "category"
+      ]
+    },
+    {
+      "name": "DEFAULT.CHAPTER.NAME.2",
+      "description": "DEFAULT.CHAPTER.DESCRIPTION.2",
+      "fields": [
+        "author",
+        "department",
+        "champion"
+
+      ]
+    },
+    {
+      "name": "DEFAULT.CHAPTER.NAME.4",
+      "description": "DEFAULT.CHAPTER.DESCRIPTION.4",
+      "fields": [
+        "start_date",
+        "completion_date",
+        "comment",
+        "attachments",
+        "paperstack"
+      ]
+    }
+
+  ]
+}

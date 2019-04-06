@@ -1,10 +1,10 @@
-<div class="title">{{ field.title | translate }}</div>
+<div class="title"><b>{{ field.title | translate }}</b></div>
 <p> {{ field.description | translate }}</p>
 
 <mat-form-field class="example-full-width" appearance="outline">
   <div [formGroup]="forminputs">
     <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" [formControlName]="field.type"
-      placeholder="Choose a date">
+      placeholder="dd / mm / yyyy">
 </div>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>

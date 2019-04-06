@@ -106,8 +106,9 @@ export class DropdownComponent implements OnInit, ControlValueAccessor {
     console.log(this.field.connection.source);
     switch (this.field.connection.source) {
       case 'departments':
+        console.log("TAPE")
         return this.hype.queryDepartments(val).pipe(
-          map(value => value.rows.splice(0, 5)),
+          map(value => value.splice(0, 5)),
         );
 
       case 'users':

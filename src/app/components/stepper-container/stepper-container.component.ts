@@ -46,7 +46,6 @@ export class StepperContainerComponent implements OnInit {
     this.config$ = store.pipe(select(selectActiveStepper));
     this.staticData$ = store.pipe(select(selectStaticData));
 
-
   }
 
   ngOnInit() {
@@ -58,9 +57,9 @@ export class StepperContainerComponent implements OnInit {
       }
     });
   }
-  showWelcomeDialog() {
-    const dialogRef = this.dialog.open(WelcomeAlertComponent, { disableClose: false, panelClass: 'panel-welcome' })
-  }
+  // showWelcomeDialog() {
+  //   const dialogRef = this.dialog.open(WelcomeAlertComponent, { disableClose: false, panelClass: 'panel-welcome' })
+  // }
 
 
 
@@ -74,7 +73,7 @@ export class StepperContainerComponent implements OnInit {
 
 
   fireSuccess() {
-    const dialogRef = this.dialog.open(SuccessAlertComponent, { disableClose: true, panelClass: 'my-panel' });
+    const dialogSuccess = this.dialog.open(SuccessAlertComponent, { disableClose: true, panelClass: 'my-panel' });
 
   }
 

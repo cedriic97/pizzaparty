@@ -1,15 +1,13 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 
-import { ICurrentUser } from './models/current-user';
-import { HypeService } from './services/hype.service';
-import { AppState } from './store';
-import { FetchStepperDataAction, FetchStaticDataAction } from './store/stepper.actions';
-import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material';
 import { WelcomeAlertComponent } from './components/welcome-alert/welcome-alert.component';
+import { ICurrentUser } from './models/current-user';
+import { AppState } from './store';
+import { FetchStaticDataAction, FetchStepperDataAction } from './store/stepper.actions';
 
 @Component({
   selector: 'app-root',

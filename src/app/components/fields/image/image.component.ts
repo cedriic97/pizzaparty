@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { IField } from 'src/app/models/stepper';
+import { ImageCropperDialogComponent } from '../image-cropper-dialog/image-cropper-dialog.component';
+import { MatDialog } from '@angular/material';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { IField } from 'src/app/models/stepper';
   styleUrls: ['./image.component.scss']
 })
 export class ImageComponent implements OnInit {
-  imageChangedEvent: any = '';
+  imageChangedEvent: any;
   croppedImage: any = '';
   hideImageSelector: boolean;
   imageExists: boolean;
@@ -18,7 +20,7 @@ export class ImageComponent implements OnInit {
   @Input() public field: IField;
   @Input() public forminputs: FormGroup;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     this.hideImageSelector = false;
@@ -41,9 +43,12 @@ export class ImageComponent implements OnInit {
     // cropper ready
   }
   loadImageFailed() {
-    // show message
+    console.log('error')
   }
 
+  openCropper(){
+    const dialogSuccess = this.dialog.open(ImageCropperDialogComponent, { disableClose: true, panelClass: 'my-panel' });
+  }
   hide() {
     this.hideImageSelector = !this.hideImageSelector;
     console.log('called')

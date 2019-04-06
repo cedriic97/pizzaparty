@@ -39,6 +39,7 @@ import { UsersComponent } from './components/fields/dropdown/users/users.compone
 import { DepartmentsComponent } from './components/fields/dropdown/departments/departments.component';
 import { TagsComponent } from './components/fields/dropdown/tags/tags.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ImageCropperDialogComponent } from './components/fields/image-cropper-dialog/image-cropper-dialog.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { HeaderComponent } from './components/header/header.component';
     UsersComponent,
     DepartmentsComponent,
     TagsComponent,
-    HeaderComponent
+    HeaderComponent,
+    ImageCropperDialogComponent
 
   ],
   imports: [
@@ -82,7 +84,9 @@ import { HeaderComponent } from './components/header/header.component';
     MaterialModule,
   ],
   entryComponents: [
-    WelcomeAlertComponent
+    WelcomeAlertComponent,
+    SuccessAlertComponent,
+    ImageCropperDialogComponent
   ],
   providers: [
     { provide: APP_NAME, useValue: 'hype-idea-form' },
