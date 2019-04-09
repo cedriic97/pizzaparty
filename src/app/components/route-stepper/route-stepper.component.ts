@@ -12,12 +12,12 @@ import { SetFieldValueAction } from '../../store/form/form.actions';
 import { SuccessAlertComponent } from '../dialogs/dialog-success/success-alert.component';
 
 @Component({
-  selector: 'app-stepper-container',
-  templateUrl: './stepper-container.component.html',
-  styleUrls: ['./stepper-container.component.scss'],
+  selector: 'app-route-stepper',
+  templateUrl: './route-stepper.component.html',
+  styleUrls: ['./route-stepper.component.scss'],
 })
 
-export class StepperContainerComponent implements OnInit {
+export class RouteStepperComponent implements OnInit {
   config$: Observable<IConfig>;
   staticData$: Observable<IStaticData>;
 

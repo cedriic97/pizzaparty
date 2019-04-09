@@ -8,6 +8,7 @@
         "problem_description",
         "picture_before",
         "solution",
+
         "picture_after",
         "tags",
         "action_type"
@@ -26,8 +27,8 @@
       "name": "DEFAULT.CHAPTER.NAME.3",
       "description": "DEFAULT.CHAPTER.DESCRIPTION.3",
       "fields": [
-        "costs",
-        "savings",
+        "monetary_costs",
+        "monetary_savings",
         "time_savings"
       ]
     },
@@ -40,7 +41,10 @@
         "comment",
         "attachments",
         "methods_used",
-        "types_of_waste"
+        "types_of_waste",
+        "consequences",
+        "expected_result",
+        "responsible_for_implementation"
       ]
     }
   ]

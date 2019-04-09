@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-feedback-formular',
-  templateUrl: './feedback-formular.component.html',
-  styleUrls: ['./feedback-formular.component.scss']
+  selector: 'app-route-feedback',
+  templateUrl: './route-feedback.component.html',
+  styleUrls: ['./route-feedback.component.scss']
 })
-export class FeedbackFormularComponent implements OnInit {
+export class RouteFeedbackComponent implements OnInit {
 
   constructor() { }
 

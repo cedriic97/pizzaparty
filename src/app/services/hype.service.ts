@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { from, Observable } from 'rxjs';
 
-import { ICurrentUser } from '../models/current-user';
-import { IHypeTableUsers, IHypeTableDepartments, IHypeTableDepartment, IHypeTableUser } from '../models/hype';
-import { Message, sendMessage } from '../models/messaging';
+import { ICurrentUser } from '../models/hype';
+import { IHypeTableDepartment, IHypeTableUser } from '../models/hype';
+import { Message, sendMessage } from '../models/hype-communication';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +12,8 @@ import { Message, sendMessage } from '../models/messaging';
 export class HypeService {
 
   public readonly userData$: Observable<ICurrentUser>;
-  initiative$: any;
 
-  constructor(private route: ActivatedRoute) {
+  constructor() {
     this.userData$ = this.getPlatformDetails();
   }
 

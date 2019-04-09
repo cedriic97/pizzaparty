@@ -1,71 +1,75 @@
+import 'hammerjs';
+
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgSelectModule } from '@ng-select/ng-select';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import 'hammerjs';
+import { FileUploadModule } from 'ng2-file-upload';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
-import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ComponentNotFoundComponent } from './components/general/component-not-found/component-not-found.component';
-import { PageNotFoundComponent } from './components/general/page-not-found/page-not-found.component';
+import { FieldAttachmentsComponent } from './components/fields/field-attachments/field-attachments.component';
+import { RouteFeedbackComponent } from './components/route-feedback/route-feedback.component';
+import { ControllerComponent } from './components/fields/controller/controller.component';
+import { DepartmentsComponent } from './components/fields/field-dropdown/departments/departments.component';
+import { FieldDropdownComponent } from './components/fields/field-dropdown/field-dropdown.component';
+import { TagsComponent } from './components/fields/field-dropdown/tags/tags.component';
+import { UsersComponent } from './components/fields/field-dropdown/users/users.component';
+import { FieldTextComponent } from './components/fields/field-text/field-text.component';
+import { FieldHelpPanelComponent } from './components/fields/field-help-panel/field-help-panel.component';
+import { ImageCropperDialogComponent } from './components/dialogs/dialog-image-cropper/image-cropper-dialog.component';
+import { FieldImageComponent } from './components/fields/field-image/field-image.component';
+import { FieldNumberComponent } from './components/fields/field-number/field-number.component';
+import { FooterComponent } from './components/general/footer/footer.component';
+import { ComponentNotFoundComponent } from './components/general/error-components/component-not-found/component-not-found.component';
+import { PageNotFoundComponent } from './components/general/error-components/page-not-found/page-not-found.component';
+import { HeaderComponent } from './components/general/header/header.component';
 import { LanguageDropdownComponent } from './components/localization/language-dropdown/language-dropdown.component';
-import { ControllerComponent } from './components/fields/_controller/_controller.component';
-import { ChipComponent } from './components/fields/chip/chip.component';
-import { DateComponent } from './components/fields/date/date.component';
-import { DropdownComponent } from './components/fields/dropdown/dropdown.component';
-import { FreetextComponent } from './components/fields/freetext/freetext.component';
-import { HelpPanelComponent } from './components/fields/help-panel/help-panel.component';
-import { ImageComponent } from './components/fields/image/image.component';
-import { NumberComponent } from './components/fields/number/number.component';
-import { SuccessAlertComponent } from './components/success-alert/success-alert.component';
-import { StepperContainerComponent } from './components/stepper-container/stepper-container.component';
+import { RouteStepperComponent } from './components/route-stepper/route-stepper.component';
+import { SuccessAlertComponent } from './components/dialogs/dialog-success/success-alert.component';
+import { WelcomeAlertComponent } from './components/dialogs/dialog-welcome/welcome-alert.component';
 import { APP_NAME } from './config';
+import { AppRoutingModule } from './modules/app-routing.module';
 import { LocalizationModule } from './modules/localization.module';
+import { MaterialModule } from './modules/material.module';
 import { HypeService } from './services/hype.service';
 import { reducers } from './store';
-import { StepperEffects } from './store/stepper.effects';
-import { ImageCropperModule } from 'ngx-image-cropper';
-import { SelectorComponent } from './components/fields/selector/selector.component';
-import { MaterialModule } from './modules/material.module';
-import { WelcomeAlertComponent } from './components/welcome-alert/welcome-alert.component';
-import { FeedbackFormularComponent } from './components/feedback-formular/feedback-formular.component';
-import { UsersComponent } from './components/fields/dropdown/users/users.component';
-import { DepartmentsComponent } from './components/fields/dropdown/departments/departments.component';
-import { TagsComponent } from './components/fields/dropdown/tags/tags.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ImageCropperDialogComponent } from './components/fields/image-cropper-dialog/image-cropper-dialog.component';
+import { StepperEffects } from './store/stepper/stepper.effects';
+import { SubTitleComponent } from './components/fields/sub-components/sub-title/sub-title.component';
+import {FieldChipSelectorComponent} from './components/fields/field-chip-selector/field-chip-selector.component';
+import {FieldDatepickerComponent} from './components/fields/field-datepicker/field-datepicker.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    StepperContainerComponent,
+    RouteStepperComponent,
     LanguageDropdownComponent,
-    DropdownComponent,
+    FieldDropdownComponent,
     ControllerComponent,
-    FreetextComponent,
-    DateComponent,
-    NumberComponent,
-    ChipComponent,
+    FieldTextComponent,
+    FieldDatepickerComponent,
+    FieldNumberComponent,
     PageNotFoundComponent,
     SuccessAlertComponent,
     ComponentNotFoundComponent,
     FooterComponent,
-    HelpPanelComponent,
-    ImageComponent,
-    SelectorComponent,
+    FieldHelpPanelComponent,
+    FieldImageComponent,
+    FieldChipSelectorComponent,
     WelcomeAlertComponent,
-    FeedbackFormularComponent,
+    RouteFeedbackComponent,
     UsersComponent,
     DepartmentsComponent,
     TagsComponent,
     HeaderComponent,
-    ImageCropperDialogComponent
+    ImageCropperDialogComponent,
+    FieldAttachmentsComponent,
+    SubTitleComponent
 
   ],
   imports: [
@@ -77,11 +81,11 @@ import { ImageCropperDialogComponent } from './components/fields/image-cropper-d
     HttpClientModule,
     ImageCropperModule,
     FormsModule,
-    NgSelectModule,
     ReactiveFormsModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([StepperEffects]),
     MaterialModule,
+    FileUploadModule
   ],
   entryComponents: [
     WelcomeAlertComponent,

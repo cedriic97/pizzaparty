@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FreetextComponent } from './freetext.component';
+import { FieldTextComponent } from './field-text.component';
 
-describe('FreetextComponent', () => {
-  let component: FreetextComponent;
-  let fixture: ComponentFixture<FreetextComponent>;
+describe('FieldTextComponent', () => {
+  let component: FieldTextComponent;
+  let fixture: ComponentFixture<FieldTextComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FreetextComponent ]
+      declarations: [ FieldTextComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FreetextComponent);
+    fixture = TestBed.createComponent(FieldTextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

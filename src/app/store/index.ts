@@ -1,14 +1,14 @@
-import {StepperState, stepperReducer} from './stepper.reducer';
+import {StepperState, stepperReducer} from './stepper/stepper.reducer';
 import {ActionReducerMap} from '@ngrx/store';
-import {ideaFormReducer, IdeaFormState} from './idea-form.reducer';
+import {formReducer, FormState} from './form/form.reducer';
 
 
 export interface AppState {
-  ideaForm: IdeaFormState;
+  ideaForm: FormState;
   stepper: StepperState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  ideaForm: ideaFormReducer,
+  ideaForm: formReducer,
   stepper: stepperReducer,
 };

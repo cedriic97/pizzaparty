@@ -27,11 +27,6 @@ export enum EInitiative {
 
 // used for parsing responses from HYPE
 // could possibly be obsolete in the future (when format is changed to JSON) -> Ever?
-export interface IHypeTableDepartments {
-  columns: string[];
-  rows: string[][];
-}
-
 export interface IHypeTableUser {
   username: string;
   forename: string;

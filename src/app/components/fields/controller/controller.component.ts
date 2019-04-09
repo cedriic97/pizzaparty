@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { getConfigFor, getFieldType } from 'src/app/models/process-config';
+import { getConfigFor, getFieldType } from 'src/app/models/config';
 import { EFieldType, IField, ISection } from 'src/app/models/stepper';
 
 @Component({
   selector: 'app-controller',
-  templateUrl: './_controller.component.html',
-  styleUrls: ['./_controller.component.scss']
+  templateUrl: './controller.component.html',
+  styleUrls: ['./controller.component.scss']
 })
 
 export class ControllerComponent implements OnInit {

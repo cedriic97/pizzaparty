@@ -1,13 +1,13 @@
-import { EFieldOptions } from '../models/stepper';
+
 import { ActionsUnion, ActionTypes } from './form.actions';
 
-export interface IdeaFormState {
+export interface FormState {
   values: {
     [key: string]: any;
   };
 }
 
-const initialState: IdeaFormState = {
+const initialState: FormState = {
   values: {},
 };
 

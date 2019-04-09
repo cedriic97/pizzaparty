@@ -9,11 +9,11 @@ import {selectFieldValue} from '../../../store/form/form.selectors';
 import {SetFieldValueAction} from '../../../store/form/form.actions';
 
 @Component({
-  selector: 'app-freetext',
-  templateUrl: './freetext.component.html',
-  styleUrls: ['./freetext.component.scss']
+  selector: 'app-field-text',
+  templateUrl: './field-text.component.html',
+  styleUrls: ['./field-text.component.scss']
 })
-export class FreetextComponent implements OnInit {
+export class FieldTextComponent implements OnInit {
   @Input() public field: IField;
   @Input() public forminputs: FormGroup;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;

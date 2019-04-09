@@ -1,5 +1,6 @@
-import { Stepper, IStaticData } from '../models/stepper';
-import { ActionsUnion, ActionTypes } from './stepper.actions';
+import {IStaticData, Stepper} from '../../models/stepper';
+import {ActionsUnion, ActionTypes} from './stepper.actions';
+
 
 export interface StepperState {
   activeStepper: Stepper;

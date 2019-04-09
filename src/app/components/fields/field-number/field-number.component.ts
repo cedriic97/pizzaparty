@@ -3,12 +3,12 @@ import { IField, EUnitCurrency, EUnitTime } from 'src/app/models/stepper';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-number',
-  templateUrl: './number.component.html',
-  styleUrls: ['./number.component.scss']
+  selector: 'app-field-number',
+  templateUrl: './field-number.component.html',
+  styleUrls: ['./field-number.component.scss']
 })
 
-export class NumberComponent implements OnInit {
+export class FieldNumberComponent implements OnInit {
   @Input() public field: IField;
   @Input() public formValues: FormGroup;
 

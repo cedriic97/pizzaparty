@@ -1,19 +1,35 @@
 {
-  "APP_NAME": "HYPE Benefit Rechner",
-  "BUTTON_CLOSE": "schliessen",
-  "BUTTON_BACK": "zurück",
-  "BUTTON_NEXT": "weiter",
-  "BUTTON_SHOW": "anzeigen",
-  "BUTTON_FINALIZE": "abschliessen",
-  "BUTTON_UPLOAD": "Hochladen",
+  "APP_NAME": "HYPE One Idea Form",
+  "BUTTON_CLOSE": "SCHLIESSEN",
+  "BUTTON_SAVE": "SPEICHERN",
+  "BUTTON_BACK": "ZURÜCK",
+  "BUTTON_NEXT": "WEITER",
+  "BUTTON_EDIT": "BEARBEITEN",
+  "BUTTON_DELETE": "ENTFERNEN",
+  "BUTTON_SHOW": "ANZEIGEN",
+  "BUTTON_FEEDBACK":"FEEDBACKFORMULAR ÖFFNEN",
+  "BUTTON_FINALIZE": "ABSCHLIESSEN",
+  "BUTTON_UPLOAD": "DATEI HOCHLADEN",
+  "BUTTON_CANCEL": "ABBRECHEN",
+  "BUTTON_UPLOAD_ALL": "ALLE HOCHLADEN",
+  "BUTTON_DELETE_ALL": "ALLE LÖSCHEN",
+  "BUTTON_ADD_FILES": "DATEIEN HINZUFÜGEN",
+
   "RESULT.SUCCESS.TITLE": "Toll! Deine Idee wurde erfolgreich übermittelt",
-  "RESULT.SUCCESS.BUTTON.LEFT": "Idee einreichen",
-  "RESULT.SUCCESS.BUTTON.CENTER": "HYPE Startseite",
-  "RESULT.SUCCESS.BUTTON.RIGHT": "Idee in HYPE ansehen",
-  "RESULT.BUTTON.TRANSFER": "In HYPE speichern",
+  "RESULT.SUCCESS.BUTTON.LEFT": "IDEE EINREICHEN",
+  "RESULT.SUCCESS.BUTTON.CENTER": "HYPE STARTSEITE",
+  "RESULT.SUCCESS.BUTTON.RIGHT": "IDEE IN HYPE ANSEHEN",
+  "RESULT.BUTTON.TRANSFER": "IN HYPE SPEICHERN",
   "HEADER.MENU_ITEM.PATCHNOTES": "v0.1 Informationen",
   "HEADER.MENU_ITEM.HOME": "Startseite",
   "HEADER.MENU_ITEM.FEEDBACK": "Feedback Formular",
+  "HEADER.CROPPER_DIALOG":"Neues Bild zuschneiden",
+  "EUR":"€",
+  "USD":"$",
+  "CHF":"CHF",
+  "HOUR":"Stunde/n",
+  "MINUTE":"Minute/n",
+  "DAY":"Tag/e",
 
   "METHOD.NAME.A3":"A3",
   "METHOD.NAME.MAKIGAMI":"Makigami",
@@ -60,6 +76,16 @@
   "TYPE_OF_WASTE.DESCRIPTION.TRANSPORTS":"In der klassischen Lean Production Lehre nach Taiichi Ohno wird zwischen insgesamt sieben Verschwendungsarten unterschieden.",
   "TYPE_OF_WASTE.DESCRIPTION.STOCKS":"In der klassischen Lean Production Lehre nach Taiichi Ohno wird zwischen insgesamt sieben Verschwendungsarten unterschieden.",
   "TYPE_OF_WASTE.DESCRIPTION.WORKING_METHOD":"In der klassischen Lean Production Lehre nach Taiichi Ohno wird zwischen insgesamt sieben Verschwendungsarten unterschieden.",
+
+  "ACTION_TYPE.NAME.PROJECT":"Projekt",
+  "ACTION_TYPE.NAME.IMPROVEMENT":"Verbesserung",
+  "ACTION_TYPE.NAME.QUICK_WIN":"Quick Win",
+  "ACTION_TYPE.NAME.OE":"OE Projekt",
+  "ACTION_TYPE.NAME.OTHER":"Sonstiges Funktionsprojekt",
+  "ACTION_TYPE.NAME.KAIZEN_ACTION_SHEET":"Kaizen Action Sheet",
+  "ACTION_TYPE.NAME.EVENT_CHARTER":"Event Charter",
+  "ACTION_TYPE.NAME.CERTIFICATE":"Zertifizierungsprojekt",
+
 
   "AUTHOR.TITLE": "Autor/en",
   "AUTHOR.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
@@ -109,10 +135,26 @@
   "PICTURE_BEFORE.TITLE": "Bild vorher",
   "PICTURE_BEFORE.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
 
-
-  "PICTURE_AFTER.TITLE": "Bild nacher",
+  "PICTURE_AFTER.TITLE": "Bild danach",
   "PICTURE_AFTER.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
 
+  "MONETARY_COSTS.TITLE": "Finanzielle Kosten",
+  "MONETARY_COSTS.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "MONETARY_SAVINGS.TITLE": "Finanzielle Einsparungen",
+  "MONETARY_SAVINGS.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "ATTACHMENTS.TITLE": "Anhänge",
+  "ATTACHMENTS.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "TIME_SAVINGS.TITLE": "Zeiteinsparung",
+  "TIME_SAVINGS.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "ACTION_TYPE.TITLE": "Aktionstyp",
+  "ACTION_TYPE.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
+
+  "RESPONSIBLE_FOR_IMPLEMENTATION.TITLE": "Verantwortlich für die Umsetzung",
+  "RESPONSIBLE_FOR_IMPLEMENTATION.DESCRIPTION": "Hier könnte ihre Beschreibung stehen",
 
   "CHAPTER.DESCRIPTION.HEADER": "Um mehr über die Inhalte dieses Abschnittes zu erfahren, klicke hier",
   "DEFAULT.LOGO.PATH": "assets/img/logos/i_default.png",

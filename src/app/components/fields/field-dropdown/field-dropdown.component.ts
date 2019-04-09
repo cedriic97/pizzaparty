@@ -19,13 +19,13 @@ import { HypeService } from '../../../services/hype.service';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => DropdownComponent),
+      useExisting: forwardRef(() => FieldDropdownComponent),
       multi: true
     }
   ]
 })
 
-export class DropdownComponent implements OnInit, ControlValueAccessor {
+export class FieldDropdownComponent implements OnInit, ControlValueAccessor {
   private _selectedChips: string[] = [];
   onChange;
   removable = true;

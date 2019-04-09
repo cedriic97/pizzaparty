@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { StepperContainerComponent } from './stepper-container.component';
+import { RouteStepperComponent } from './route-stepper.component';
 
 
-describe('StepperContainerComponent', () => {
-  let component: StepperContainerComponent;
-  let fixture: ComponentFixture<StepperContainerComponent>;
+describe('RouteStepperComponent', () => {
+  let component: RouteStepperComponent;
+  let fixture: ComponentFixture<RouteStepperComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StepperContainerComponent ]
+      declarations: [ RouteStepperComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StepperContainerComponent);
+    fixture = TestBed.createComponent(RouteStepperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

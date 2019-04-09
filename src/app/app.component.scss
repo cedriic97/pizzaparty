@@ -1,29 +1,8 @@
 :host {
   display: block;
-
-}
-
-.spacer {
-  flex: 1 1 auto;
 }
 
 .content {
   z-index: 2;
   overflow: auto;
-  //  background: #dadce0;
-}
-
-
-
-.footer-toolbar {
-  bottom: 0;
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-
-}
-
-app-language-dropdown {
-  position: fixed;
-  right: 32px;
-  bottom: 32px;
 }

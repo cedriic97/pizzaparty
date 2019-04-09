@@ -1,0 +1,52 @@
+<app-field-title [field]="field"></app-field-title>
+
+<div hidden>
+  <input type="file" id="file" name="file" ng2FileSelect [uploader]="fileUploader" multiple />
+</div>
+<span class="flex-align">
+<button mat-button mat-flat-button color="primary"><label for="file">{{ 'BUTTON_ADD_FILES' | translate}}</label></button>
+<div>
+  <button mat-button mat-stroked-button color="primary" (click)="fileUploader.uploadAll()"
+    [disabled]="!fileUploader.getNotUploadedItems().length">
+    {{ 'BUTTON_UPLOAD_ALL' | translate }}
+  </button>
+
+  <button mat-button mat-stroked-button color="primary" (click)="fileUploader.clearQueue()"
+    [disabled]="!fileUploader.queue.length">
+    {{ 'BUTTON_DELETE_ALL' | translate }}
+  </button>
+</div>
+</span>
+<table class="table" width="100%">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of fileUploader.queue">
+
+      <td>
+        <span *ngIf="item.isSuccess">
+          <mat-icon class="vertical-table-align" color="primary">check_circle</mat-icon>
+        </span>
+        <span *ngIf="item.isError">
+          <mat-icon class="vertical-table-align" color="warn">error</mat-icon>
+        </span>
+        <span class="vertical-table-align"><strong>{{ item?.file?.name }}</strong></span>
+      </td>
+      <mat-divider></mat-divider>
+
+      <td align="right" nowrap>
+        <button mat-button mat-flat-button color="primary" (click)="item.upload()"
+          [disabled]="item.isReady || item.isUploading || item.isSuccess">
+          {{ 'BUTTON_UPLOAD' | translate }}
+        </button>
+        <button mat-button mat-stroked-button color="primary" (click)="item.remove()">
+          {{ 'BUTTON_DELETE' | translate }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

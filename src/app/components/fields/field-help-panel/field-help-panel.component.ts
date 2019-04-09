@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-help-panel',
-  templateUrl: './help-panel.component.html',
-  styleUrls: ['./help-panel.component.scss']
+  selector: 'app-field-help-panel',
+  templateUrl: './field-help-panel.component.html',
+  styleUrls: ['./field-help-panel.component.scss']
 })
-export class HelpPanelComponent implements OnInit {
+export class FieldHelpPanelComponent implements OnInit {
   @Input() public description: string;
   @Input() public imgpath: string;
   panelOpenState = false;

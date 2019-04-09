@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FieldSelectorComponent } from './field-selector.component';
+import { FieldChipSelectorComponent } from './field-chip-selector.component';
 
-describe('FieldSelectorComponent', () => {
-  let component: FieldSelectorComponent;
-  let fixture: ComponentFixture<FieldSelectorComponent>;
+describe('FieldChipSelectorComponent', () => {
+  let component: FieldChipSelectorComponent;
+  let fixture: ComponentFixture<FieldChipSelectorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FieldSelectorComponent ]
+      declarations: [ FieldChipSelectorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FieldSelectorComponent);
+    fixture = TestBed.createComponent(FieldChipSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

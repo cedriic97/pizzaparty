@@ -3,11 +3,11 @@ import { FormGroup } from '@angular/forms';
 import { IField } from 'src/app/models/stepper';
 
 @Component({
-  selector: 'app-field-date',
-  templateUrl: './field-date.component.html',
-  styleUrls: ['./field-date.component.scss']
+  selector: 'app-field-datepicker',
+  templateUrl: './field-datepicker.component.html',
+  styleUrls: ['./field-datepicker.component.scss']
 })
-export class FieldDateComponent implements OnInit {
+export class FieldDatepickerComponent implements OnInit {
   @Input() public field: IField;
   @Input() public formValues: FormGroup;
 

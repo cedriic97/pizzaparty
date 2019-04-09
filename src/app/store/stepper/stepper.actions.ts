@@ -1,6 +1,5 @@
-import { Action } from '@ngrx/store';
-
-import { Stepper, IStaticData } from '../models/stepper';
+import {IStaticData, Stepper} from '../../models/stepper';
+import {Action} from '@ngrx/store';
 
 
 export enum ActionTypes {

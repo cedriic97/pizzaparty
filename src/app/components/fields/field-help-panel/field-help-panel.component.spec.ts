@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HelpPanelComponent } from './help-panel.component';
+import { FieldHelpPanelComponent } from './field-help-panel.component';
 
-describe('HelpPanelComponent', () => {
-  let component: HelpPanelComponent;
-  let fixture: ComponentFixture<HelpPanelComponent>;
+describe('FieldHelpPanelComponent', () => {
+  let component: FieldHelpPanelComponent;
+  let fixture: ComponentFixture<FieldHelpPanelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HelpPanelComponent ]
+      declarations: [ FieldHelpPanelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HelpPanelComponent);
+    fixture = TestBed.createComponent(FieldHelpPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

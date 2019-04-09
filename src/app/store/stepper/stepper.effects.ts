@@ -1,20 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import {ActionTypes, FetchStaticDataAction, FetchStepperDataAction, SetActiveStepperAction, SetStaticDataAction} from './stepper.actions';
+import {HypeService} from '../../services/hype.service';
+import {Actions, Effect, ofType} from '@ngrx/effects';
+import {getLocalStoragePath, getStepperPath, IStaticData, Stepper} from '../../models/stepper';
+import {Observable} from 'rxjs';
+import {catchError, map, switchMap} from 'rxjs/operators';
+import {EInitiative} from '../../models/hype';
+import {Action} from '@ngrx/store';
 
-import { EInitiative } from '../models/hype';
-import { getStaticDataPath, getStepperPath, IStaticData, Stepper } from '../models/stepper';
-import { HypeService } from '../services/hype.service';
-import {
-  ActionTypes,
-  FetchStaticDataAction,
-  FetchStepperDataAction,
-  SetActiveStepperAction,
-  SetStaticDataAction,
-} from './stepper.actions';
 
 
 @Injectable()
@@ -34,7 +28,7 @@ export class StepperEffects {
   @Effect()
   fetchStaticData$: Observable<Action> = this.actions$.pipe(
     ofType<FetchStaticDataAction>(ActionTypes.FETCH_STATIC_DATA),
-    switchMap(() => this.http.get(getStaticDataPath('static'))),
+    switchMap(() => this.http.get(getLocalStoragePath('local-storage'))),
     catchError(() => null),
     map((data: IStaticData) => new SetStaticDataAction(data)),
   );

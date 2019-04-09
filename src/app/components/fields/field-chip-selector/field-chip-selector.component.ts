@@ -8,18 +8,18 @@ import { AppState } from 'src/app/store';
 import { selectActionTypes, selectMethods, selectTypesOfWaste } from 'src/app/store/stepper/stepper.selectors';
 
 @Component({
-  selector: 'app-field-selector',
-  templateUrl: './field-selector.component.html',
-  styleUrls: ['./field-selector.component.scss'],
+  selector: 'app-field-chip-selector',
+  templateUrl: './field-chip-selector.component.html',
+  styleUrls: ['./field-chip-selector.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => FieldSelectorComponent),
+      useExisting: forwardRef(() => FieldChipSelectorComponent),
       multi: true
     }
   ]
 })
-export class FieldSelectorComponent implements OnInit, ControlValueAccessor {
+export class FieldChipSelectorComponent implements OnInit, ControlValueAccessor {
   private _selectedChips: string[] = [];
   chips$: Observable<IStaticDataObject[]>;
   onChange;

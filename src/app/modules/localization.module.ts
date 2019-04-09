@@ -1,9 +1,9 @@
-import {Inject, NgModule} from '@angular/core';
-import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Inject, NgModule } from '@angular/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import {APP_NAME} from '../config';
+import { APP_NAME } from '../config';
 
 const DEFAULT_LANG = 'de';
 
@@ -34,7 +34,7 @@ export class LocalizationModule {
     translate.use(initialLang);
 
     translate.onLangChange.subscribe(
-      ({lang}) => localStorage.setItem(STORAGE_KEY, lang)
+      ({ lang }) => localStorage.setItem(STORAGE_KEY, lang)
     );
   }
 }

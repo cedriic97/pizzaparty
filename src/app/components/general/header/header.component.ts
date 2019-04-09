@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WelcomeAlertComponent } from '../welcome-alert/welcome-alert.component';
+import { WelcomeAlertComponent } from '../../dialogs/dialog-welcome/welcome-alert.component';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
 

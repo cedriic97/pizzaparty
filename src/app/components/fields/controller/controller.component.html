@@ -1,29 +1,29 @@
-<app-help-panel [description]="section.description" [imgpath]="imagePath"></app-help-panel>
+<app-field-help-panel [description]="section.description" [imgpath]="imagePath"></app-field-help-panel>
 
 <div *ngFor="let item of fields" [formGroup]="formValues">
   <div *ngIf="item.type; else elseTemplate">
     <mat-card class="mat-elevation-z2">
       <span [ngSwitch]="fieldType(item)">
         <p *ngSwitchCase="'user'">
-          <app-dropdown [field]="item" [forminputs]="formValues" [formControlName]="item.type"></app-dropdown>
+          <app-field-dropdown [field]="item" [forminputs]="formValues" [formControlName]="item.type"></app-field-dropdown>
         </p>
         <p *ngSwitchCase="'text'">
-          <app-freetext [field]="item" [forminputs]="formValues"></app-freetext>
+          <app-field-text [field]="item" [forminputs]="formValues"></app-field-text>
         </p>
         <p *ngSwitchCase="'date'">
-          <app-date [field]="item" [formValues]="formValues"></app-date>
+          <app-field-datepicker [field]="item" [formValues]="formValues"></app-field-datepicker>
         </p>
         <p *ngSwitchCase="'image'">
-          <app-image [field]="item" [forminputs]="formValues"></app-image>
+          <app-field-image [field]="item" [forminputs]="formValues"></app-field-image>
         </p>
-        <p *ngSwitchCase="'field-number'">
-          <app-number [field]="item" [formValues]="formValues"></app-number>
+        <p *ngSwitchCase="'number'">
+          <app-field-number [field]="item" [formValues]="formValues"></app-field-number>
         </p>
         <p *ngSwitchCase="'selector'">
-          <app-selector [field]="item" [forminputs]="formValues" [formControlName]="item.type"></app-selector>
+          <app-field-chip-selector [field]="item" [forminputs]="formValues" [formControlName]="item.type"></app-field-chip-selector>
         </p>
         <p *ngSwitchCase="'files'">
-          <app-attachments [field]="item" [formValues]="formValues"></app-attachments>
+          <app-field-attachments [field]="item" [formValues]="formValues"></app-field-attachments>
         </p>
         <p *ngSwitchDefault>
           <app-component-not-found [componentName]="item"></app-component-not-found>

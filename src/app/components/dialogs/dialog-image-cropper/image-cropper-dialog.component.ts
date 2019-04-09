@@ -28,7 +28,6 @@ export class ImageCropperDialogComponent implements OnInit {
 
   fileChangeEvent(event: any): void {
     this.imageChangedEvent = event;
-    console.log("this is patrick")
     this.imageExists = true;
     if (this.imageChangedEvent == null) {
       this.closeDialog();
@@ -42,9 +41,8 @@ export class ImageCropperDialogComponent implements OnInit {
 
   }
   ngOnInit() {
-    const fileUpload: HTMLElement = document.getElementById('field-image') as HTMLElement;
+    const fileUpload: HTMLElement = document.getElementById('image') as HTMLElement;
     fileUpload.click();
-    console.log("jajs")
   }
 
   saveImage() {

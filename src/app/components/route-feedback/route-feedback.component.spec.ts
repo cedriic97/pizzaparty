@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeedbackFormularComponent } from './feedback-formular.component';
+import { RouteFeedbackComponent } from './route-feedback.component';
 
-describe('FeedbackFormularComponent', () => {
-  let component: FeedbackFormularComponent;
-  let fixture: ComponentFixture<FeedbackFormularComponent>;
+describe('RouteFeedbackComponent', () => {
+  let component: RouteFeedbackComponent;
+  let fixture: ComponentFixture<RouteFeedbackComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FeedbackFormularComponent ]
+      declarations: [ RouteFeedbackComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FeedbackFormularComponent);
+    fixture = TestBed.createComponent(RouteFeedbackComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

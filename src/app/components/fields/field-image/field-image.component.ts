@@ -2,16 +2,16 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { IField } from 'src/app/models/stepper';
-import { ImageCropperDialogComponent } from '../sub-components/sub-image-cropper-dialog/image-cropper-dialog.component';
+import { ImageCropperDialogComponent } from '../../dialogs/dialog-image-cropper/image-cropper-dialog.component';
 import { MatDialog } from '@angular/material';
 
 
 @Component({
-  selector: 'app-image',
-  templateUrl: './image.component.html',
-  styleUrls: ['./image.component.scss']
+  selector: 'app-field-image',
+  templateUrl: './field-image.component.html',
+  styleUrls: ['./field-image.component.scss']
 })
-export class ImageComponent implements OnInit {
+export class FieldImageComponent implements OnInit {
   croppedImage: any = '';
   imageExists = false;
   // TODO: Value Accessor
@@ -22,16 +22,16 @@ export class ImageComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+
   }
 
   openCropper() {
-    const dialogSuccess = this.dialog.open(ImageCropperDialogComponent, { disableClose: true, panelClass: 'my-panel',autoFocus: false });
-    const sub = dialogSuccess.componentInstance.onAdd.subscribe((data) => {
+    const dialogImage = this.dialog.open(ImageCropperDialogComponent, { disableClose: true, panelClass: 'my-panel', autoFocus: false });
+    const sub = dialogImage.componentInstance.onAdd.subscribe((data) => {
       this.croppedImage = data;
-      console.log(data);
       this.imageExists = true;
     });
-    dialogSuccess.afterClosed().subscribe(() => {
+    dialogImage.afterClosed().subscribe(() => {
       sub.unsubscribe();
     });
   }

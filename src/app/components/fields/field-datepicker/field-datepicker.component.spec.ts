@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FieldDateComponent } from './field-date.component';
+import { FieldDatepickerComponent } from './field-datepicker.component';
 
-describe('FieldDateComponent', () => {
-  let component: FieldDateComponent;
-  let fixture: ComponentFixture<FieldDateComponent>;
+describe('FieldDatepickerComponent', () => {
+  let component: FieldDatepickerComponent;
+  let fixture: ComponentFixture<FieldDatepickerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FieldDateComponent ]
+      declarations: [ FieldDatepickerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FieldDateComponent);
+    fixture = TestBed.createComponent(FieldDatepickerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
