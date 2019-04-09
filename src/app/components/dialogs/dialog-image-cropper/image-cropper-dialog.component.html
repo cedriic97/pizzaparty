@@ -1,0 +1,36 @@
+<div hidden>
+  <button mat-button mat-flat-button color="primary"><label for="image">{{'BUTTON_UPLOAD' | translate}}</label></button>
+</div>
+
+<mat-dialog-content class="mat-typography">
+  <div [hidden]="!imageExists">
+    <h2 mat-dialog-title>{{ 'HEADER.CROPPER_DIALOG' | translate}}</h2>
+  </div>
+  <div [hidden]="hideImageSelector">
+    <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="false"
+      format="png" (imageCropped)="imageCropped($event)"></image-cropper>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <span>
+    <input type="file" name="image" id="image" class="inputfile" (change)="fileChangeEvent($event)" />
+    <div [hidden]="imageExists">
+
+      <div class="cornerstone">
+        <button (click)="closeDialog()" mat-button mat-icon-button>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </div>
+
+      <img src="assets/img/search.png" alt="Choose a picture">
+      <br>
+
+    </div>
+    <div [hidden]="!imageExists">
+      <button mat-button mat-stroked-button color="primary" (click)="saveImage()">{{'BUTTON_SAVE' | translate}}</button>
+      <button mat-button mat-stroked-button color="primary"
+        (click)="closeDialog()">{{'BUTTON_CLOSE' | translate}}</button>
+    </div>
+  </span>
+</mat-dialog-actions>

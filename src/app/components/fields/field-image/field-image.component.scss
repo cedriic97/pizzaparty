@@ -1,0 +1,25 @@
+.bottom-spacer {
+  padding-bottom: 16px;
+}
+
+span {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+img {
+  height: 104px;
+  max-width: 250px;
+  object-fit: cover;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.maintain-button-margin {
+  margin-left: 8px;
+}
+
+

@@ -1,0 +1,13 @@
+<app-field-title [field]="field"></app-field-title>
+
+<mat-form-field appearance="outline">
+  <input matInput type="number" class="example-right-align">
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="unit-field">
+  <mat-select required>
+    <mat-option *ngFor="let unit of units" [value]="unit">
+      {{ unit | translate }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

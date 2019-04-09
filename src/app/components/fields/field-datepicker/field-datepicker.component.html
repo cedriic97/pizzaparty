@@ -1,0 +1,8 @@
+<app-field-title [field]="field"></app-field-title>
+<mat-form-field appearance="outline">
+  <div [formGroup]="formValues">
+    <input matInput [matDatepickerFilter]="filterWeekendDays" [matDatepicker]="datePicker" [formControlName]="field.type">
+  </div>
+    <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+    <mat-datepicker #datePicker></mat-datepicker>
+</mat-form-field>

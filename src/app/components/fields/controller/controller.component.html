@@ -1,0 +1,38 @@
+<app-help-panel [description]="section.description" [imgpath]="imagePath"></app-help-panel>
+
+<div *ngFor="let item of fields" [formGroup]="formValues">
+  <div *ngIf="item.type; else elseTemplate">
+    <mat-card class="mat-elevation-z2">
+      <span [ngSwitch]="fieldType(item)">
+        <p *ngSwitchCase="'user'">
+          <app-dropdown [field]="item" [forminputs]="formValues" [formControlName]="item.type"></app-dropdown>
+        </p>
+        <p *ngSwitchCase="'text'">
+          <app-freetext [field]="item" [forminputs]="formValues"></app-freetext>
+        </p>
+        <p *ngSwitchCase="'date'">
+          <app-date [field]="item" [formValues]="formValues"></app-date>
+        </p>
+        <p *ngSwitchCase="'image'">
+          <app-image [field]="item" [forminputs]="formValues"></app-image>
+        </p>
+        <p *ngSwitchCase="'field-number'">
+          <app-number [field]="item" [formValues]="formValues"></app-number>
+        </p>
+        <p *ngSwitchCase="'selector'">
+          <app-selector [field]="item" [forminputs]="formValues" [formControlName]="item.type"></app-selector>
+        </p>
+        <p *ngSwitchCase="'files'">
+          <app-attachments [field]="item" [formValues]="formValues"></app-attachments>
+        </p>
+        <p *ngSwitchDefault>
+          <app-component-not-found [componentName]="item"></app-component-not-found>
+        </p>
+      </span>
+    </mat-card>
+  </div>
+
+  <ng-template #elseTemplate>
+    <app-component-not-found [componentName]="item"></app-component-not-found>
+  </ng-template>
+</div>

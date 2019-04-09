@@ -1,0 +1,22 @@
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+.unit-field {
+  max-width: 120px;
+}
+
+mat-form-field {
+  text-align: right;
+  font-size: 15px;
+  margin-right: 8px;
+}

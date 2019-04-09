@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0px auto;
+}
+
+mat-horizontal-stepper {
+  background: transparent;
+}
+
+/deep/ .mat-horizontal-stepper-header-container {
+  z-index: 5;
+  width: 800px ;
+  position: fixed ;
+}
+
+/deep/ .mat-horizontal-content-container {
+  z-index: 1;
+  padding-top: 108px !important;
+  padding-bottom: 200px !important;
+}
+
+
+
+

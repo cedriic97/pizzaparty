@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Herzlich Willkommen zur neuen Ideeneingabe (v0.1)</h2>
+
+<mat-dialog-content class="mat-typography">
+  <h4><b>Was bedeutet dieses Tool für mich zum aktuellen Zeitpunkt?</b></h4>
+  <p>
+    Diese Version ist eine <b>Testversion</b> und daher ausdrücklich <b>NICHT</b> für die produktive Eingabe von Ideen
+    zu verwenden.
+    Sie läuft ausschließlich im Testsystem des KVP's und dient der vorzeitigen Optimierung der neuen Ideeneingabe durch
+    ihr Feedback.
+    Eine finale Veröffentlichung ist für das vierte Quartal 2019 angestrebt.
+  </p>
+
+  <h4><b>Wo kann ich Feedback zu der Applikation einreichen?</b></h4>
+  <p>
+    Hierfür haben wir ein spezielles Formular eingerichtet.
+    Wir würden uns freuen wenn du uns Feedback aller Art darüber zukommen lassen könntest
+  </p>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button [routerLink]="['/feedback']" (click)="closeDialog()" mat-button mat-flat-button
+    color="primary">{{'BUTTON_FEEDBACK' | translate}}</button>
+
+  <button (click)="closeDialog()" mat-button mat-stroked-button>{{ 'BUTTON_CLOSE' | translate }} </button>
+</mat-dialog-actions>
