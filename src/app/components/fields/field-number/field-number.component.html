@@ -1,11 +1,11 @@
 <app-field-title [field]="field"></app-field-title>
 
-<mat-form-field appearance="outline">
-  <input matInput type="number" class="example-right-align">
+<mat-form-field  appearance="outline">
+  <input matInput type="number" class="example-right-align" [(ngModel)]="number.value" (ngModelChange)="valueChange()">
 </mat-form-field>
 
 <mat-form-field appearance="outline" class="unit-field">
-  <mat-select required>
+  <mat-select [(ngModel)]="number.unit" (ngModelChange)="unitChange()" required>
     <mat-option *ngFor="let unit of units" [value]="unit">
       {{ unit | translate }}
     </mat-option>

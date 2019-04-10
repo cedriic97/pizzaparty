@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatStepper } from '@angular/material';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -22,26 +22,28 @@ export class RouteStepperComponent implements OnInit {
   staticData$: Observable<IStaticData>;
 
   formGroup = new FormGroup({
-    [EFieldOptions.AUTHOR]: new FormControl(),
-    [EFieldOptions.CHAMPION]: new FormControl(),
-    [EFieldOptions.COMMENT]: new FormControl(),
-    [EFieldOptions.COMPLETION_DATE]: new FormControl(),
-    [EFieldOptions.CONSEQUENCES]: new FormControl(),
-    [EFieldOptions.DEPARTMENT]: new FormControl(),
-    [EFieldOptions.EXPECTED_RESULT]: new FormControl(),
-    [EFieldOptions.METHODS_USED]: new FormControl(),
-    [EFieldOptions.PROBLEM_DESCRIPTION]: new FormControl(),
-    [EFieldOptions.TYPES_OF_WASTE]: new FormControl(),
-    [EFieldOptions.SOLUTION]: new FormControl(),
-    [EFieldOptions.TAGS]: new FormControl(),
-    [EFieldOptions.START_DATE]: new FormControl(),
-    [EFieldOptions.ACTION_TYPE]: new FormControl(),
-    [EFieldOptions.TITLE]: new FormControl(),
-    [EFieldOptions.ATTACHMENTS]: new FormControl(),
-    [EFieldOptions.MONETARY_COSTS]: new FormControl(),
-    [EFieldOptions.MONETARY_SAVINGS]: new FormControl(),
-    [EFieldOptions.TIME_SAVINGS]: new FormControl(),
-    [EFieldOptions.RESPONSIBLE_FOR_IMPLEMENTATION]: new FormControl()
+    [EFieldOptions.AUTHOR]: new FormControl('', Validators.required),
+    [EFieldOptions.CHAMPION]: new FormControl('', Validators.required),
+    [EFieldOptions.COMMENT]: new FormControl(''),
+    [EFieldOptions.COMPLETION_DATE]: new FormControl('', Validators.required),
+    [EFieldOptions.CONSEQUENCES]: new FormControl('', Validators.required),
+    [EFieldOptions.DEPARTMENT]: new FormControl('', Validators.required),
+    [EFieldOptions.EXPECTED_RESULT]: new FormControl('', Validators.required),
+    [EFieldOptions.METHODS_USED]: new FormControl(''),
+    [EFieldOptions.PROBLEM_DESCRIPTION]: new FormControl('', Validators.required),
+    [EFieldOptions.TYPES_OF_WASTE]: new FormControl(''),
+    [EFieldOptions.SOLUTION]: new FormControl('', Validators.required),
+    [EFieldOptions.TAGS]: new FormControl(''),
+    [EFieldOptions.START_DATE]: new FormControl('', Validators.required),
+    [EFieldOptions.ACTION_TYPE]: new FormControl(''),
+    [EFieldOptions.TITLE]: new FormControl('', Validators.required),
+    [EFieldOptions.ATTACHMENTS]: new FormControl(''),
+    [EFieldOptions.MONETARY_COSTS]: new FormControl(''),
+    [EFieldOptions.MONETARY_SAVINGS]: new FormControl(''),
+    [EFieldOptions.TIME_SAVINGS]: new FormControl(''),
+    [EFieldOptions.RESPONSIBLE_FOR_IMPLEMENTATION]: new FormControl('', Validators.required),
+    [EFieldOptions.PICTURE_AFTER]: new FormControl(''),
+    [EFieldOptions.PICTURE_BEFORE]: new FormControl('')
   });
 
   constructor(public hype: HypeService, public dialog: MatDialog, private store: Store<AppState>) {

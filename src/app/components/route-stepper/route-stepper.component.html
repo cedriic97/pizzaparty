@@ -5,5 +5,5 @@
       <app-controller [imagePath]="(config$ | async).imgpath" [section]="step" [formValues]="formGroup"></app-controller>
     </mat-step>
   </mat-horizontal-stepper>
-  <app-footer [stepper]=stepper (success)="fireSuccess()"></app-footer>
+  <app-footer [stepper]=stepper [formGroup]="formGroup" (success)="fireSuccess()"></app-footer>
 </form>

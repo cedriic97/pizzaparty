@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatStepper } from '@angular/material';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -8,6 +9,7 @@ import { MatStepper } from '@angular/material';
 })
 export class FooterComponent implements OnInit {
   @Input() public stepper: MatStepper;
+  @Input() public formGroup: FormGroup;
   @Output() success = new EventEmitter<string>();
   constructor() { }
 

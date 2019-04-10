@@ -15,6 +15,7 @@ export class SuccessAlertComponent implements OnInit {
 
   ngOnInit() {
     this.result$ = this.store.pipe(select(selectFormValues));
+    console.log(this.result$)
 
   }
   reload(): void {
